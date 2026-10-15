@@ -2,7 +2,7 @@
 
 本仓库管理项目源码、测试、运行文档和上游许可证。数据集、模型权重、训练输出、虚拟环境、缓存、凭据和本地交接记录由 `.gitignore` 排除；文件保留在磁盘上，训练路径不变。
 
-当前 `experiments/` 全部视为运行产物，其中生成的配置也不提交。需要复现实验时，将人工维护且不含凭据的配置放入独立的 `configs/` 目录。CSV 清单、`train_ucf.txt`、`test_ucf*.txt` 和报告 JSON 先留在本地，划分生成脚本仍被版本管理。保留依赖清单（例如 requirements.txt、pyproject.toml、environment.yml）和许可证。
+当前 `experiments/` 全部视为运行产物，其中生成的配置也不提交。需要复现实验时，将人工维护且不含凭据的配置放入独立的 `configs/` 目录。CSV 清单和报告 JSON 留在本地；根目录 `train_ucf.txt` 与 `test_ucf(1).txt` 作为训练/测试划分清单纳入版本管理，`experiments/` 中的生成副本仍被排除。划分生成脚本也被版本管理。保留依赖清单（例如 requirements.txt、pyproject.toml、environment.yml）和许可证。
 
 日常提交前检查：
 

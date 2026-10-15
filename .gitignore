@@ -22,8 +22,7 @@ features/
 *.pcd
 *.ply
 *.csv
-/train_ucf.txt
-/test_ucf*.txt
+# Root UCF split TXT lists are versioned; experiments/ copies stay ignored.
 *.report.json
 
 # Model weights and training artifacts
