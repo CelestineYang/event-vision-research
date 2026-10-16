@@ -5,6 +5,7 @@ then each branch runs its own forward, CE backward and Adam update. No fusion.
 """
 import argparse
 import fcntl
+import hashlib
 import json
 import os
 import time
@@ -24,6 +25,34 @@ from ucf101_window_data import (OUTPUT, VIEWS, WindowDataset, checked_audit,
 from train_ucf101_window_gcstr import (Metrics, atomic_checkpoint, load_checkpoint,
                                      protocol_config, seed_all, core, wrap, world,
                                      rank, barrier, loader)
+
+
+def training_dataset(args):
+    if args.event_store is not None:
+        from ucf101_event_store import PreparedThreeViewDataset
+        return PreparedThreeViewDataset(args.output,'train',args.event_store,seed=args.seed)
+    return ThreeViewDataset(args.output,'train',seed=args.seed)
+
+
+def check_resume_config(previous,current,allow_transition=False):
+    if previous==current: return
+    if not allow_transition:
+        raise ValueError('Resume protocol mismatch; explicit data-backend transition required')
+    if 'data_backend' in previous or current.get('data_backend',{}).get('train')!='full_event_memory_map':
+        raise ValueError('Only the one-time legacy NPZ -> full-event mmap transition is permitted')
+    semantic=lambda c:{k:v for k,v in c.items() if k not in ('code','data_backend')}
+    if semantic(previous)!=semantic(current):
+        raise ValueError('Training/data protocol changed beyond the storage backend')
+    before,after=previous['code'],current['code']
+    if set(after)-set(before)!={'ucf101_event_store.py'} or set(before)-set(after):
+        raise ValueError('Unexpected code dependency change')
+    for name in before:
+        if name!='train_ucf101_window_joint.py' and before[name]!=after[name]:
+            raise ValueError(f'Non-backend code changed: {name}')
+
+
+def smoke_marker(args):
+    return args.output/('joint_smoke_mmap_passed.json' if args.event_store is not None else 'joint_smoke_passed.json')
 
 
 class ThreeViewDataset(WindowDataset):
@@ -142,10 +171,14 @@ def check_coverage(result,size):
 
 
 def smoke(args,config,device):
-    data = ThreeViewDataset(args.output,'train',seed=args.seed)
-    data.set_epoch(1)
+    data = training_dataset(args)
+    saved=load_checkpoint(args.output/'checkpoints/joint_last.pt') if args.resume else None
+    if saved: check_resume_config(saved['config'],config,args.allow_data_backend_transition)
+    initial_epoch=saved['epoch']+1 if saved else 1
+    data.set_epoch(initial_epoch)
     subset = Subset(data,list(range(min(2*args.batch_size+1,len(data)))))
-    models,optimizers = build_bank(args,device)
+    models,optimizers = build_bank(args,device,saved)
+    del saved
     before = {v:core(m).backbone.fc.weight.detach().clone() for v,m in models.items()}
     if device.type=='cuda': torch.cuda.reset_peak_memory_stats(device)
     initial,_ = joint_epoch(models,loader(subset,args.batch_size,args.num_workers,True,args.seed+1),device,optimizers)
@@ -156,9 +189,9 @@ def smoke(args,config,device):
     for m in models.values(): m.eval()
     with torch.inference_mode():
         expected = {v:core(models[v])(images[v][None].to(device)).cpu() for v in VIEWS}
-    checkpoint = args.output/'smoke_joint'/'last.pt'
+    checkpoint = args.output/('smoke_joint_mmap' if args.event_store is not None else 'smoke_joint')/'last.pt'
     if rank()==0:
-        saved_state = bank_state(models,optimizers,1,config,{})
+        saved_state = bank_state(models,optimizers,initial_epoch,config,{})
         atomic_checkpoint(checkpoint,saved_state)
         for v in VIEWS: atomic_checkpoint(checkpoint.parent/f'{v}.pt',saved_state['branches'][v])
         del saved_state
@@ -172,8 +205,19 @@ def smoke(args,config,device):
         with torch.inference_mode():
             torch.testing.assert_close(expected[v],core(models[v])(images[v][None].to(device)).cpu(),rtol=0,atol=0)
     del saved
-    data.set_epoch(2)
+    data.set_epoch(initial_epoch+1)
     resumed,_ = joint_epoch(models,loader(subset,args.batch_size,args.num_workers,True,args.seed+2),device,optimizers)
+    hashes={}
+    for view in VIEWS:
+        digest=hashlib.sha256()
+        for key,value in core(models[view]).state_dict().items():
+            digest.update(key.encode());digest.update(value.detach().cpu().numpy().tobytes())
+        hashes[view]=digest.hexdigest()
+    rank_hashes=[hashes]
+    if world()>1:
+        rank_hashes=[None]*world();dist.all_gather_object(rank_hashes,hashes)
+    if any(h!=hashes for h in rank_hashes):
+        raise RuntimeError(f'Rank model states differ: {rank_hashes}')
     # Evaluate the same deterministic epoch-2 augmented Train subset in eval mode.
     # Official Test payload is not accessed by this execution check.
     evaluated,predictions = joint_epoch(models,loader(subset,args.batch_size,args.num_workers,False,args.seed),device)
@@ -183,22 +227,27 @@ def smoke(args,config,device):
         from torch.utils.data import DataLoader
         reference = {v:Metrics() for v in VIEWS}
         with torch.inference_mode():
-            for batch,labels,ids in DataLoader(subset,batch_size=args.batch_size,num_workers=0):
-                for v in VIEWS:
-                    reference[v].update(core(models[v])(batch[v].to(device)),labels,ids)
+            # Match each actual eval shard's batch shapes. Different convolution
+            # batch shapes may choose different FP32/TF32 kernels, which is not
+            # a distributed voting error and is visible with trained logits.
+            for replica in range(world()):
+                shard=Subset(subset,list(range(replica,len(subset),world())))
+                for batch,labels,ids in DataLoader(shard,batch_size=max(1,args.batch_size//world()),num_workers=0):
+                    for v in VIEWS:
+                        reference[v].update(core(models[v])(batch[v].to(device)),labels,ids)
         for v in VIEWS:
             expected_metrics,_ = reference[v].finish()
             for key,value in expected_metrics.items():
                 if not np.isclose(value,evaluated['branches'][v][key],rtol=1e-5,atol=1e-5):
-                    raise RuntimeError(f'Distributed vote mismatch: {v}/{key}')
+                    raise RuntimeError(f'Distributed vote mismatch: {v}/{key}, reference={value}, distributed={evaluated["branches"][v][key]}')
     barrier()
     result = dict(config=config,initial=initial,resumed=resumed,
-                  evaluation_train_subset=evaluated,gpu_memory=memory_stats(device),
+                  evaluation_train_subset=evaluated,gpu_memory=memory_stats(device),rank_model_hashes=rank_hashes,
                   checks=['three_independent_parameter_sets','finite_gradients','all_classifiers_updated',
                           'checkpoint_logits_identical','three_adam_states_restored','full_window_coverage',
                           'distributed_voting_matches_single_rank'])
     if rank()==0:
-        write_json(args.output/'joint_smoke_passed.json',result)
+        write_json(smoke_marker(args),dict(result,resume_source_epoch=initial_epoch-1))
         print(json.dumps(dict(event='joint_smoke_passed',results=result)),flush=True)
     barrier()
 
@@ -207,12 +256,12 @@ def train(args,config,device,audit):
     last = args.output/'checkpoints'/'joint_last.pt'
     if last.exists() and not args.resume: raise FileExistsError('Use --resume for existing joint checkpoint')
     saved = load_checkpoint(last) if last.exists() else None
-    if saved and saved['config']!=config: raise ValueError('Resume protocol mismatch')
+    if saved: check_resume_config(saved['config'],config,args.allow_data_backend_transition)
     models,optimizers = build_bank(args,device,saved)
     history = saved['history'] if saved else {v:dict(best_loss=None,best_top1=None) for v in VIEWS}
     start = saved['epoch']+1 if saved else 1
     del saved
-    train_data = ThreeViewDataset(args.output,'train',seed=args.seed)
+    train_data = training_dataset(args)
     test_data = ThreeViewDataset(args.output,'test',seed=args.seed)
     logs,reports = args.output/'logs',args.output/'reports'
     if rank()==0:
@@ -263,6 +312,7 @@ def train(args,config,device,audit):
                     write_csv(reports/f'{v}_test_video_predictions_best_loss.csv',predictions[v],list(predictions[v][0]))
             # One atomic checkpoint is authoritative for resuming all branches at the same epoch.
             atomic_checkpoint(last,state)
+            write_json(args.output/'active_config.json',config)
             for v,metric in metrics.items():
                 metric['joint_epoch_seconds_including_checkpoints'] = time.perf_counter()-begin
                 with (logs/f'{v}_metrics.jsonl').open('a') as f: f.write(json.dumps(metric)+'\n')
@@ -286,6 +336,9 @@ def main():
     parser.add_argument('--seed',type=int,default=0)
     parser.add_argument('--device',default='cuda:0')
     parser.add_argument('--resume',action='store_true')
+    parser.add_argument('--event-store',type=Path,help='Verified full-event mmap cache for Train; Test keeps image cache')
+    parser.add_argument('--allow-data-backend-transition',action='store_true',
+                        help='Allow only legacy NPZ -> verified mmap resume with otherwise identical protocol')
     args = parser.parse_args()
     if int(os.environ.get('WORLD_SIZE','1'))>1:
         if int(os.environ['WORLD_SIZE'])!=2: parser.error('Expected two DDP ranks')
@@ -299,6 +352,16 @@ def main():
     config = protocol_config(args,audit)
     config['execution'] = 'three_independent_branches_shared_event_batch'
     config['code']['train_ucf101_window_joint.py'] = sha(Path(__file__))
+    if args.allow_data_backend_transition and (not args.resume or args.event_store is None):
+        parser.error('Data backend transition requires --resume and --event-store')
+    if args.event_store is not None:
+        from ucf101_event_store import EventStore
+        store=EventStore(args.event_store,args.output)
+        config['data_backend']=dict(train='full_event_memory_map',event_store=str(args.event_store.resolve()),
+                                    store_summary_sha256=sha(args.event_store/'summary.json'),
+                                    test='unchanged_pre_rendered_images')
+        config['code']['ucf101_event_store.py']=sha(Path(__file__).parent/'ucf101_event_store.py')
+        del store
     device = torch.device(args.device)
     with ((args.output/'.training.lock').open('a') if rank()==0 else nullcontext()) as lock:
         if rank()==0: fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -306,16 +369,18 @@ def main():
         if args.smoke:
             smoke(args,config,device)
             return
-        marker = args.output/'joint_smoke_passed.json'
+        marker = smoke_marker(args)
         if not marker.is_file() or json.loads(marker.read_text())['config']!=config:
             raise RuntimeError('Matching joint Smoke Test required')
         for v in VIEWS:
             data = WindowDataset(args.output,'test',v)
             for row in data.rows:
                 if not data.cache_path(row).is_file(): raise RuntimeError('Complete Test cache required')
-        path = args.output/'config.json'
-        if path.exists() and json.loads(path.read_text())!=config: raise ValueError('Experiment config mismatch')
-        if rank()==0: write_json(path,config)
+        path = args.output/('active_config.json' if (args.output/'active_config.json').exists() else 'config.json')
+        if path.exists(): check_resume_config(json.loads(path.read_text()),config,args.allow_data_backend_transition)
+        elif rank()==0: write_json(args.output/'config.json',config)
+        # Preserve config.json as epoch1 provenance; active config published only
+        # after a resumed epoch has successfully saved its new checkpoint.
         train(args,config,device,audit)
 
 

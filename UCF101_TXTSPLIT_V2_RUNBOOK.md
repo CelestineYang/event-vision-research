@@ -1,5 +1,10 @@
 # Current UCF101-DVS split: supplied TXT lists
 
+Current status: paused after verified epoch6. Before resuming use the new
+Train memory-map backend and migrated Test image cache as documented in
+`UCF101_EVENT_PREPROCESS_RUNBOOK.md`. The earlier fresh-run commands below are
+historical; the next run must restore epoch6, not reinitialize models.
+
 The user approved `train_ucf.txt` and `test_ucf(1).txt` on 2026-10-15.
 These lists define the video split, superseding the previous RGB-split-derived
 lists. They are approximately 80/20, not group-disjoint. They are not labeled

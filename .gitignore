@@ -50,6 +50,8 @@ lightning_logs/
 tensorboard/
 events.out.tfevents.*
 *.log
+# Imported PointMLP training log (not source code).
+/pointmlp.txt
 *.pid
 *.lock
 
