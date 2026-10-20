@@ -1,0 +1,106 @@
+{
+  "dataset": "UCF101-DVS",
+  "num_classes": 101,
+  "views": [
+    "cstr3",
+    "xt_p",
+    "ty_p"
+  ],
+  "world_size": 2,
+  "parallelism": "DDP+SyncBatchNorm",
+  "per_rank_batch": 32,
+  "num_workers_per_rank": 4,
+  "tail_policy": "redistribute tiny tail; no duplicate or dropped windows",
+  "pretrained": "ImageNet1K_V1",
+  "epochs": 50,
+  "batch_size": 64,
+  "optimizer": "Adam",
+  "lr": 0.0001,
+  "weight_decay": 0.0,
+  "scheduler": null,
+  "early_stopping": false,
+  "label_smoothing": 0.0,
+  "augmentation": "spatial",
+  "amp": false,
+  "augmentation_config": {
+    "train_only": true,
+    "coordinate_dither_pixels": [
+      -0.5,
+      0.5
+    ],
+    "rotation_degrees": [
+      -15.0,
+      15.0
+    ],
+    "crop_per_side": [
+      0.0,
+      0.1
+    ],
+    "versions_per_window_per_epoch": 1,
+    "temporal": false,
+    "polarity_flip": false,
+    "rng": "seed+epoch+video_id+window_id; independent of rank/view",
+    "empty_crop_policy": "existing augment_events retains pre-crop events"
+  },
+  "precision": "float32",
+  "seed": 0,
+  "num_workers": 4,
+  "torch_version": "2.0.1+cu118",
+  "cuda_version": "11.8",
+  "selection_split": "test",
+  "independent_test": false,
+  "selection_metric": "video_nll",
+  "validation_split": null,
+  "tie_rules": "NLL then higher video Top1 then earlier epoch; Top1 then lower NLL then earlier epoch",
+  "hard_vote_tie_rule": "lowest class ID",
+  "train_coverage": "every valid window once per epoch, drop_last=False",
+  "data_config": {
+    "protocol": {
+      "window_us": 1000000,
+      "step_us": 500000,
+      "min_events": 10001,
+      "max_window_count_exclusive": 40,
+      "future_point_count": 8192,
+      "polarity": "raw pol == 1 positive, raw pol == 0 negative",
+      "time_unit": "microseconds (source CSV *_usec convention)",
+      "full_windows_only": true,
+      "image_size": 224,
+      "time_bins": 224,
+      "event_sampling": "all_events_in_window",
+      "augmentation": "spatial_train_only"
+    },
+    "seed": 0,
+    "validation": false,
+    "audit_scope": "full",
+    "split_unit": "user_supplied_video_lists",
+    "anomaly_policy": "retain_suspicious",
+    "evaluation_split": "test",
+    "selection": "test_video_nll",
+    "independent_test": false,
+    "root": "/remote-home/datasets/Joind-dataset for Action Recognition/UCF101-DVS",
+    "representation_code": {
+      "ucf101_window_data.py": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+      "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "gcstr_augmentation.py": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2"
+    },
+    "source_manifests": {
+      "train": "8a8de17c3ff7f7f3c5637cf6302569b67d42100032a606c5ad8c79cf33252010",
+      "test": "03e82492b2bd4a92d7b08845b56d4fb6a9f42808bdcb75c51872d99d7d32c546"
+    },
+    "prepare_code_sha256": "79bef89d56d54d16b0c0f60688452d7cd56c10685653ca11f834111ec413519c",
+    "prior_audit_sha256": "11aa68284aa834fb0a5dc3e5ab7277c4dd5d3d6a781ca28ca26263b41482d09d",
+    "audit_method": "Reuse prior complete raw/NPZ audit for known sources; audit omitted MAT directly",
+    "group_overlap_allowed": true,
+    "fresh_model_initialization_required": true
+  },
+  "manifest_sha256": "bd07cb2a14bc70089dc8359f36de7b1ebafb27e1156bd579058e5c9c7e982f58",
+  "code": {
+    "train_ucf101_window_gcstr.py": "d0d65342115fdf83d511e1a1bfca6d154b6727ef9d2154a75bbe68c6538c65ce",
+    "ucf101_window_data.py": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+    "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3",
+    "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+    "gcstr_augmentation.py": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2",
+    "train_ucf101_window_joint.py": "310a99a55c91872cddfc8b75d996abb268a1e4faa6b17de4425674424eeb1cd8"
+  },
+  "execution": "three_independent_branches_shared_event_batch"
+}

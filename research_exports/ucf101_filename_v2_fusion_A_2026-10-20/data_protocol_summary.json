@@ -1,0 +1,65 @@
+{
+  "source_audit_status": "passed",
+  "audit_config": {
+    "protocol": {
+      "window_us": 1000000,
+      "step_us": 500000,
+      "min_events": 10001,
+      "max_window_count_exclusive": 40,
+      "future_point_count": 8192,
+      "polarity": "raw pol == 1 positive, raw pol == 0 negative",
+      "time_unit": "microseconds (source CSV *_usec convention)",
+      "full_windows_only": true,
+      "image_size": 224,
+      "time_bins": 224,
+      "event_sampling": "all_events_in_window",
+      "augmentation": "spatial_train_only"
+    },
+    "seed": 0,
+    "validation": false,
+    "audit_scope": "full",
+    "split_unit": "user_supplied_video_lists",
+    "anomaly_policy": "retain_suspicious",
+    "evaluation_split": "test",
+    "selection": "test_video_nll",
+    "independent_test": false,
+    "root": "/remote-home/datasets/Joind-dataset for Action Recognition/UCF101-DVS",
+    "representation_code": {
+      "ucf101_window_data.py": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+      "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "gcstr_augmentation.py": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2"
+    },
+    "source_manifests": {
+      "train": "8a8de17c3ff7f7f3c5637cf6302569b67d42100032a606c5ad8c79cf33252010",
+      "test": "03e82492b2bd4a92d7b08845b56d4fb6a9f42808bdcb75c51872d99d7d32c546"
+    },
+    "prepare_code_sha256": "79bef89d56d54d16b0c0f60688452d7cd56c10685653ca11f834111ec413519c",
+    "prior_audit_sha256": "11aa68284aa834fb0a5dc3e5ab7277c4dd5d3d6a781ca28ca26263b41482d09d",
+    "audit_method": "Reuse prior complete raw/NPZ audit for known sources; audit omitted MAT directly",
+    "group_overlap_allowed": true,
+    "fresh_model_initialization_required": true
+  },
+  "raw_video_counts": {
+    "train": 10819,
+    "test": 2704
+  },
+  "valid_video_counts": {
+    "train": 10296,
+    "test": 2555
+  },
+  "valid_window_counts": {
+    "train": 108066,
+    "test": 27384
+  },
+  "class_group_counts": {
+    "train": 2537,
+    "test": 1756
+  },
+  "overlapping_class_groups": 1754,
+  "exact_video_overlap": 0,
+  "tracked_split_lists": [
+    "train_ucf.txt",
+    "test_ucf(1).txt"
+  ],
+  "scope": "aggregate metadata only; no raw events, images or full window manifest exported"
+}

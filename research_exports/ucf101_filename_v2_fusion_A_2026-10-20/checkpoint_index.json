@@ -1,0 +1,58 @@
+{
+  "weights_uploaded": false,
+  "selection_rule": "fusion video Test NLL",
+  "official_point_pretraining": {
+    "log": "eventmamba_official_training.txt",
+    "artifact_sha256": "499cf427b08c6e9b50df686600ebebb6f58eb514caec6032a1bd7561a55ed6d4",
+    "epoch_zero_based": 146,
+    "note": "Author pretraining log, not an independently reproduced point-only baseline"
+  },
+  "image_initialization": {
+    "cstr3": {
+      "epoch": 49,
+      "path": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/checkpoints/cstr3/best_loss.pt",
+      "sha256": "c4f9ef8cb934f6dc130c4d96b293f9eda863d662f04d3369845a31df0e0ccef3"
+    },
+    "xt_p": {
+      "epoch": 39,
+      "path": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/checkpoints/xt_p/best_loss.pt",
+      "sha256": "2045c6e21804c1e60dd6d59dbaa95690da8569a8c27d7a758a37942be302fe1e"
+    },
+    "ty_p": {
+      "epoch": 41,
+      "path": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/checkpoints/ty_p/best_loss.pt",
+      "sha256": "ae9de57323189ff8cda7a38d8e12eb8b8535e4fe1c00e7e165f3fca3f03ea8c0"
+    }
+  },
+  "fusion_nll_selected": {
+    "epoch": 6,
+    "filename": "best_loss.pt",
+    "metrics": {
+      "windows": 27384,
+      "videos": 2555,
+      "window_loss": 0.5912975169791439,
+      "window_top1": 0.9060035056967572,
+      "window_top5": 0.9702746129126497,
+      "video_nll": 0.239658978845264,
+      "video_top1": 0.9499021526418787,
+      "video_top5": 0.9886497064579256,
+      "hard_vote_video_top1": 0.9452054794520548
+    }
+  },
+  "fusion_peak_top1": {
+    "epoch": 40,
+    "filename": "epoch_040.pt",
+    "metrics": {
+      "windows": 27384,
+      "videos": 2555,
+      "window_loss": 1.3814850328209456,
+      "window_top1": 0.9236050248320187,
+      "window_top5": 0.9761174408413672,
+      "video_nll": 0.36205984962661464,
+      "video_top1": 0.961252446183953,
+      "video_top5": 0.9870841487279843,
+      "hard_vote_video_top1": 0.9604696673189824
+    }
+  },
+  "checkpoint_directory": "/remote-home/datasets/event_project_cache/ucf101_filename_v2_fusion_A_seed0_v1_checkpoints"
+}

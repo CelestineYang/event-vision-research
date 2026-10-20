@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-20T04:52:05.354257+00:00",
+  "completed_fusion_epoch": 118,
+  "planned_fusion_epochs": 150,
+  "experiment_complete": false,
+  "code_matches_executed_config": true,
+  "source_config_code_hashes": {
+    "train_ucf101_pretrained_fusion.py": "cbddc9dd6e970d61fbf37de12c2d07348fd7efa56ef84e363ce00d63e0df999c",
+    "ucf101_pretrained_fusion.py": "47f245b7d113c95b90f9bc5fae0c28f3a1650d7ef3caee71e257714051a3c5c4",
+    "ucf101_fusion_window_data.py": "2a09eb7a064b0371f110fe3c202a20ee45b7ee97e763ffd0ba582454b5a95945",
+    "eventmamba_v2_pretrained.py": "70f3cdc283bdf8e8935402fe54143612f90114a7a8fcb06566c99d2220cf441f",
+    "eventmamba_v2_model.py": "4dc39cca938ce1813b3228439bbf181f65a1edb13a7e400e3ea005e01e993c28",
+    "eventmamba_v2_layers.py": "d94873e429ea18d42f7f36b762120b8df7a9e5a455cb839ff6e86dcb7fed18a3",
+    "ucf101_event_store.py": "11fc7531d2f0eed0abe4d2d10f454d605e682a33eadc5788ce03d019d9b6e697",
+    "gcstr_eventmamba_fusion.py": "349f98e2bf430930ff60fa6654006f997ed1fed0ee0f5cafada50087a3d70e25",
+    "gcstr_secnet_fusion.py": "55ff121257ff78075d9705f6fad0e035fa221c958ef6e81f9fa88665e092d33b",
+    "train_ucf101_window_gcstr.py": "d0d65342115fdf83d511e1a1bfca6d154b6727ef9d2154a75bbe68c6538c65ce",
+    "ucf101_window_data.py": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+    "gcstr_augmentation.py": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2",
+    "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+    "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3"
+  },
+  "members": {
+    "fusion_metrics.jsonl": {
+      "bytes": 198211,
+      "sha256": "faa85eaec272e03b79797aef6d1ad2d2223235d03744463921fb5854191b051d",
+      "source": "experiments/ucf101_filename_v2_fusion_A_seed0_v1/metrics.jsonl"
+    },
+    "fusion_config.json": {
+      "bytes": 3165,
+      "sha256": "9d3bde77a0ee362d5dcfab6abb44cd42bbaf029e3c9cf74e251b6753ad35fa91",
+      "source": "experiments/ucf101_filename_v2_fusion_A_seed0_v1/config.json"
+    },
+    "image_config.json": {
+      "bytes": 3984,
+      "sha256": "33d163dbb75d326eb8209f325dbe519ee68a020e9fc7fe36fa55571eedfa6a10",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/config.json"
+    },
+    "image_summary.json": {
+      "bytes": 22528,
+      "sha256": "b74a24160663335602149e21565da842e84eb241e4ad74588c7c95bdf07f0d83",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/reports/summary.json"
+    },
+    "class_to_idx.json": {
+      "bytes": 2092,
+      "sha256": "b82270610aafd2d8c623ac340d67397a1af178e7ea30d0a7f82d7b9ce6857578",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/class_to_idx.json"
+    },
+    "eventmamba_official_training.txt": {
+      "bytes": 70455,
+      "sha256": "89f4f8d81c9088ba1b21bc434b4fda969c520be709032ee229378bdc28d44ed8",
+      "source": "eventmamba.txt"
+    },
+    "UCF101_FILENAME_V2_FUSION_RUNBOOK.md": {
+      "bytes": 5111,
+      "sha256": "1770e214d6d4554c43c6d84f48b6e6af3b845f885f3c77f30e2d976654452b58",
+      "source": "UCF101_FILENAME_V2_FUSION_RUNBOOK.md"
+    },
+    "UCF101_TXTSPLIT_V2_RUNBOOK.md": {
+      "bytes": 3831,
+      "sha256": "a8504773844c7407409ec9c2dd15942674d52cc53349c4c4526dab4e3620f370",
+      "source": "UCF101_TXTSPLIT_V2_RUNBOOK.md"
+    },
+    "cstr3_metrics.jsonl": {
+      "bytes": 93853,
+      "sha256": "5873ac86372cee6c7779c2fcc16205dbd8cb01403f9786592fedf6bef6a18aa3",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/cstr3_metrics.jsonl"
+    },
+    "cstr3_test_video_predictions_best_loss.csv": {
+      "bytes": 255827,
+      "sha256": "04c429395fa7009df4429b4d69f3267c04f8a060333773cd74b98a82615134c1",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/reports/cstr3_test_video_predictions_best_loss.csv"
+    },
+    "xt_p_metrics.jsonl": {
+      "bytes": 93792,
+      "sha256": "840190e84bd7eb056c7419190c55941bff6d81d8ebc8cb645a149dfbdebd9c2e",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/xt_p_metrics.jsonl"
+    },
+    "xt_p_test_video_predictions_best_loss.csv": {
+      "bytes": 254727,
+      "sha256": "0176c119aab657c6e93e52c56f0a7ea99ceb383d507a6b05f6da8ca94189bca1",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/reports/xt_p_test_video_predictions_best_loss.csv"
+    },
+    "ty_p_metrics.jsonl": {
+      "bytes": 93883,
+      "sha256": "56dfd5e4763fa32a1a4f02215343d6aaf6ddd31558c6da67ef8387f99e489000",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/ty_p_metrics.jsonl"
+    },
+    "ty_p_test_video_predictions_best_loss.csv": {
+      "bytes": 255060,
+      "sha256": "d316f37a47ead676f50d06dc7bbfa8cde6682b34abd3e1988796d333bb42a0ac",
+      "source": "experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/reports/ty_p_test_video_predictions_best_loss.csv"
+    },
+    "fusion_predictions_best_loss.csv": {
+      "bytes": 256984,
+      "sha256": "ea14759867576239b729cdd5dd4c54da9335646d2bcb94a37611c7822311c553",
+      "source": "experiments/ucf101_filename_v2_fusion_A_seed0_v1/fusion_predictions_best_loss.csv"
+    },
+    "point_predictions_best_loss.csv": {
+      "bytes": 254848,
+      "sha256": "dd45be62fab574b2ad3e5bab07675a1aadd180e73be6bdfe2cbdeb103f13180e",
+      "source": "experiments/ucf101_filename_v2_fusion_A_seed0_v1/point_predictions_best_loss.csv"
+    },
+    "data_protocol_summary.json": {
+      "bytes": 2300,
+      "sha256": "895d33a12f92a8a14c2136a38a4bd80ce2166e80aa08e242839907d9c73a4df9",
+      "source": "audited source manifests; aggregate only"
+    },
+    "curves.png": {
+      "bytes": 579828,
+      "sha256": "01501b76e23d87164fb0226b75cb7f8a0db9fc9912170cb155d8d4d56ed8ef67",
+      "source": "analyze_ucf101_fusion_curves.py --through-epoch 118"
+    },
+    "curves.pdf": {
+      "bytes": 43966,
+      "sha256": "702b4d63fa5081966c1f421ef60b2791c88e01ced364d9bb6572c4812edb040d",
+      "source": "analyze_ucf101_fusion_curves.py --through-epoch 118"
+    },
+    "matched_epochs.csv": {
+      "bytes": 15300,
+      "sha256": "31c5e7af1238d79ecad1e7ee53229a88062b33ff57a74d968c8c45c73c379432",
+      "source": "analyze_ucf101_fusion_curves.py --through-epoch 118"
+    },
+    "key_epochs.json": {
+      "bytes": 1993,
+      "sha256": "965315a76cec73ef225f6539ac3737569acb23ed427a406367433f7821d78e40",
+      "source": "analyze_ucf101_fusion_curves.py --through-epoch 118"
+    },
+    "curve_summary.json": {
+      "bytes": 10071,
+      "sha256": "765b60c410854c108b51b37b57f6cfe8b2585dd7cb084174ec4c5f521728354e",
+      "source": "analysis of metric prefix through epoch 118"
+    },
+    "checkpoint_index.json": {
+      "bytes": 2058,
+      "sha256": "af179024ed91568df6e1ce7e1e54b9d7f1df57b976a17c8806b56541bb266d5d",
+      "source": "metric records and executed configuration; no weight payload"
+    },
+    "README.md": {
+      "bytes": 3510,
+      "sha256": "fdde47141850c898d28a553da46f8f1634fdb86d3f866c17a4a08858560f01ea",
+      "source": "reviewed snapshot description generated from source metadata"
+    }
+  }
+}

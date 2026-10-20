@@ -1,0 +1,1056 @@
+2025-01-10 23:57:20,115 - Model - INFO - PARAMETER ...
+2025-01-10 23:57:20,115 - Model - INFO - Namespace(batch_size=128, data_path='/home/rhwdmx/github/eventmamba/EventMamba/data/ucf101/', decay_rate=0.0001, epoch=150, gpu='1', learning_rate=0.001, log_dir=None, log_name='/ucf101_filename', log_path='./tensorboard_log/', num_category=101, num_point=2048, optimizer='AdamW', use_cpu=False)
+2025-01-10 23:57:20,115 - Model - INFO - Load dataset ...
+2025-01-10 23:57:39,590 - Model - INFO - No existing model, starting training from scratch...
+2025-01-10 23:57:39,591 - Model - INFO - Start training...
+2025-01-10 23:57:39,591 - Model - INFO - Epoch 1 (1/150):
+2025-01-11 00:06:03,666 - Model - INFO - Train loss : 4.349000
+2025-01-11 00:06:03,666 - Model - INFO - Train acc : 15.912000
+2025-01-11 00:06:03,666 - Model - INFO - Test Accuracy: 23.923000
+2025-01-11 00:06:03,666 - Model - INFO - Test Accuracy seq: 0.189968
+2025-01-11 00:06:03,666 - Model - INFO - Best Test Accuracy: 23.923000
+2025-01-11 00:06:03,666 - Model - INFO - Best Test Seq Accuracy: 0.189968
+2025-01-11 00:06:03,666 - Model - INFO - Epoch 1 (2/150):
+2025-01-11 00:14:36,998 - Model - INFO - Train loss : 4.088000
+2025-01-11 00:14:36,998 - Model - INFO - Train acc : 32.060000
+2025-01-11 00:14:36,998 - Model - INFO - Test Accuracy: 35.919000
+2025-01-11 00:14:36,998 - Model - INFO - Test Accuracy seq: 0.334518
+2025-01-11 00:14:36,998 - Model - INFO - Best Test Accuracy: 35.919000
+2025-01-11 00:14:36,998 - Model - INFO - Best Test Seq Accuracy: 0.334518
+2025-01-11 00:14:36,998 - Model - INFO - Epoch 1 (3/150):
+2025-01-11 00:22:59,919 - Model - INFO - Train loss : 3.920000
+2025-01-11 00:22:59,919 - Model - INFO - Train acc : 44.367000
+2025-01-11 00:22:59,919 - Model - INFO - Test Accuracy: 50.190000
+2025-01-11 00:22:59,919 - Model - INFO - Test Accuracy seq: 0.490126
+2025-01-11 00:22:59,919 - Model - INFO - Best Test Accuracy: 50.190000
+2025-01-11 00:22:59,919 - Model - INFO - Best Test Seq Accuracy: 0.490126
+2025-01-11 00:22:59,919 - Model - INFO - Epoch 1 (4/150):
+2025-01-11 00:31:10,167 - Model - INFO - Train loss : 3.791000
+2025-01-11 00:31:10,167 - Model - INFO - Train acc : 54.199000
+2025-01-11 00:31:10,167 - Model - INFO - Test Accuracy: 56.263000
+2025-01-11 00:31:10,167 - Model - INFO - Test Accuracy seq: 0.580569
+2025-01-11 00:31:10,167 - Model - INFO - Best Test Accuracy: 56.263000
+2025-01-11 00:31:10,167 - Model - INFO - Best Test Seq Accuracy: 0.580569
+2025-01-11 00:31:10,167 - Model - INFO - Epoch 1 (5/150):
+2025-01-11 00:39:00,953 - Model - INFO - Train loss : 3.687000
+2025-01-11 00:39:00,953 - Model - INFO - Train acc : 62.117000
+2025-01-11 00:39:00,953 - Model - INFO - Test Accuracy: 63.439000
+2025-01-11 00:39:00,953 - Model - INFO - Test Accuracy seq: 0.673381
+2025-01-11 00:39:00,953 - Model - INFO - Best Test Accuracy: 63.439000
+2025-01-11 00:39:00,953 - Model - INFO - Best Test Seq Accuracy: 0.673381
+2025-01-11 00:39:00,953 - Model - INFO - Epoch 1 (6/150):
+2025-01-11 00:47:07,098 - Model - INFO - Train loss : 3.610000
+2025-01-11 00:47:07,098 - Model - INFO - Train acc : 68.100000
+2025-01-11 00:47:07,098 - Model - INFO - Test Accuracy: 65.465000
+2025-01-11 00:47:07,098 - Model - INFO - Test Accuracy seq: 0.690758
+2025-01-11 00:47:07,098 - Model - INFO - Best Test Accuracy: 65.465000
+2025-01-11 00:47:07,098 - Model - INFO - Best Test Seq Accuracy: 0.690758
+2025-01-11 00:47:07,098 - Model - INFO - Epoch 1 (7/150):
+2025-01-11 00:55:12,918 - Model - INFO - Train loss : 3.551000
+2025-01-11 00:55:12,918 - Model - INFO - Train acc : 72.545000
+2025-01-11 00:55:12,918 - Model - INFO - Test Accuracy: 66.831000
+2025-01-11 00:55:12,918 - Model - INFO - Test Accuracy seq: 0.715640
+2025-01-11 00:55:12,918 - Model - INFO - Best Test Accuracy: 66.831000
+2025-01-11 00:55:12,918 - Model - INFO - Best Test Seq Accuracy: 0.715640
+2025-01-11 00:55:12,918 - Model - INFO - Epoch 1 (8/150):
+2025-01-11 01:03:21,255 - Model - INFO - Train loss : 3.503000
+2025-01-11 01:03:21,255 - Model - INFO - Train acc : 76.245000
+2025-01-11 01:03:21,255 - Model - INFO - Test Accuracy: 69.168000
+2025-01-11 01:03:21,255 - Model - INFO - Test Accuracy seq: 0.739336
+2025-01-11 01:03:21,255 - Model - INFO - Best Test Accuracy: 69.168000
+2025-01-11 01:03:21,255 - Model - INFO - Best Test Seq Accuracy: 0.739336
+2025-01-11 01:03:21,255 - Model - INFO - Epoch 1 (9/150):
+2025-01-11 01:11:53,756 - Model - INFO - Train loss : 3.462000
+2025-01-11 01:11:53,756 - Model - INFO - Train acc : 79.391000
+2025-01-11 01:11:53,756 - Model - INFO - Test Accuracy: 71.706000
+2025-01-11 01:11:53,756 - Model - INFO - Test Accuracy seq: 0.766193
+2025-01-11 01:11:53,756 - Model - INFO - Best Test Accuracy: 71.706000
+2025-01-11 01:11:53,756 - Model - INFO - Best Test Seq Accuracy: 0.766193
+2025-01-11 01:11:53,756 - Model - INFO - Epoch 1 (10/150):
+2025-01-11 01:20:14,010 - Model - INFO - Train loss : 3.430000
+2025-01-11 01:20:14,010 - Model - INFO - Train acc : 81.589000
+2025-01-11 01:20:14,010 - Model - INFO - Test Accuracy: 72.626000
+2025-01-11 01:20:14,010 - Model - INFO - Test Accuracy seq: 0.780411
+2025-01-11 01:20:14,010 - Model - INFO - Best Test Accuracy: 72.626000
+2025-01-11 01:20:14,010 - Model - INFO - Best Test Seq Accuracy: 0.780411
+2025-01-11 01:20:14,010 - Model - INFO - Epoch 1 (11/150):
+2025-01-11 01:28:34,236 - Model - INFO - Train loss : 3.401000
+2025-01-11 01:28:34,236 - Model - INFO - Train acc : 83.504000
+2025-01-11 01:28:34,236 - Model - INFO - Test Accuracy: 72.718000
+2025-01-11 01:28:34,236 - Model - INFO - Test Accuracy seq: 0.785940
+2025-01-11 01:28:34,236 - Model - INFO - Best Test Accuracy: 72.718000
+2025-01-11 01:28:34,236 - Model - INFO - Best Test Seq Accuracy: 0.785940
+2025-01-11 01:28:34,236 - Model - INFO - Epoch 1 (12/150):
+2025-01-11 01:37:11,373 - Model - INFO - Train loss : 3.374000
+2025-01-11 01:37:11,373 - Model - INFO - Train acc : 85.365000
+2025-01-11 01:37:11,373 - Model - INFO - Test Accuracy: 74.449000
+2025-01-11 01:37:11,373 - Model - INFO - Test Accuracy seq: 0.803712
+2025-01-11 01:37:11,373 - Model - INFO - Best Test Accuracy: 74.449000
+2025-01-11 01:37:11,373 - Model - INFO - Best Test Seq Accuracy: 0.803712
+2025-01-11 01:37:11,373 - Model - INFO - Epoch 1 (13/150):
+2025-01-11 01:45:32,480 - Model - INFO - Train loss : 3.351000
+2025-01-11 01:45:32,480 - Model - INFO - Train acc : 86.842000
+2025-01-11 01:45:32,480 - Model - INFO - Test Accuracy: 75.920000
+2025-01-11 01:45:32,480 - Model - INFO - Test Accuracy seq: 0.816746
+2025-01-11 01:45:32,480 - Model - INFO - Best Test Accuracy: 75.920000
+2025-01-11 01:45:32,480 - Model - INFO - Best Test Seq Accuracy: 0.816746
+2025-01-11 01:45:32,480 - Model - INFO - Epoch 1 (14/150):
+2025-01-11 01:53:58,992 - Model - INFO - Train loss : 3.328000
+2025-01-11 01:53:58,992 - Model - INFO - Train acc : 88.166000
+2025-01-11 01:53:58,992 - Model - INFO - Test Accuracy: 76.680000
+2025-01-11 01:53:58,992 - Model - INFO - Test Accuracy seq: 0.822670
+2025-01-11 01:53:58,992 - Model - INFO - Best Test Accuracy: 76.680000
+2025-01-11 01:53:58,992 - Model - INFO - Best Test Seq Accuracy: 0.822670
+2025-01-11 01:53:58,992 - Model - INFO - Epoch 1 (15/150):
+2025-01-11 02:02:37,706 - Model - INFO - Train loss : 3.312000
+2025-01-11 02:02:37,706 - Model - INFO - Train acc : 89.289000
+2025-01-11 02:02:37,706 - Model - INFO - Test Accuracy: 76.826000
+2025-01-11 02:02:37,706 - Model - INFO - Test Accuracy seq: 0.830569
+2025-01-11 02:02:37,706 - Model - INFO - Best Test Accuracy: 76.826000
+2025-01-11 02:02:37,706 - Model - INFO - Best Test Seq Accuracy: 0.830569
+2025-01-11 02:02:37,706 - Model - INFO - Epoch 1 (16/150):
+2025-01-11 02:11:08,529 - Model - INFO - Train loss : 3.295000
+2025-01-11 02:11:08,529 - Model - INFO - Train acc : 90.183000
+2025-01-11 02:11:08,529 - Model - INFO - Test Accuracy: 76.895000
+2025-01-11 02:11:08,529 - Model - INFO - Test Accuracy seq: 0.836888
+2025-01-11 02:11:08,529 - Model - INFO - Best Test Accuracy: 76.895000
+2025-01-11 02:11:08,529 - Model - INFO - Best Test Seq Accuracy: 0.836888
+2025-01-11 02:11:08,529 - Model - INFO - Epoch 1 (17/150):
+2025-01-11 02:19:46,644 - Model - INFO - Train loss : 3.276000
+2025-01-11 02:19:46,644 - Model - INFO - Train acc : 91.259000
+2025-01-11 02:19:46,644 - Model - INFO - Test Accuracy: 77.651000
+2025-01-11 02:19:46,644 - Model - INFO - Test Accuracy seq: 0.832543
+2025-01-11 02:19:46,644 - Model - INFO - Best Test Accuracy: 77.651000
+2025-01-11 02:19:46,644 - Model - INFO - Best Test Seq Accuracy: 0.836888
+2025-01-11 02:19:46,644 - Model - INFO - Epoch 1 (18/150):
+2025-01-11 02:28:15,293 - Model - INFO - Train loss : 3.263000
+2025-01-11 02:28:15,293 - Model - INFO - Train acc : 91.912000
+2025-01-11 02:28:15,293 - Model - INFO - Test Accuracy: 76.033000
+2025-01-11 02:28:15,294 - Model - INFO - Test Accuracy seq: 0.826619
+2025-01-11 02:28:15,294 - Model - INFO - Best Test Accuracy: 77.651000
+2025-01-11 02:28:15,294 - Model - INFO - Best Test Seq Accuracy: 0.836888
+2025-01-11 02:28:15,294 - Model - INFO - Epoch 1 (19/150):
+2025-01-11 02:36:27,618 - Model - INFO - Train loss : 3.248000
+2025-01-11 02:36:27,618 - Model - INFO - Train acc : 92.724000
+2025-01-11 02:36:27,618 - Model - INFO - Test Accuracy: 77.940000
+2025-01-11 02:36:27,618 - Model - INFO - Test Accuracy seq: 0.846367
+2025-01-11 02:36:27,618 - Model - INFO - Best Test Accuracy: 77.940000
+2025-01-11 02:36:27,618 - Model - INFO - Best Test Seq Accuracy: 0.846367
+2025-01-11 02:36:27,618 - Model - INFO - Epoch 1 (20/150):
+2025-01-11 02:44:57,210 - Model - INFO - Train loss : 3.237000
+2025-01-11 02:44:57,210 - Model - INFO - Train acc : 93.249000
+2025-01-11 02:44:57,210 - Model - INFO - Test Accuracy: 78.542000
+2025-01-11 02:44:57,210 - Model - INFO - Test Accuracy seq: 0.858610
+2025-01-11 02:44:57,210 - Model - INFO - Best Test Accuracy: 78.542000
+2025-01-11 02:44:57,210 - Model - INFO - Best Test Seq Accuracy: 0.858610
+2025-01-11 02:44:57,210 - Model - INFO - Epoch 1 (21/150):
+2025-01-11 02:53:02,770 - Model - INFO - Train loss : 3.226000
+2025-01-11 02:53:02,770 - Model - INFO - Train acc : 93.779000
+2025-01-11 02:53:02,770 - Model - INFO - Test Accuracy: 77.560000
+2025-01-11 02:53:02,770 - Model - INFO - Test Accuracy seq: 0.842417
+2025-01-11 02:53:02,770 - Model - INFO - Best Test Accuracy: 78.542000
+2025-01-11 02:53:02,770 - Model - INFO - Best Test Seq Accuracy: 0.858610
+2025-01-11 02:53:02,770 - Model - INFO - Epoch 1 (22/150):
+2025-01-11 03:01:23,061 - Model - INFO - Train loss : 3.213000
+2025-01-11 03:01:23,061 - Model - INFO - Train acc : 94.541000
+2025-01-11 03:01:23,061 - Model - INFO - Test Accuracy: 78.506000
+2025-01-11 03:01:23,061 - Model - INFO - Test Accuracy seq: 0.847946
+2025-01-11 03:01:23,061 - Model - INFO - Best Test Accuracy: 78.542000
+2025-01-11 03:01:23,061 - Model - INFO - Best Test Seq Accuracy: 0.858610
+2025-01-11 03:01:23,061 - Model - INFO - Epoch 1 (23/150):
+2025-01-11 03:09:29,927 - Model - INFO - Train loss : 3.203000
+2025-01-11 03:09:29,927 - Model - INFO - Train acc : 95.016000
+2025-01-11 03:09:29,928 - Model - INFO - Test Accuracy: 77.976000
+2025-01-11 03:09:29,928 - Model - INFO - Test Accuracy seq: 0.859005
+2025-01-11 03:09:29,928 - Model - INFO - Best Test Accuracy: 78.542000
+2025-01-11 03:09:29,928 - Model - INFO - Best Test Seq Accuracy: 0.859005
+2025-01-11 03:09:29,928 - Model - INFO - Epoch 1 (24/150):
+2025-01-11 03:17:49,055 - Model - INFO - Train loss : 3.194000
+2025-01-11 03:17:49,055 - Model - INFO - Train acc : 95.384000
+2025-01-11 03:17:49,055 - Model - INFO - Test Accuracy: 78.907000
+2025-01-11 03:17:49,055 - Model - INFO - Test Accuracy seq: 0.864139
+2025-01-11 03:17:49,055 - Model - INFO - Best Test Accuracy: 78.907000
+2025-01-11 03:17:49,055 - Model - INFO - Best Test Seq Accuracy: 0.864139
+2025-01-11 03:17:49,055 - Model - INFO - Epoch 1 (25/150):
+2025-01-11 03:26:05,576 - Model - INFO - Train loss : 3.185000
+2025-01-11 03:26:05,576 - Model - INFO - Train acc : 95.836000
+2025-01-11 03:26:05,576 - Model - INFO - Test Accuracy: 78.900000
+2025-01-11 03:26:05,576 - Model - INFO - Test Accuracy seq: 0.864139
+2025-01-11 03:26:05,576 - Model - INFO - Best Test Accuracy: 78.907000
+2025-01-11 03:26:05,576 - Model - INFO - Best Test Seq Accuracy: 0.864139
+2025-01-11 03:26:05,576 - Model - INFO - Epoch 1 (26/150):
+2025-01-11 03:34:15,205 - Model - INFO - Train loss : 3.178000
+2025-01-11 03:34:15,205 - Model - INFO - Train acc : 96.035000
+2025-01-11 03:34:15,205 - Model - INFO - Test Accuracy: 78.688000
+2025-01-11 03:34:15,205 - Model - INFO - Test Accuracy seq: 0.859005
+2025-01-11 03:34:15,205 - Model - INFO - Best Test Accuracy: 78.907000
+2025-01-11 03:34:15,205 - Model - INFO - Best Test Seq Accuracy: 0.864139
+2025-01-11 03:34:15,205 - Model - INFO - Epoch 1 (27/150):
+2025-01-11 03:42:29,207 - Model - INFO - Train loss : 3.172000
+2025-01-11 03:42:29,207 - Model - INFO - Train acc : 96.433000
+2025-01-11 03:42:29,207 - Model - INFO - Test Accuracy: 79.189000
+2025-01-11 03:42:29,207 - Model - INFO - Test Accuracy seq: 0.868483
+2025-01-11 03:42:29,208 - Model - INFO - Best Test Accuracy: 79.189000
+2025-01-11 03:42:29,208 - Model - INFO - Best Test Seq Accuracy: 0.868483
+2025-01-11 03:42:29,208 - Model - INFO - Epoch 1 (28/150):
+2025-01-11 03:50:18,073 - Model - INFO - Train loss : 3.164000
+2025-01-11 03:50:18,073 - Model - INFO - Train acc : 96.735000
+2025-01-11 03:50:18,073 - Model - INFO - Test Accuracy: 79.021000
+2025-01-11 03:50:18,073 - Model - INFO - Test Accuracy seq: 0.857425
+2025-01-11 03:50:18,073 - Model - INFO - Best Test Accuracy: 79.189000
+2025-01-11 03:50:18,073 - Model - INFO - Best Test Seq Accuracy: 0.868483
+2025-01-11 03:50:18,073 - Model - INFO - Epoch 1 (29/150):
+2025-01-11 03:58:38,143 - Model - INFO - Train loss : 3.159000
+2025-01-11 03:58:38,143 - Model - INFO - Train acc : 96.969000
+2025-01-11 03:58:38,143 - Model - INFO - Test Accuracy: 79.305000
+2025-01-11 03:58:38,143 - Model - INFO - Test Accuracy seq: 0.865324
+2025-01-11 03:58:38,143 - Model - INFO - Best Test Accuracy: 79.305000
+2025-01-11 03:58:38,143 - Model - INFO - Best Test Seq Accuracy: 0.868483
+2025-01-11 03:58:38,143 - Model - INFO - Epoch 1 (30/150):
+2025-01-11 04:06:25,513 - Model - INFO - Train loss : 3.152000
+2025-01-11 04:06:25,514 - Model - INFO - Train acc : 97.225000
+2025-01-11 04:06:25,514 - Model - INFO - Test Accuracy: 79.006000
+2025-01-11 04:06:25,514 - Model - INFO - Test Accuracy seq: 0.866904
+2025-01-11 04:06:25,514 - Model - INFO - Best Test Accuracy: 79.305000
+2025-01-11 04:06:25,514 - Model - INFO - Best Test Seq Accuracy: 0.868483
+2025-01-11 04:06:25,514 - Model - INFO - Epoch 1 (31/150):
+2025-01-11 04:14:23,994 - Model - INFO - Train loss : 3.148000
+2025-01-11 04:14:23,994 - Model - INFO - Train acc : 97.396000
+2025-01-11 04:14:23,994 - Model - INFO - Test Accuracy: 79.616000
+2025-01-11 04:14:23,994 - Model - INFO - Test Accuracy seq: 0.866114
+2025-01-11 04:14:23,994 - Model - INFO - Best Test Accuracy: 79.616000
+2025-01-11 04:14:23,994 - Model - INFO - Best Test Seq Accuracy: 0.868483
+2025-01-11 04:14:23,994 - Model - INFO - Epoch 1 (32/150):
+2025-01-11 04:22:41,719 - Model - INFO - Train loss : 3.143000
+2025-01-11 04:22:41,719 - Model - INFO - Train acc : 97.558000
+2025-01-11 04:22:41,719 - Model - INFO - Test Accuracy: 79.221000
+2025-01-11 04:22:41,719 - Model - INFO - Test Accuracy seq: 0.870458
+2025-01-11 04:22:41,719 - Model - INFO - Best Test Accuracy: 79.616000
+2025-01-11 04:22:41,720 - Model - INFO - Best Test Seq Accuracy: 0.870458
+2025-01-11 04:22:41,720 - Model - INFO - Epoch 1 (33/150):
+2025-01-11 04:31:39,199 - Model - INFO - Train loss : 3.139000
+2025-01-11 04:31:39,199 - Model - INFO - Train acc : 97.749000
+2025-01-11 04:31:39,199 - Model - INFO - Test Accuracy: 79.802000
+2025-01-11 04:31:39,199 - Model - INFO - Test Accuracy seq: 0.868878
+2025-01-11 04:31:39,199 - Model - INFO - Best Test Accuracy: 79.802000
+2025-01-11 04:31:39,199 - Model - INFO - Best Test Seq Accuracy: 0.870458
+2025-01-11 04:31:39,199 - Model - INFO - Epoch 1 (34/150):
+2025-01-11 04:39:59,760 - Model - INFO - Train loss : 3.134000
+2025-01-11 04:39:59,760 - Model - INFO - Train acc : 97.954000
+2025-01-11 04:39:59,760 - Model - INFO - Test Accuracy: 79.893000
+2025-01-11 04:39:59,760 - Model - INFO - Test Accuracy seq: 0.874408
+2025-01-11 04:39:59,760 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 04:39:59,761 - Model - INFO - Best Test Seq Accuracy: 0.874408
+2025-01-11 04:39:59,761 - Model - INFO - Epoch 1 (35/150):
+2025-01-11 04:48:36,911 - Model - INFO - Train loss : 3.130000
+2025-01-11 04:48:36,911 - Model - INFO - Train acc : 98.054000
+2025-01-11 04:48:36,911 - Model - INFO - Test Accuracy: 79.094000
+2025-01-11 04:48:36,911 - Model - INFO - Test Accuracy seq: 0.857820
+2025-01-11 04:48:36,911 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 04:48:36,911 - Model - INFO - Best Test Seq Accuracy: 0.874408
+2025-01-11 04:48:36,911 - Model - INFO - Epoch 1 (36/150):
+2025-01-11 04:56:43,522 - Model - INFO - Train loss : 3.128000
+2025-01-11 04:56:43,523 - Model - INFO - Train acc : 98.148000
+2025-01-11 04:56:43,523 - Model - INFO - Test Accuracy: 79.656000
+2025-01-11 04:56:43,523 - Model - INFO - Test Accuracy seq: 0.874408
+2025-01-11 04:56:43,523 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 04:56:43,523 - Model - INFO - Best Test Seq Accuracy: 0.874408
+2025-01-11 04:56:43,523 - Model - INFO - Epoch 1 (37/150):
+2025-01-11 05:05:22,039 - Model - INFO - Train loss : 3.124000
+2025-01-11 05:05:22,039 - Model - INFO - Train acc : 98.288000
+2025-01-11 05:05:22,039 - Model - INFO - Test Accuracy: 79.663000
+2025-01-11 05:05:22,039 - Model - INFO - Test Accuracy seq: 0.875197
+2025-01-11 05:05:22,039 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 05:05:22,039 - Model - INFO - Best Test Seq Accuracy: 0.875197
+2025-01-11 05:05:22,039 - Model - INFO - Epoch 1 (38/150):
+2025-01-11 05:13:26,736 - Model - INFO - Train loss : 3.120000
+2025-01-11 05:13:26,736 - Model - INFO - Train acc : 98.439000
+2025-01-11 05:13:26,736 - Model - INFO - Test Accuracy: 79.806000
+2025-01-11 05:13:26,736 - Model - INFO - Test Accuracy seq: 0.872828
+2025-01-11 05:13:26,736 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 05:13:26,736 - Model - INFO - Best Test Seq Accuracy: 0.875197
+2025-01-11 05:13:26,736 - Model - INFO - Epoch 1 (39/150):
+2025-01-11 05:21:42,417 - Model - INFO - Train loss : 3.118000
+2025-01-11 05:21:42,417 - Model - INFO - Train acc : 98.535000
+2025-01-11 05:21:42,417 - Model - INFO - Test Accuracy: 79.473000
+2025-01-11 05:21:42,417 - Model - INFO - Test Accuracy seq: 0.869668
+2025-01-11 05:21:42,417 - Model - INFO - Best Test Accuracy: 79.893000
+2025-01-11 05:21:42,417 - Model - INFO - Best Test Seq Accuracy: 0.875197
+2025-01-11 05:21:42,417 - Model - INFO - Epoch 1 (40/150):
+2025-01-11 05:29:43,209 - Model - INFO - Train loss : 3.116000
+2025-01-11 05:29:43,209 - Model - INFO - Train acc : 98.576000
+2025-01-11 05:29:43,209 - Model - INFO - Test Accuracy: 80.321000
+2025-01-11 05:29:43,209 - Model - INFO - Test Accuracy seq: 0.879542
+2025-01-11 05:29:43,209 - Model - INFO - Best Test Accuracy: 80.321000
+2025-01-11 05:29:43,209 - Model - INFO - Best Test Seq Accuracy: 0.879542
+2025-01-11 05:29:43,209 - Model - INFO - Epoch 1 (41/150):
+2025-01-11 05:38:05,770 - Model - INFO - Train loss : 3.114000
+2025-01-11 05:38:05,770 - Model - INFO - Train acc : 98.612000
+2025-01-11 05:38:05,770 - Model - INFO - Test Accuracy: 80.503000
+2025-01-11 05:38:05,770 - Model - INFO - Test Accuracy seq: 0.875987
+2025-01-11 05:38:05,770 - Model - INFO - Best Test Accuracy: 80.503000
+2025-01-11 05:38:05,770 - Model - INFO - Best Test Seq Accuracy: 0.879542
+2025-01-11 05:38:05,770 - Model - INFO - Epoch 1 (42/150):
+2025-01-11 05:46:28,671 - Model - INFO - Train loss : 3.110000
+2025-01-11 05:46:28,671 - Model - INFO - Train acc : 98.818000
+2025-01-11 05:46:28,671 - Model - INFO - Test Accuracy: 80.525000
+2025-01-11 05:46:28,671 - Model - INFO - Test Accuracy seq: 0.880332
+2025-01-11 05:46:28,671 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 05:46:28,671 - Model - INFO - Best Test Seq Accuracy: 0.880332
+2025-01-11 05:46:28,671 - Model - INFO - Epoch 1 (43/150):
+2025-01-11 05:54:49,393 - Model - INFO - Train loss : 3.110000
+2025-01-11 05:54:49,393 - Model - INFO - Train acc : 98.761000
+2025-01-11 05:54:49,393 - Model - INFO - Test Accuracy: 80.094000
+2025-01-11 05:54:49,393 - Model - INFO - Test Accuracy seq: 0.882701
+2025-01-11 05:54:49,393 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 05:54:49,393 - Model - INFO - Best Test Seq Accuracy: 0.882701
+2025-01-11 05:54:49,393 - Model - INFO - Epoch 1 (44/150):
+2025-01-11 06:02:57,640 - Model - INFO - Train loss : 3.106000
+2025-01-11 06:02:57,640 - Model - INFO - Train acc : 98.864000
+2025-01-11 06:02:57,640 - Model - INFO - Test Accuracy: 79.985000
+2025-01-11 06:02:57,640 - Model - INFO - Test Accuracy seq: 0.876382
+2025-01-11 06:02:57,640 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:02:57,640 - Model - INFO - Best Test Seq Accuracy: 0.882701
+2025-01-11 06:02:57,640 - Model - INFO - Epoch 1 (45/150):
+2025-01-11 06:11:09,701 - Model - INFO - Train loss : 3.105000
+2025-01-11 06:11:09,701 - Model - INFO - Train acc : 98.858000
+2025-01-11 06:11:09,701 - Model - INFO - Test Accuracy: 80.361000
+2025-01-11 06:11:09,701 - Model - INFO - Test Accuracy seq: 0.876382
+2025-01-11 06:11:09,701 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:11:09,701 - Model - INFO - Best Test Seq Accuracy: 0.882701
+2025-01-11 06:11:09,701 - Model - INFO - Epoch 1 (46/150):
+2025-01-11 06:19:40,171 - Model - INFO - Train loss : 3.102000
+2025-01-11 06:19:40,171 - Model - INFO - Train acc : 98.987000
+2025-01-11 06:19:40,171 - Model - INFO - Test Accuracy: 80.039000
+2025-01-11 06:19:40,171 - Model - INFO - Test Accuracy seq: 0.883886
+2025-01-11 06:19:40,171 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:19:40,171 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 06:19:40,171 - Model - INFO - Epoch 1 (47/150):
+2025-01-11 06:27:51,286 - Model - INFO - Train loss : 3.101000
+2025-01-11 06:27:51,286 - Model - INFO - Train acc : 99.048000
+2025-01-11 06:27:51,286 - Model - INFO - Test Accuracy: 80.496000
+2025-01-11 06:27:51,286 - Model - INFO - Test Accuracy seq: 0.879937
+2025-01-11 06:27:51,286 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:27:51,286 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 06:27:51,286 - Model - INFO - Epoch 1 (48/150):
+2025-01-11 06:35:57,577 - Model - INFO - Train loss : 3.100000
+2025-01-11 06:35:57,577 - Model - INFO - Train acc : 99.107000
+2025-01-11 06:35:57,577 - Model - INFO - Test Accuracy: 80.003000
+2025-01-11 06:35:57,577 - Model - INFO - Test Accuracy seq: 0.878752
+2025-01-11 06:35:57,577 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:35:57,577 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 06:35:57,577 - Model - INFO - Epoch 1 (49/150):
+2025-01-11 06:44:00,554 - Model - INFO - Train loss : 3.097000
+2025-01-11 06:44:00,554 - Model - INFO - Train acc : 99.147000
+2025-01-11 06:44:00,554 - Model - INFO - Test Accuracy: 79.331000
+2025-01-11 06:44:00,554 - Model - INFO - Test Accuracy seq: 0.874408
+2025-01-11 06:44:00,554 - Model - INFO - Best Test Accuracy: 80.525000
+2025-01-11 06:44:00,554 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 06:44:00,554 - Model - INFO - Epoch 1 (50/150):
+2025-01-11 06:52:36,892 - Model - INFO - Train loss : 3.096000
+2025-01-11 06:52:36,892 - Model - INFO - Train acc : 99.176000
+2025-01-11 06:52:36,892 - Model - INFO - Test Accuracy: 80.810000
+2025-01-11 06:52:36,892 - Model - INFO - Test Accuracy seq: 0.879937
+2025-01-11 06:52:36,892 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 06:52:36,892 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 06:52:36,892 - Model - INFO - Epoch 1 (51/150):
+2025-01-11 07:01:16,336 - Model - INFO - Train loss : 3.095000
+2025-01-11 07:01:16,336 - Model - INFO - Train acc : 99.186000
+2025-01-11 07:01:16,336 - Model - INFO - Test Accuracy: 80.543000
+2025-01-11 07:01:16,336 - Model - INFO - Test Accuracy seq: 0.876382
+2025-01-11 07:01:16,336 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:01:16,336 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:01:16,336 - Model - INFO - Epoch 1 (52/150):
+2025-01-11 07:09:32,636 - Model - INFO - Train loss : 3.093000
+2025-01-11 07:09:32,636 - Model - INFO - Train acc : 99.252000
+2025-01-11 07:09:32,636 - Model - INFO - Test Accuracy: 79.645000
+2025-01-11 07:09:32,636 - Model - INFO - Test Accuracy seq: 0.871248
+2025-01-11 07:09:32,636 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:09:32,636 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:09:32,636 - Model - INFO - Epoch 1 (53/150):
+2025-01-11 07:17:45,256 - Model - INFO - Train loss : 3.092000
+2025-01-11 07:17:45,256 - Model - INFO - Train acc : 99.265000
+2025-01-11 07:17:45,256 - Model - INFO - Test Accuracy: 80.587000
+2025-01-11 07:17:45,256 - Model - INFO - Test Accuracy seq: 0.883096
+2025-01-11 07:17:45,256 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:17:45,256 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:17:45,256 - Model - INFO - Epoch 1 (54/150):
+2025-01-11 07:26:04,162 - Model - INFO - Train loss : 3.092000
+2025-01-11 07:26:04,163 - Model - INFO - Train acc : 99.265000
+2025-01-11 07:26:04,163 - Model - INFO - Test Accuracy: 80.357000
+2025-01-11 07:26:04,163 - Model - INFO - Test Accuracy seq: 0.877962
+2025-01-11 07:26:04,163 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:26:04,163 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:26:04,163 - Model - INFO - Epoch 1 (55/150):
+2025-01-11 07:34:53,724 - Model - INFO - Train loss : 3.089000
+2025-01-11 07:34:53,724 - Model - INFO - Train acc : 99.334000
+2025-01-11 07:34:53,724 - Model - INFO - Test Accuracy: 80.244000
+2025-01-11 07:34:53,724 - Model - INFO - Test Accuracy seq: 0.877567
+2025-01-11 07:34:53,724 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:34:53,724 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:34:53,724 - Model - INFO - Epoch 1 (56/150):
+2025-01-11 07:43:08,081 - Model - INFO - Train loss : 3.089000
+2025-01-11 07:43:08,082 - Model - INFO - Train acc : 99.377000
+2025-01-11 07:43:08,082 - Model - INFO - Test Accuracy: 79.952000
+2025-01-11 07:43:08,082 - Model - INFO - Test Accuracy seq: 0.879937
+2025-01-11 07:43:08,082 - Model - INFO - Best Test Accuracy: 80.810000
+2025-01-11 07:43:08,082 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:43:08,082 - Model - INFO - Epoch 1 (57/150):
+2025-01-11 07:51:11,315 - Model - INFO - Train loss : 3.088000
+2025-01-11 07:51:11,315 - Model - INFO - Train acc : 99.375000
+2025-01-11 07:51:11,315 - Model - INFO - Test Accuracy: 80.876000
+2025-01-11 07:51:11,315 - Model - INFO - Test Accuracy seq: 0.883491
+2025-01-11 07:51:11,315 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 07:51:11,315 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:51:11,315 - Model - INFO - Epoch 1 (58/150):
+2025-01-11 07:59:33,459 - Model - INFO - Train loss : 3.086000
+2025-01-11 07:59:33,459 - Model - INFO - Train acc : 99.424000
+2025-01-11 07:59:33,459 - Model - INFO - Test Accuracy: 80.138000
+2025-01-11 07:59:33,459 - Model - INFO - Test Accuracy seq: 0.875987
+2025-01-11 07:59:33,459 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 07:59:33,459 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 07:59:33,459 - Model - INFO - Epoch 1 (59/150):
+2025-01-11 08:07:27,026 - Model - INFO - Train loss : 3.085000
+2025-01-11 08:07:27,026 - Model - INFO - Train acc : 99.444000
+2025-01-11 08:07:27,026 - Model - INFO - Test Accuracy: 80.350000
+2025-01-11 08:07:27,026 - Model - INFO - Test Accuracy seq: 0.883491
+2025-01-11 08:07:27,026 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:07:27,026 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 08:07:27,026 - Model - INFO - Epoch 1 (60/150):
+2025-01-11 08:15:31,666 - Model - INFO - Train loss : 3.085000
+2025-01-11 08:15:31,667 - Model - INFO - Train acc : 99.417000
+2025-01-11 08:15:31,667 - Model - INFO - Test Accuracy: 80.364000
+2025-01-11 08:15:31,667 - Model - INFO - Test Accuracy seq: 0.883096
+2025-01-11 08:15:31,667 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:15:31,667 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 08:15:31,667 - Model - INFO - Epoch 1 (61/150):
+2025-01-11 08:23:31,308 - Model - INFO - Train loss : 3.083000
+2025-01-11 08:23:31,308 - Model - INFO - Train acc : 99.512000
+2025-01-11 08:23:31,308 - Model - INFO - Test Accuracy: 79.999000
+2025-01-11 08:23:31,308 - Model - INFO - Test Accuracy seq: 0.883096
+2025-01-11 08:23:31,308 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:23:31,308 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 08:23:31,308 - Model - INFO - Epoch 1 (62/150):
+2025-01-11 08:31:43,387 - Model - INFO - Train loss : 3.082000
+2025-01-11 08:31:43,387 - Model - INFO - Train acc : 99.498000
+2025-01-11 08:31:43,387 - Model - INFO - Test Accuracy: 80.846000
+2025-01-11 08:31:43,387 - Model - INFO - Test Accuracy seq: 0.880332
+2025-01-11 08:31:43,387 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:31:43,387 - Model - INFO - Best Test Seq Accuracy: 0.883886
+2025-01-11 08:31:43,387 - Model - INFO - Epoch 1 (63/150):
+2025-01-11 08:40:00,770 - Model - INFO - Train loss : 3.082000
+2025-01-11 08:40:00,770 - Model - INFO - Train acc : 99.498000
+2025-01-11 08:40:00,770 - Model - INFO - Test Accuracy: 80.218000
+2025-01-11 08:40:00,770 - Model - INFO - Test Accuracy seq: 0.885071
+2025-01-11 08:40:00,770 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:40:00,770 - Model - INFO - Best Test Seq Accuracy: 0.885071
+2025-01-11 08:40:00,770 - Model - INFO - Epoch 1 (64/150):
+2025-01-11 08:48:12,800 - Model - INFO - Train loss : 3.080000
+2025-01-11 08:48:12,800 - Model - INFO - Train acc : 99.570000
+2025-01-11 08:48:12,800 - Model - INFO - Test Accuracy: 80.521000
+2025-01-11 08:48:12,800 - Model - INFO - Test Accuracy seq: 0.876777
+2025-01-11 08:48:12,800 - Model - INFO - Best Test Accuracy: 80.876000
+2025-01-11 08:48:12,801 - Model - INFO - Best Test Seq Accuracy: 0.885071
+2025-01-11 08:48:12,801 - Model - INFO - Epoch 1 (65/150):
+2025-01-11 08:56:19,249 - Model - INFO - Train loss : 3.080000
+2025-01-11 08:56:19,250 - Model - INFO - Train acc : 99.523000
+2025-01-11 08:56:19,250 - Model - INFO - Test Accuracy: 81.091000
+2025-01-11 08:56:19,250 - Model - INFO - Test Accuracy seq: 0.889415
+2025-01-11 08:56:19,250 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 08:56:19,250 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 08:56:19,250 - Model - INFO - Epoch 1 (66/150):
+2025-01-11 09:04:23,979 - Model - INFO - Train loss : 3.079000
+2025-01-11 09:04:23,979 - Model - INFO - Train acc : 99.562000
+2025-01-11 09:04:23,979 - Model - INFO - Test Accuracy: 80.536000
+2025-01-11 09:04:23,979 - Model - INFO - Test Accuracy seq: 0.879542
+2025-01-11 09:04:23,979 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:04:23,979 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:04:23,979 - Model - INFO - Epoch 1 (67/150):
+2025-01-11 09:12:47,547 - Model - INFO - Train loss : 3.077000
+2025-01-11 09:12:47,547 - Model - INFO - Train acc : 99.629000
+2025-01-11 09:12:47,547 - Model - INFO - Test Accuracy: 80.620000
+2025-01-11 09:12:47,547 - Model - INFO - Test Accuracy seq: 0.876777
+2025-01-11 09:12:47,547 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:12:47,547 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:12:47,547 - Model - INFO - Epoch 1 (68/150):
+2025-01-11 09:21:17,179 - Model - INFO - Train loss : 3.077000
+2025-01-11 09:21:17,179 - Model - INFO - Train acc : 99.645000
+2025-01-11 09:21:17,179 - Model - INFO - Test Accuracy: 80.664000
+2025-01-11 09:21:17,179 - Model - INFO - Test Accuracy seq: 0.884676
+2025-01-11 09:21:17,179 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:21:17,179 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:21:17,179 - Model - INFO - Epoch 1 (69/150):
+2025-01-11 09:29:41,368 - Model - INFO - Train loss : 3.076000
+2025-01-11 09:29:41,368 - Model - INFO - Train acc : 99.646000
+2025-01-11 09:29:41,368 - Model - INFO - Test Accuracy: 80.755000
+2025-01-11 09:29:41,368 - Model - INFO - Test Accuracy seq: 0.881912
+2025-01-11 09:29:41,368 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:29:41,368 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:29:41,368 - Model - INFO - Epoch 1 (70/150):
+2025-01-11 09:38:09,362 - Model - INFO - Train loss : 3.076000
+2025-01-11 09:38:09,363 - Model - INFO - Train acc : 99.635000
+2025-01-11 09:38:09,363 - Model - INFO - Test Accuracy: 80.693000
+2025-01-11 09:38:09,363 - Model - INFO - Test Accuracy seq: 0.885861
+2025-01-11 09:38:09,363 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:38:09,363 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:38:09,363 - Model - INFO - Epoch 1 (71/150):
+2025-01-11 09:46:30,289 - Model - INFO - Train loss : 3.075000
+2025-01-11 09:46:30,289 - Model - INFO - Train acc : 99.655000
+2025-01-11 09:46:30,289 - Model - INFO - Test Accuracy: 80.894000
+2025-01-11 09:46:30,289 - Model - INFO - Test Accuracy seq: 0.882306
+2025-01-11 09:46:30,289 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:46:30,289 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:46:30,289 - Model - INFO - Epoch 1 (72/150):
+2025-01-11 09:55:00,703 - Model - INFO - Train loss : 3.074000
+2025-01-11 09:55:00,703 - Model - INFO - Train acc : 99.705000
+2025-01-11 09:55:00,703 - Model - INFO - Test Accuracy: 80.675000
+2025-01-11 09:55:00,703 - Model - INFO - Test Accuracy seq: 0.882701
+2025-01-11 09:55:00,703 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 09:55:00,703 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 09:55:00,703 - Model - INFO - Epoch 1 (73/150):
+2025-01-11 10:03:33,558 - Model - INFO - Train loss : 3.074000
+2025-01-11 10:03:33,558 - Model - INFO - Train acc : 99.705000
+2025-01-11 10:03:33,558 - Model - INFO - Test Accuracy: 80.686000
+2025-01-11 10:03:33,558 - Model - INFO - Test Accuracy seq: 0.885466
+2025-01-11 10:03:33,558 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 10:03:33,558 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 10:03:33,558 - Model - INFO - Epoch 1 (74/150):
+2025-01-11 10:12:05,551 - Model - INFO - Train loss : 3.072000
+2025-01-11 10:12:05,551 - Model - INFO - Train acc : 99.740000
+2025-01-11 10:12:05,551 - Model - INFO - Test Accuracy: 80.664000
+2025-01-11 10:12:05,551 - Model - INFO - Test Accuracy seq: 0.885861
+2025-01-11 10:12:05,551 - Model - INFO - Best Test Accuracy: 81.091000
+2025-01-11 10:12:05,551 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 10:12:05,551 - Model - INFO - Epoch 1 (75/150):
+2025-01-11 10:20:45,648 - Model - INFO - Train loss : 3.072000
+2025-01-11 10:20:45,648 - Model - INFO - Train acc : 99.736000
+2025-01-11 10:20:45,648 - Model - INFO - Test Accuracy: 81.193000
+2025-01-11 10:20:45,648 - Model - INFO - Test Accuracy seq: 0.887836
+2025-01-11 10:20:45,648 - Model - INFO - Best Test Accuracy: 81.193000
+2025-01-11 10:20:45,648 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 10:20:45,648 - Model - INFO - Epoch 1 (76/150):
+2025-01-11 10:28:49,552 - Model - INFO - Train loss : 3.072000
+2025-01-11 10:28:49,552 - Model - INFO - Train acc : 99.700000
+2025-01-11 10:28:49,553 - Model - INFO - Test Accuracy: 81.201000
+2025-01-11 10:28:49,553 - Model - INFO - Test Accuracy seq: 0.885071
+2025-01-11 10:28:49,553 - Model - INFO - Best Test Accuracy: 81.201000
+2025-01-11 10:28:49,553 - Model - INFO - Best Test Seq Accuracy: 0.889415
+2025-01-11 10:28:49,553 - Model - INFO - Epoch 1 (77/150):
+2025-01-11 10:37:28,778 - Model - INFO - Train loss : 3.070000
+2025-01-11 10:37:28,778 - Model - INFO - Train acc : 99.801000
+2025-01-11 10:37:28,778 - Model - INFO - Test Accuracy: 80.974000
+2025-01-11 10:37:28,778 - Model - INFO - Test Accuracy seq: 0.891390
+2025-01-11 10:37:28,778 - Model - INFO - Best Test Accuracy: 81.201000
+2025-01-11 10:37:28,778 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 10:37:28,778 - Model - INFO - Epoch 1 (78/150):
+2025-01-11 10:46:00,531 - Model - INFO - Train loss : 3.071000
+2025-01-11 10:46:00,531 - Model - INFO - Train acc : 99.714000
+2025-01-11 10:46:00,531 - Model - INFO - Test Accuracy: 79.616000
+2025-01-11 10:46:00,531 - Model - INFO - Test Accuracy seq: 0.873223
+2025-01-11 10:46:00,531 - Model - INFO - Best Test Accuracy: 81.201000
+2025-01-11 10:46:00,531 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 10:46:00,531 - Model - INFO - Epoch 1 (79/150):
+2025-01-11 10:54:30,334 - Model - INFO - Train loss : 3.069000
+2025-01-11 10:54:30,334 - Model - INFO - Train acc : 99.773000
+2025-01-11 10:54:30,334 - Model - INFO - Test Accuracy: 81.573000
+2025-01-11 10:54:30,334 - Model - INFO - Test Accuracy seq: 0.890205
+2025-01-11 10:54:30,334 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 10:54:30,334 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 10:54:30,334 - Model - INFO - Epoch 1 (80/150):
+2025-01-11 11:02:59,078 - Model - INFO - Train loss : 3.068000
+2025-01-11 11:02:59,078 - Model - INFO - Train acc : 99.819000
+2025-01-11 11:02:59,078 - Model - INFO - Test Accuracy: 81.014000
+2025-01-11 11:02:59,078 - Model - INFO - Test Accuracy seq: 0.878752
+2025-01-11 11:02:59,078 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:02:59,078 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 11:02:59,078 - Model - INFO - Epoch 1 (81/150):
+2025-01-11 11:11:23,336 - Model - INFO - Train loss : 3.068000
+2025-01-11 11:11:23,336 - Model - INFO - Train acc : 99.824000
+2025-01-11 11:11:23,336 - Model - INFO - Test Accuracy: 81.204000
+2025-01-11 11:11:23,336 - Model - INFO - Test Accuracy seq: 0.886256
+2025-01-11 11:11:23,336 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:11:23,336 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 11:11:23,336 - Model - INFO - Epoch 1 (82/150):
+2025-01-11 11:19:57,143 - Model - INFO - Train loss : 3.068000
+2025-01-11 11:19:57,143 - Model - INFO - Train acc : 99.784000
+2025-01-11 11:19:57,143 - Model - INFO - Test Accuracy: 80.536000
+2025-01-11 11:19:57,143 - Model - INFO - Test Accuracy seq: 0.885861
+2025-01-11 11:19:57,143 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:19:57,143 - Model - INFO - Best Test Seq Accuracy: 0.891390
+2025-01-11 11:19:57,143 - Model - INFO - Epoch 1 (83/150):
+2025-01-11 11:28:02,538 - Model - INFO - Train loss : 3.068000
+2025-01-11 11:28:02,539 - Model - INFO - Train acc : 99.807000
+2025-01-11 11:28:02,539 - Model - INFO - Test Accuracy: 80.872000
+2025-01-11 11:28:02,539 - Model - INFO - Test Accuracy seq: 0.891785
+2025-01-11 11:28:02,539 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:28:02,539 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 11:28:02,539 - Model - INFO - Epoch 1 (84/150):
+2025-01-11 11:36:23,297 - Model - INFO - Train loss : 3.067000
+2025-01-11 11:36:23,298 - Model - INFO - Train acc : 99.852000
+2025-01-11 11:36:23,298 - Model - INFO - Test Accuracy: 81.018000
+2025-01-11 11:36:23,298 - Model - INFO - Test Accuracy seq: 0.888626
+2025-01-11 11:36:23,298 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:36:23,298 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 11:36:23,298 - Model - INFO - Epoch 1 (85/150):
+2025-01-11 11:44:34,777 - Model - INFO - Train loss : 3.066000
+2025-01-11 11:44:34,777 - Model - INFO - Train acc : 99.842000
+2025-01-11 11:44:34,777 - Model - INFO - Test Accuracy: 81.292000
+2025-01-11 11:44:34,777 - Model - INFO - Test Accuracy seq: 0.888626
+2025-01-11 11:44:34,777 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:44:34,777 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 11:44:34,778 - Model - INFO - Epoch 1 (86/150):
+2025-01-11 11:52:55,363 - Model - INFO - Train loss : 3.066000
+2025-01-11 11:52:55,363 - Model - INFO - Train acc : 99.836000
+2025-01-11 11:52:55,363 - Model - INFO - Test Accuracy: 81.310000
+2025-01-11 11:52:55,363 - Model - INFO - Test Accuracy seq: 0.887046
+2025-01-11 11:52:55,363 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 11:52:55,363 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 11:52:55,363 - Model - INFO - Epoch 1 (87/150):
+2025-01-11 12:00:58,201 - Model - INFO - Train loss : 3.065000
+2025-01-11 12:00:58,201 - Model - INFO - Train acc : 99.853000
+2025-01-11 12:00:58,202 - Model - INFO - Test Accuracy: 81.270000
+2025-01-11 12:00:58,202 - Model - INFO - Test Accuracy seq: 0.886256
+2025-01-11 12:00:58,202 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:00:58,202 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 12:00:58,202 - Model - INFO - Epoch 1 (88/150):
+2025-01-11 12:09:00,929 - Model - INFO - Train loss : 3.065000
+2025-01-11 12:09:00,929 - Model - INFO - Train acc : 99.882000
+2025-01-11 12:09:00,929 - Model - INFO - Test Accuracy: 81.197000
+2025-01-11 12:09:00,929 - Model - INFO - Test Accuracy seq: 0.890205
+2025-01-11 12:09:00,929 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:09:00,929 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 12:09:00,929 - Model - INFO - Epoch 1 (89/150):
+2025-01-11 12:17:02,639 - Model - INFO - Train loss : 3.064000
+2025-01-11 12:17:02,639 - Model - INFO - Train acc : 99.863000
+2025-01-11 12:17:02,639 - Model - INFO - Test Accuracy: 80.668000
+2025-01-11 12:17:02,639 - Model - INFO - Test Accuracy seq: 0.881517
+2025-01-11 12:17:02,639 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:17:02,639 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 12:17:02,639 - Model - INFO - Epoch 1 (90/150):
+2025-01-11 12:25:23,852 - Model - INFO - Train loss : 3.065000
+2025-01-11 12:25:23,852 - Model - INFO - Train acc : 99.851000
+2025-01-11 12:25:23,852 - Model - INFO - Test Accuracy: 81.098000
+2025-01-11 12:25:23,852 - Model - INFO - Test Accuracy seq: 0.889021
+2025-01-11 12:25:23,852 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:25:23,852 - Model - INFO - Best Test Seq Accuracy: 0.891785
+2025-01-11 12:25:23,853 - Model - INFO - Epoch 1 (91/150):
+2025-01-11 12:34:22,914 - Model - INFO - Train loss : 3.064000
+2025-01-11 12:34:22,914 - Model - INFO - Train acc : 99.878000
+2025-01-11 12:34:22,914 - Model - INFO - Test Accuracy: 81.011000
+2025-01-11 12:34:22,914 - Model - INFO - Test Accuracy seq: 0.892575
+2025-01-11 12:34:22,914 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:34:22,914 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 12:34:22,914 - Model - INFO - Epoch 1 (92/150):
+2025-01-11 12:42:41,577 - Model - INFO - Train loss : 3.063000
+2025-01-11 12:42:41,577 - Model - INFO - Train acc : 99.896000
+2025-01-11 12:42:41,577 - Model - INFO - Test Accuracy: 81.157000
+2025-01-11 12:42:41,577 - Model - INFO - Test Accuracy seq: 0.889021
+2025-01-11 12:42:41,577 - Model - INFO - Best Test Accuracy: 81.573000
+2025-01-11 12:42:41,577 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 12:42:41,577 - Model - INFO - Epoch 1 (93/150):
+2025-01-11 12:51:01,152 - Model - INFO - Train loss : 3.063000
+2025-01-11 12:51:01,152 - Model - INFO - Train acc : 99.904000
+2025-01-11 12:51:01,152 - Model - INFO - Test Accuracy: 81.657000
+2025-01-11 12:51:01,152 - Model - INFO - Test Accuracy seq: 0.892180
+2025-01-11 12:51:01,152 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 12:51:01,152 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 12:51:01,152 - Model - INFO - Epoch 1 (94/150):
+2025-01-11 12:59:21,368 - Model - INFO - Train loss : 3.062000
+2025-01-11 12:59:21,368 - Model - INFO - Train acc : 99.921000
+2025-01-11 12:59:21,368 - Model - INFO - Test Accuracy: 81.369000
+2025-01-11 12:59:21,368 - Model - INFO - Test Accuracy seq: 0.888231
+2025-01-11 12:59:21,368 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 12:59:21,368 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 12:59:21,368 - Model - INFO - Epoch 1 (95/150):
+2025-01-11 13:07:22,069 - Model - INFO - Train loss : 3.062000
+2025-01-11 13:07:22,069 - Model - INFO - Train acc : 99.923000
+2025-01-11 13:07:22,069 - Model - INFO - Test Accuracy: 81.098000
+2025-01-11 13:07:22,069 - Model - INFO - Test Accuracy seq: 0.887046
+2025-01-11 13:07:22,069 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 13:07:22,069 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 13:07:22,069 - Model - INFO - Epoch 1 (96/150):
+2025-01-11 13:15:29,461 - Model - INFO - Train loss : 3.062000
+2025-01-11 13:15:29,461 - Model - INFO - Train acc : 99.919000
+2025-01-11 13:15:29,461 - Model - INFO - Test Accuracy: 81.266000
+2025-01-11 13:15:29,461 - Model - INFO - Test Accuracy seq: 0.887441
+2025-01-11 13:15:29,461 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 13:15:29,461 - Model - INFO - Best Test Seq Accuracy: 0.892575
+2025-01-11 13:15:29,461 - Model - INFO - Epoch 1 (97/150):
+2025-01-11 13:23:39,966 - Model - INFO - Train loss : 3.062000
+2025-01-11 13:23:39,966 - Model - INFO - Train acc : 99.912000
+2025-01-11 13:23:39,966 - Model - INFO - Test Accuracy: 81.486000
+2025-01-11 13:23:39,966 - Model - INFO - Test Accuracy seq: 0.893365
+2025-01-11 13:23:39,966 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 13:23:39,966 - Model - INFO - Best Test Seq Accuracy: 0.893365
+2025-01-11 13:23:39,966 - Model - INFO - Epoch 1 (98/150):
+2025-01-11 13:32:06,193 - Model - INFO - Train loss : 3.061000
+2025-01-11 13:32:06,193 - Model - INFO - Train acc : 99.946000
+2025-01-11 13:32:06,193 - Model - INFO - Test Accuracy: 81.580000
+2025-01-11 13:32:06,193 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 13:32:06,193 - Model - INFO - Best Test Accuracy: 81.657000
+2025-01-11 13:32:06,193 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 13:32:06,193 - Model - INFO - Epoch 1 (99/150):
+2025-01-11 13:40:19,762 - Model - INFO - Train loss : 3.061000
+2025-01-11 13:40:19,762 - Model - INFO - Train acc : 99.942000
+2025-01-11 13:40:19,763 - Model - INFO - Test Accuracy: 81.759000
+2025-01-11 13:40:19,763 - Model - INFO - Test Accuracy seq: 0.894155
+2025-01-11 13:40:19,763 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 13:40:19,763 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 13:40:19,763 - Model - INFO - Epoch 1 (100/150):
+2025-01-11 13:48:20,822 - Model - INFO - Train loss : 3.060000
+2025-01-11 13:48:20,822 - Model - INFO - Train acc : 99.958000
+2025-01-11 13:48:20,822 - Model - INFO - Test Accuracy: 81.679000
+2025-01-11 13:48:20,822 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 13:48:20,822 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 13:48:20,822 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 13:48:20,822 - Model - INFO - Epoch 1 (101/150):
+2025-01-11 13:56:37,207 - Model - INFO - Train loss : 3.060000
+2025-01-11 13:56:37,207 - Model - INFO - Train acc : 99.951000
+2025-01-11 13:56:37,207 - Model - INFO - Test Accuracy: 81.679000
+2025-01-11 13:56:37,207 - Model - INFO - Test Accuracy seq: 0.889021
+2025-01-11 13:56:37,207 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 13:56:37,207 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 13:56:37,207 - Model - INFO - Epoch 1 (102/150):
+2025-01-11 14:04:41,006 - Model - INFO - Train loss : 3.060000
+2025-01-11 14:04:41,006 - Model - INFO - Train acc : 99.958000
+2025-01-11 14:04:41,006 - Model - INFO - Test Accuracy: 81.208000
+2025-01-11 14:04:41,006 - Model - INFO - Test Accuracy seq: 0.890600
+2025-01-11 14:04:41,006 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 14:04:41,006 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:04:41,006 - Model - INFO - Epoch 1 (103/150):
+2025-01-11 14:13:16,502 - Model - INFO - Train loss : 3.060000
+2025-01-11 14:13:16,503 - Model - INFO - Train acc : 99.949000
+2025-01-11 14:13:16,503 - Model - INFO - Test Accuracy: 81.445000
+2025-01-11 14:13:16,503 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 14:13:16,503 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 14:13:16,503 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:13:16,503 - Model - INFO - Epoch 1 (104/150):
+2025-01-11 14:21:48,346 - Model - INFO - Train loss : 3.059000
+2025-01-11 14:21:48,346 - Model - INFO - Train acc : 99.960000
+2025-01-11 14:21:48,346 - Model - INFO - Test Accuracy: 81.580000
+2025-01-11 14:21:48,346 - Model - INFO - Test Accuracy seq: 0.893365
+2025-01-11 14:21:48,346 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 14:21:48,346 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:21:48,346 - Model - INFO - Epoch 1 (105/150):
+2025-01-11 14:30:21,736 - Model - INFO - Train loss : 3.059000
+2025-01-11 14:30:21,737 - Model - INFO - Train acc : 99.968000
+2025-01-11 14:30:21,737 - Model - INFO - Test Accuracy: 81.245000
+2025-01-11 14:30:21,737 - Model - INFO - Test Accuracy seq: 0.891785
+2025-01-11 14:30:21,737 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 14:30:21,737 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:30:21,737 - Model - INFO - Epoch 1 (106/150):
+2025-01-11 14:38:36,420 - Model - INFO - Train loss : 3.059000
+2025-01-11 14:38:36,420 - Model - INFO - Train acc : 99.961000
+2025-01-11 14:38:36,420 - Model - INFO - Test Accuracy: 81.471000
+2025-01-11 14:38:36,420 - Model - INFO - Test Accuracy seq: 0.892180
+2025-01-11 14:38:36,420 - Model - INFO - Best Test Accuracy: 81.759000
+2025-01-11 14:38:36,420 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:38:36,420 - Model - INFO - Epoch 1 (107/150):
+2025-01-11 14:47:02,647 - Model - INFO - Train loss : 3.059000
+2025-01-11 14:47:02,647 - Model - INFO - Train acc : 99.973000
+2025-01-11 14:47:02,647 - Model - INFO - Test Accuracy: 81.832000
+2025-01-11 14:47:02,647 - Model - INFO - Test Accuracy seq: 0.894550
+2025-01-11 14:47:02,647 - Model - INFO - Best Test Accuracy: 81.832000
+2025-01-11 14:47:02,647 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:47:02,647 - Model - INFO - Epoch 1 (108/150):
+2025-01-11 14:55:32,010 - Model - INFO - Train loss : 3.059000
+2025-01-11 14:55:32,010 - Model - INFO - Train acc : 99.972000
+2025-01-11 14:55:32,010 - Model - INFO - Test Accuracy: 81.423000
+2025-01-11 14:55:32,010 - Model - INFO - Test Accuracy seq: 0.890205
+2025-01-11 14:55:32,010 - Model - INFO - Best Test Accuracy: 81.832000
+2025-01-11 14:55:32,010 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 14:55:32,010 - Model - INFO - Epoch 1 (109/150):
+2025-01-11 15:03:51,780 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:03:51,780 - Model - INFO - Train acc : 99.977000
+2025-01-11 15:03:51,780 - Model - INFO - Test Accuracy: 81.475000
+2025-01-11 15:03:51,780 - Model - INFO - Test Accuracy seq: 0.891785
+2025-01-11 15:03:51,780 - Model - INFO - Best Test Accuracy: 81.832000
+2025-01-11 15:03:51,780 - Model - INFO - Best Test Seq Accuracy: 0.896130
+2025-01-11 15:03:51,780 - Model - INFO - Epoch 1 (110/150):
+2025-01-11 15:12:32,630 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:12:32,630 - Model - INFO - Train acc : 99.980000
+2025-01-11 15:12:32,630 - Model - INFO - Test Accuracy: 81.774000
+2025-01-11 15:12:32,630 - Model - INFO - Test Accuracy seq: 0.897314
+2025-01-11 15:12:32,630 - Model - INFO - Best Test Accuracy: 81.832000
+2025-01-11 15:12:32,630 - Model - INFO - Best Test Seq Accuracy: 0.897314
+2025-01-11 15:12:32,630 - Model - INFO - Epoch 1 (111/150):
+2025-01-11 15:20:49,744 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:20:49,744 - Model - INFO - Train acc : 99.977000
+2025-01-11 15:20:49,744 - Model - INFO - Test Accuracy: 81.832000
+2025-01-11 15:20:49,744 - Model - INFO - Test Accuracy seq: 0.891390
+2025-01-11 15:20:49,744 - Model - INFO - Best Test Accuracy: 81.832000
+2025-01-11 15:20:49,744 - Model - INFO - Best Test Seq Accuracy: 0.897314
+2025-01-11 15:20:49,744 - Model - INFO - Epoch 1 (112/150):
+2025-01-11 15:29:15,572 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:29:15,572 - Model - INFO - Train acc : 99.989000
+2025-01-11 15:29:15,572 - Model - INFO - Test Accuracy: 81.840000
+2025-01-11 15:29:15,572 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 15:29:15,572 - Model - INFO - Best Test Accuracy: 81.840000
+2025-01-11 15:29:15,572 - Model - INFO - Best Test Seq Accuracy: 0.897314
+2025-01-11 15:29:15,572 - Model - INFO - Epoch 1 (113/150):
+2025-01-11 15:37:48,462 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:37:48,463 - Model - INFO - Train acc : 99.977000
+2025-01-11 15:37:48,463 - Model - INFO - Test Accuracy: 81.938000
+2025-01-11 15:37:48,463 - Model - INFO - Test Accuracy seq: 0.896919
+2025-01-11 15:37:48,463 - Model - INFO - Best Test Accuracy: 81.938000
+2025-01-11 15:37:48,463 - Model - INFO - Best Test Seq Accuracy: 0.897314
+2025-01-11 15:37:48,463 - Model - INFO - Epoch 1 (114/150):
+2025-01-11 15:46:22,125 - Model - INFO - Train loss : 3.058000
+2025-01-11 15:46:22,125 - Model - INFO - Train acc : 99.985000
+2025-01-11 15:46:22,125 - Model - INFO - Test Accuracy: 81.898000
+2025-01-11 15:46:22,125 - Model - INFO - Test Accuracy seq: 0.899684
+2025-01-11 15:46:22,125 - Model - INFO - Best Test Accuracy: 81.938000
+2025-01-11 15:46:22,125 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 15:46:22,125 - Model - INFO - Epoch 1 (115/150):
+2025-01-11 15:54:36,110 - Model - INFO - Train loss : 3.057000
+2025-01-11 15:54:36,110 - Model - INFO - Train acc : 99.984000
+2025-01-11 15:54:36,110 - Model - INFO - Test Accuracy: 81.661000
+2025-01-11 15:54:36,110 - Model - INFO - Test Accuracy seq: 0.892575
+2025-01-11 15:54:36,110 - Model - INFO - Best Test Accuracy: 81.938000
+2025-01-11 15:54:36,110 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 15:54:36,110 - Model - INFO - Epoch 1 (116/150):
+2025-01-11 16:02:49,359 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:02:49,359 - Model - INFO - Train acc : 99.986000
+2025-01-11 16:02:49,359 - Model - INFO - Test Accuracy: 81.873000
+2025-01-11 16:02:49,359 - Model - INFO - Test Accuracy seq: 0.892970
+2025-01-11 16:02:49,359 - Model - INFO - Best Test Accuracy: 81.938000
+2025-01-11 16:02:49,359 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:02:49,359 - Model - INFO - Epoch 1 (117/150):
+2025-01-11 16:11:07,748 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:11:07,748 - Model - INFO - Train acc : 99.989000
+2025-01-11 16:11:07,748 - Model - INFO - Test Accuracy: 82.055000
+2025-01-11 16:11:07,748 - Model - INFO - Test Accuracy seq: 0.891785
+2025-01-11 16:11:07,748 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:11:07,748 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:11:07,748 - Model - INFO - Epoch 1 (118/150):
+2025-01-11 16:19:27,984 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:19:27,984 - Model - INFO - Train acc : 99.984000
+2025-01-11 16:19:27,984 - Model - INFO - Test Accuracy: 81.891000
+2025-01-11 16:19:27,984 - Model - INFO - Test Accuracy seq: 0.892970
+2025-01-11 16:19:27,984 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:19:27,984 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:19:27,984 - Model - INFO - Epoch 1 (119/150):
+2025-01-11 16:27:42,843 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:27:42,843 - Model - INFO - Train acc : 99.993000
+2025-01-11 16:27:42,843 - Model - INFO - Test Accuracy: 82.015000
+2025-01-11 16:27:42,843 - Model - INFO - Test Accuracy seq: 0.896919
+2025-01-11 16:27:42,843 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:27:42,843 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:27:42,843 - Model - INFO - Epoch 1 (120/150):
+2025-01-11 16:36:00,299 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:36:00,299 - Model - INFO - Train acc : 99.991000
+2025-01-11 16:36:00,299 - Model - INFO - Test Accuracy: 81.960000
+2025-01-11 16:36:00,299 - Model - INFO - Test Accuracy seq: 0.895735
+2025-01-11 16:36:00,299 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:36:00,299 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:36:00,299 - Model - INFO - Epoch 1 (121/150):
+2025-01-11 16:44:28,795 - Model - INFO - Train loss : 3.057000
+2025-01-11 16:44:28,795 - Model - INFO - Train acc : 99.986000
+2025-01-11 16:44:28,795 - Model - INFO - Test Accuracy: 81.924000
+2025-01-11 16:44:28,795 - Model - INFO - Test Accuracy seq: 0.890205
+2025-01-11 16:44:28,795 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:44:28,795 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:44:28,795 - Model - INFO - Epoch 1 (122/150):
+2025-01-11 16:52:32,945 - Model - INFO - Train loss : 3.056000
+2025-01-11 16:52:32,945 - Model - INFO - Train acc : 99.993000
+2025-01-11 16:52:32,945 - Model - INFO - Test Accuracy: 81.672000
+2025-01-11 16:52:32,945 - Model - INFO - Test Accuracy seq: 0.885466
+2025-01-11 16:52:32,945 - Model - INFO - Best Test Accuracy: 82.055000
+2025-01-11 16:52:32,945 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 16:52:32,945 - Model - INFO - Epoch 1 (123/150):
+2025-01-11 17:00:43,193 - Model - INFO - Train loss : 3.057000
+2025-01-11 17:00:43,193 - Model - INFO - Train acc : 99.991000
+2025-01-11 17:00:43,193 - Model - INFO - Test Accuracy: 82.059000
+2025-01-11 17:00:43,193 - Model - INFO - Test Accuracy seq: 0.895735
+2025-01-11 17:00:43,193 - Model - INFO - Best Test Accuracy: 82.059000
+2025-01-11 17:00:43,193 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:00:43,193 - Model - INFO - Epoch 1 (124/150):
+2025-01-11 17:08:50,587 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:08:50,587 - Model - INFO - Train acc : 99.994000
+2025-01-11 17:08:50,587 - Model - INFO - Test Accuracy: 81.884000
+2025-01-11 17:08:50,587 - Model - INFO - Test Accuracy seq: 0.894155
+2025-01-11 17:08:50,587 - Model - INFO - Best Test Accuracy: 82.059000
+2025-01-11 17:08:50,587 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:08:50,587 - Model - INFO - Epoch 1 (125/150):
+2025-01-11 17:16:49,089 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:16:49,089 - Model - INFO - Train acc : 99.994000
+2025-01-11 17:16:49,089 - Model - INFO - Test Accuracy: 81.960000
+2025-01-11 17:16:49,089 - Model - INFO - Test Accuracy seq: 0.891785
+2025-01-11 17:16:49,089 - Model - INFO - Best Test Accuracy: 82.059000
+2025-01-11 17:16:49,089 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:16:49,089 - Model - INFO - Epoch 1 (126/150):
+2025-01-11 17:24:56,465 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:24:56,465 - Model - INFO - Train acc : 99.994000
+2025-01-11 17:24:56,465 - Model - INFO - Test Accuracy: 82.048000
+2025-01-11 17:24:56,465 - Model - INFO - Test Accuracy seq: 0.895735
+2025-01-11 17:24:56,465 - Model - INFO - Best Test Accuracy: 82.059000
+2025-01-11 17:24:56,465 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:24:56,465 - Model - INFO - Epoch 1 (127/150):
+2025-01-11 17:32:54,666 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:32:54,666 - Model - INFO - Train acc : 99.994000
+2025-01-11 17:32:54,666 - Model - INFO - Test Accuracy: 82.063000
+2025-01-11 17:32:54,666 - Model - INFO - Test Accuracy seq: 0.893365
+2025-01-11 17:32:54,666 - Model - INFO - Best Test Accuracy: 82.063000
+2025-01-11 17:32:54,666 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:32:54,666 - Model - INFO - Epoch 1 (128/150):
+2025-01-11 17:41:06,325 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:41:06,325 - Model - INFO - Train acc : 99.993000
+2025-01-11 17:41:06,325 - Model - INFO - Test Accuracy: 82.033000
+2025-01-11 17:41:06,325 - Model - INFO - Test Accuracy seq: 0.890600
+2025-01-11 17:41:06,325 - Model - INFO - Best Test Accuracy: 82.063000
+2025-01-11 17:41:06,325 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:41:06,325 - Model - INFO - Epoch 1 (129/150):
+2025-01-11 17:49:18,194 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:49:18,194 - Model - INFO - Train acc : 99.994000
+2025-01-11 17:49:18,194 - Model - INFO - Test Accuracy: 82.230000
+2025-01-11 17:49:18,194 - Model - INFO - Test Accuracy seq: 0.896919
+2025-01-11 17:49:18,194 - Model - INFO - Best Test Accuracy: 82.230000
+2025-01-11 17:49:18,194 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:49:18,194 - Model - INFO - Epoch 1 (130/150):
+2025-01-11 17:57:31,686 - Model - INFO - Train loss : 3.056000
+2025-01-11 17:57:31,687 - Model - INFO - Train acc : 99.995000
+2025-01-11 17:57:31,687 - Model - INFO - Test Accuracy: 82.336000
+2025-01-11 17:57:31,687 - Model - INFO - Test Accuracy seq: 0.899684
+2025-01-11 17:57:31,687 - Model - INFO - Best Test Accuracy: 82.336000
+2025-01-11 17:57:31,687 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 17:57:31,687 - Model - INFO - Epoch 1 (131/150):
+2025-01-11 18:05:55,031 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:05:55,031 - Model - INFO - Train acc : 99.994000
+2025-01-11 18:05:55,031 - Model - INFO - Test Accuracy: 82.136000
+2025-01-11 18:05:55,031 - Model - INFO - Test Accuracy seq: 0.895340
+2025-01-11 18:05:55,032 - Model - INFO - Best Test Accuracy: 82.336000
+2025-01-11 18:05:55,032 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:05:55,032 - Model - INFO - Epoch 1 (132/150):
+2025-01-11 18:14:17,363 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:14:17,363 - Model - INFO - Train acc : 99.995000
+2025-01-11 18:14:17,363 - Model - INFO - Test Accuracy: 82.041000
+2025-01-11 18:14:17,363 - Model - INFO - Test Accuracy seq: 0.893365
+2025-01-11 18:14:17,364 - Model - INFO - Best Test Accuracy: 82.336000
+2025-01-11 18:14:17,364 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:14:17,364 - Model - INFO - Epoch 1 (133/150):
+2025-01-11 18:22:42,888 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:22:42,888 - Model - INFO - Train acc : 99.996000
+2025-01-11 18:22:42,888 - Model - INFO - Test Accuracy: 82.384000
+2025-01-11 18:22:42,888 - Model - INFO - Test Accuracy seq: 0.898104
+2025-01-11 18:22:42,888 - Model - INFO - Best Test Accuracy: 82.384000
+2025-01-11 18:22:42,888 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:22:42,888 - Model - INFO - Epoch 1 (134/150):
+2025-01-11 18:31:12,310 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:31:12,310 - Model - INFO - Train acc : 99.996000
+2025-01-11 18:31:12,310 - Model - INFO - Test Accuracy: 82.504000
+2025-01-11 18:31:12,310 - Model - INFO - Test Accuracy seq: 0.897314
+2025-01-11 18:31:12,310 - Model - INFO - Best Test Accuracy: 82.504000
+2025-01-11 18:31:12,310 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:31:12,310 - Model - INFO - Epoch 1 (135/150):
+2025-01-11 18:39:52,266 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:39:52,266 - Model - INFO - Train acc : 99.994000
+2025-01-11 18:39:52,266 - Model - INFO - Test Accuracy: 82.526000
+2025-01-11 18:39:52,266 - Model - INFO - Test Accuracy seq: 0.898499
+2025-01-11 18:39:52,266 - Model - INFO - Best Test Accuracy: 82.526000
+2025-01-11 18:39:52,266 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:39:52,266 - Model - INFO - Epoch 1 (136/150):
+2025-01-11 18:48:56,681 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:48:56,681 - Model - INFO - Train acc : 99.995000
+2025-01-11 18:48:56,681 - Model - INFO - Test Accuracy: 82.238000
+2025-01-11 18:48:56,681 - Model - INFO - Test Accuracy seq: 0.896524
+2025-01-11 18:48:56,681 - Model - INFO - Best Test Accuracy: 82.526000
+2025-01-11 18:48:56,681 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:48:56,681 - Model - INFO - Epoch 1 (137/150):
+2025-01-11 18:57:51,575 - Model - INFO - Train loss : 3.056000
+2025-01-11 18:57:51,575 - Model - INFO - Train acc : 99.997000
+2025-01-11 18:57:51,575 - Model - INFO - Test Accuracy: 82.168000
+2025-01-11 18:57:51,575 - Model - INFO - Test Accuracy seq: 0.894550
+2025-01-11 18:57:51,575 - Model - INFO - Best Test Accuracy: 82.526000
+2025-01-11 18:57:51,575 - Model - INFO - Best Test Seq Accuracy: 0.899684
+2025-01-11 18:57:51,575 - Model - INFO - Epoch 1 (138/150):
+2025-01-11 19:06:25,361 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:06:25,361 - Model - INFO - Train acc : 99.995000
+2025-01-11 19:06:25,361 - Model - INFO - Test Accuracy: 82.585000
+2025-01-11 19:06:25,361 - Model - INFO - Test Accuracy seq: 0.902449
+2025-01-11 19:06:25,362 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:06:25,362 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:06:25,362 - Model - INFO - Epoch 1 (139/150):
+2025-01-11 19:14:59,791 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:14:59,791 - Model - INFO - Train acc : 99.995000
+2025-01-11 19:14:59,791 - Model - INFO - Test Accuracy: 82.336000
+2025-01-11 19:14:59,791 - Model - INFO - Test Accuracy seq: 0.899684
+2025-01-11 19:14:59,791 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:14:59,791 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:14:59,792 - Model - INFO - Epoch 1 (140/150):
+2025-01-11 19:23:20,945 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:23:20,945 - Model - INFO - Train acc : 99.995000
+2025-01-11 19:23:20,945 - Model - INFO - Test Accuracy: 82.362000
+2025-01-11 19:23:20,945 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 19:23:20,945 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:23:20,945 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:23:20,945 - Model - INFO - Epoch 1 (141/150):
+2025-01-11 19:31:47,888 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:31:47,888 - Model - INFO - Train acc : 99.998000
+2025-01-11 19:31:47,888 - Model - INFO - Test Accuracy: 82.457000
+2025-01-11 19:31:47,888 - Model - INFO - Test Accuracy seq: 0.896919
+2025-01-11 19:31:47,888 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:31:47,888 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:31:47,888 - Model - INFO - Epoch 1 (142/150):
+2025-01-11 19:40:24,626 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:40:24,626 - Model - INFO - Train acc : 99.996000
+2025-01-11 19:40:24,626 - Model - INFO - Test Accuracy: 82.556000
+2025-01-11 19:40:24,626 - Model - INFO - Test Accuracy seq: 0.894155
+2025-01-11 19:40:24,626 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:40:24,626 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:40:24,626 - Model - INFO - Epoch 1 (143/150):
+2025-01-11 19:48:49,044 - Model - INFO - Train loss : 3.055000
+2025-01-11 19:48:49,044 - Model - INFO - Train acc : 99.996000
+2025-01-11 19:48:49,044 - Model - INFO - Test Accuracy: 82.245000
+2025-01-11 19:48:49,044 - Model - INFO - Test Accuracy seq: 0.900079
+2025-01-11 19:48:49,044 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:48:49,044 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:48:49,044 - Model - INFO - Epoch 1 (144/150):
+2025-01-11 19:57:13,025 - Model - INFO - Train loss : 3.056000
+2025-01-11 19:57:13,026 - Model - INFO - Train acc : 99.997000
+2025-01-11 19:57:13,026 - Model - INFO - Test Accuracy: 82.508000
+2025-01-11 19:57:13,026 - Model - INFO - Test Accuracy seq: 0.896130
+2025-01-11 19:57:13,026 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 19:57:13,026 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 19:57:13,026 - Model - INFO - Epoch 1 (145/150):
+2025-01-11 20:05:38,201 - Model - INFO - Train loss : 3.055000
+2025-01-11 20:05:38,201 - Model - INFO - Train acc : 99.997000
+2025-01-11 20:05:38,201 - Model - INFO - Test Accuracy: 82.409000
+2025-01-11 20:05:38,201 - Model - INFO - Test Accuracy seq: 0.896919
+2025-01-11 20:05:38,201 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:05:38,201 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 20:05:38,201 - Model - INFO - Epoch 1 (146/150):
+2025-01-11 20:13:55,084 - Model - INFO - Train loss : 3.055000
+2025-01-11 20:13:55,084 - Model - INFO - Train acc : 99.997000
+2025-01-11 20:13:55,084 - Model - INFO - Test Accuracy: 82.325000
+2025-01-11 20:13:55,085 - Model - INFO - Test Accuracy seq: 0.898499
+2025-01-11 20:13:55,085 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:13:55,085 - Model - INFO - Best Test Seq Accuracy: 0.902449
+2025-01-11 20:13:55,085 - Model - INFO - Epoch 1 (147/150):
+2025-01-11 20:22:29,595 - Model - INFO - Train loss : 3.056000
+2025-01-11 20:22:29,595 - Model - INFO - Train acc : 99.997000
+2025-01-11 20:22:29,595 - Model - INFO - Test Accuracy: 82.380000
+2025-01-11 20:22:29,595 - Model - INFO - Test Accuracy seq: 0.903239
+2025-01-11 20:22:29,595 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:22:29,595 - Model - INFO - Best Test Seq Accuracy: 0.903239
+2025-01-11 20:22:29,595 - Model - INFO - Epoch 1 (148/150):
+2025-01-11 20:30:58,233 - Model - INFO - Train loss : 3.056000
+2025-01-11 20:30:58,233 - Model - INFO - Train acc : 99.996000
+2025-01-11 20:30:58,233 - Model - INFO - Test Accuracy: 82.271000
+2025-01-11 20:30:58,233 - Model - INFO - Test Accuracy seq: 0.897314
+2025-01-11 20:30:58,233 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:30:58,233 - Model - INFO - Best Test Seq Accuracy: 0.903239
+2025-01-11 20:30:58,233 - Model - INFO - Epoch 1 (149/150):
+2025-01-11 20:39:21,151 - Model - INFO - Train loss : 3.056000
+2025-01-11 20:39:21,151 - Model - INFO - Train acc : 99.996000
+2025-01-11 20:39:21,151 - Model - INFO - Test Accuracy: 82.556000
+2025-01-11 20:39:21,151 - Model - INFO - Test Accuracy seq: 0.898894
+2025-01-11 20:39:21,151 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:39:21,151 - Model - INFO - Best Test Seq Accuracy: 0.903239
+2025-01-11 20:39:21,151 - Model - INFO - Epoch 1 (150/150):
+2025-01-11 20:47:35,125 - Model - INFO - Train loss : 3.055000
+2025-01-11 20:47:35,125 - Model - INFO - Train acc : 99.997000
+2025-01-11 20:47:35,125 - Model - INFO - Test Accuracy: 82.084000
+2025-01-11 20:47:35,125 - Model - INFO - Test Accuracy seq: 0.893365
+2025-01-11 20:47:35,125 - Model - INFO - Best Test Accuracy: 82.585000
+2025-01-11 20:47:35,125 - Model - INFO - Best Test Seq Accuracy: 0.903239
+2025-01-11 20:47:35,125 - Model - INFO - End of training...

@@ -1,0 +1,3 @@
+# Keep approved CSV exports byte-identical to the experiment files, including
+# csv.writer's CRLF line endings; source SHA256 values must remain verifiable.
+research_exports/ucf101_filename_v2_fusion_A_2026-10-20/*.csv -text whitespace=cr-at-eol

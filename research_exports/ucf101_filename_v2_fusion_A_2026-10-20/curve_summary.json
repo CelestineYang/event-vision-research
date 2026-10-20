@@ -1,0 +1,309 @@
+{
+  "snapshot_utc": "2026-10-20T04:52:03.411466+00:00",
+  "completed_epochs": 118,
+  "fusion_source": "/remote-home/chenhaoquan/event_project/experiments/ucf101_filename_v2_fusion_A_seed0_v1/metrics.jsonl",
+  "image_sources": {
+    "cstr3": "/remote-home/chenhaoquan/event_project/experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/cstr3_metrics.jsonl",
+    "xt_p": "/remote-home/chenhaoquan/event_project/experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/xt_p_metrics.jsonl",
+    "ty_p": "/remote-home/chenhaoquan/event_project/experiments/ucf101dvs_gcstr_sliding_txtsplit_v2/logs/ty_p_metrics.jsonl"
+  },
+  "latest": {
+    "epoch": 118,
+    "train": {
+      "fusion": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.0035899563580365865,
+        "window_top1": 0.9998426887272592,
+        "window_top5": 1.0,
+        "video_nll": 0.0002820833379765255,
+        "video_top1": 0.9999028749028749,
+        "video_top5": 1.0,
+        "hard_vote_video_top1": 0.9999028749028749
+      },
+      "point": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.07682315489876887,
+        "window_top1": 0.9823163622230859,
+        "window_top5": 0.9984916625025447,
+        "video_nll": 0.027393319716471114,
+        "video_top1": 0.9995143745143745,
+        "video_top5": 1.0,
+        "hard_vote_video_top1": 0.999028749028749
+      },
+      "seconds": 2992.0710926679894,
+      "objective_loss": 0.04200152803803762,
+      "prediction_mode": "online_train_changing_weights"
+    },
+    "test": {
+      "fusion": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 4.395050141880381,
+        "window_top1": 0.9163380075956763,
+        "window_top5": 0.9694712240724511,
+        "video_nll": 0.9845331599802744,
+        "video_top1": 0.9506849315068493,
+        "video_top5": 0.9851272015655578,
+        "hard_vote_video_top1": 0.9510763209393346
+      },
+      "point": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 1.5248226323268528,
+        "window_top1": 0.8126278118609407,
+        "window_top5": 0.9386137890739118,
+        "video_nll": 0.5803511380479043,
+        "video_top1": 0.8978473581213308,
+        "video_top5": 0.9639921722113503,
+        "hard_vote_video_top1": 0.8935420743639921
+      },
+      "seconds": 1874.359425839968,
+      "objective_loss": 5.157461435129093,
+      "prediction_mode": "fixed_model_eval"
+    },
+    "best": {
+      "nll": 0.239658978845264,
+      "top1": 0.9499021526418787,
+      "epoch": 6
+    },
+    "memory": [
+      {
+        "rank": 0,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      },
+      {
+        "rank": 1,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      }
+    ],
+    "time": "2026-10-20T03:30:00.897986+00:00"
+  },
+  "selected_by_nll": {
+    "epoch": 6,
+    "train": {
+      "fusion": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.004551203396508594,
+        "window_top1": 0.9986212129624489,
+        "window_top5": 0.9999814927914422,
+        "video_nll": 0.0026860798778197232,
+        "video_top1": 0.9999028749028749,
+        "video_top5": 1.0,
+        "hard_vote_video_top1": 0.9999028749028749
+      },
+      "point": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.40499012341412705,
+        "window_top1": 0.9059000980882054,
+        "window_top5": 0.9755242166823977,
+        "video_nll": 0.19418482422879818,
+        "video_top1": 0.9908702408702409,
+        "video_top5": 0.9982517482517482,
+        "hard_vote_video_top1": 0.9873737373737373
+      },
+      "seconds": 1937.2828208978754,
+      "objective_loss": 0.20704625268071236,
+      "prediction_mode": "online_train_changing_weights"
+    },
+    "test": {
+      "fusion": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 0.5912975169791439,
+        "window_top1": 0.9060035056967572,
+        "window_top5": 0.9702746129126497,
+        "video_nll": 0.239658978845264,
+        "video_top1": 0.9499021526418787,
+        "video_top5": 0.9886497064579256,
+        "hard_vote_video_top1": 0.9452054794520548
+      },
+      "point": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 1.2166902759235987,
+        "window_top1": 0.7746859479988314,
+        "window_top5": 0.9215600350569676,
+        "video_nll": 0.6058932378896438,
+        "video_top1": 0.8704500978473582,
+        "video_top5": 0.9573385518590998,
+        "hard_vote_video_top1": 0.8622309197651663
+      },
+      "seconds": 202.95315424003638,
+      "objective_loss": 1.199642635264332,
+      "prediction_mode": "fixed_model_eval"
+    },
+    "best": {
+      "nll": 0.239658978845264,
+      "top1": 0.9499021526418787,
+      "epoch": 6
+    },
+    "memory": [
+      {
+        "rank": 0,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      },
+      {
+        "rank": 1,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      }
+    ],
+    "time": "2026-10-16T17:09:24.492573+00:00"
+  },
+  "highest_top1": {
+    "epoch": 40,
+    "train": {
+      "fusion": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.004595328494601376,
+        "window_top1": 0.999370754909037,
+        "window_top5": 1.0,
+        "video_nll": 0.0010893792574582452,
+        "video_top1": 0.9999028749028749,
+        "video_top5": 1.0,
+        "hard_vote_video_top1": 0.9999028749028749
+      },
+      "point": {
+        "windows": 108066,
+        "videos": 10296,
+        "window_loss": 0.1593705430227552,
+        "window_top1": 0.961292173301501,
+        "window_top5": 0.9949012640423445,
+        "video_nll": 0.06711334817597933,
+        "video_top1": 0.9984459984459985,
+        "video_top5": 0.9996114996114996,
+        "hard_vote_video_top1": 0.9971833721833722
+      },
+      "seconds": 2241.0493119249586,
+      "objective_loss": 0.08428058989968136,
+      "prediction_mode": "online_train_changing_weights"
+    },
+    "test": {
+      "fusion": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 1.3814850328209456,
+        "window_top1": 0.9236050248320187,
+        "window_top5": 0.9761174408413672,
+        "video_nll": 0.36205984962661464,
+        "video_top1": 0.961252446183953,
+        "video_top5": 0.9870841487279843,
+        "hard_vote_video_top1": 0.9604696673189824
+      },
+      "point": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 1.3715162676186137,
+        "window_top1": 0.7984954718083552,
+        "window_top5": 0.9326979257960853,
+        "video_nll": 0.5819281765489355,
+        "video_top1": 0.8876712328767123,
+        "video_top5": 0.962426614481409,
+        "hard_vote_video_top1": 0.8802348336594912
+      },
+      "seconds": 324.9245928970631,
+      "objective_loss": 2.0672431484637315,
+      "prediction_mode": "fixed_model_eval"
+    },
+    "best": {
+      "nll": 0.239658978845264,
+      "top1": 0.9499021526418787,
+      "epoch": 6
+    },
+    "memory": [
+      {
+        "rank": 0,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      },
+      {
+        "rank": 1,
+        "allocated_mib": 1515.3095703125,
+        "reserved_mib": 1778.0
+      }
+    ],
+    "time": "2026-10-17T13:54:54.200422+00:00"
+  },
+  "comparisons": {
+    "cstr3": {
+      "common_epochs": 50,
+      "fusion_top1_higher": 50,
+      "fusion_nll_lower": 31,
+      "top1_delta_pp_min": 2.2309197651663393,
+      "top1_delta_pp_max": 22.426614481409,
+      "image_selected_epoch": 49,
+      "image_selected_metrics": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 0.5791139747262419,
+        "window_top1": 0.8755842827928717,
+        "window_top5": 0.9689964943032428,
+        "video_nll": 0.31347298926561756,
+        "video_top1": 0.9291585127201566,
+        "video_top5": 0.9835616438356164,
+        "hard_vote_video_top1": 0.923679060665362,
+        "prediction_mode": "fixed_model_eval"
+      }
+    },
+    "xt_p": {
+      "common_epochs": 50,
+      "fusion_top1_higher": 50,
+      "fusion_nll_lower": 47,
+      "top1_delta_pp_min": 4.618395303326817,
+      "top1_delta_pp_max": 22.896281800391392,
+      "image_selected_epoch": 39,
+      "image_selected_metrics": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 0.8498454013548313,
+        "window_top1": 0.8282208588957055,
+        "window_top5": 0.9547546012269938,
+        "video_nll": 0.45016986330367964,
+        "video_top1": 0.8998043052837573,
+        "video_top5": 0.9784735812133072,
+        "hard_vote_video_top1": 0.8974559686888454,
+        "prediction_mode": "fixed_model_eval"
+      }
+    },
+    "ty_p": {
+      "common_epochs": 50,
+      "fusion_top1_higher": 50,
+      "fusion_nll_lower": 43,
+      "top1_delta_pp_min": 1.7612524461839585,
+      "top1_delta_pp_max": 29.902152641878676,
+      "image_selected_epoch": 41,
+      "image_selected_metrics": {
+        "windows": 27384,
+        "videos": 2555,
+        "window_loss": 0.7353510938153387,
+        "window_top1": 0.8536006427110722,
+        "window_top5": 0.9591732398480864,
+        "video_nll": 0.36604110873309914,
+        "video_top1": 0.9240704500978474,
+        "video_top5": 0.9823874755381604,
+        "hard_vote_video_top1": 0.9158512720156555,
+        "prediction_mode": "fixed_model_eval"
+      }
+    }
+  },
+  "recent_mean": {
+    "video_top1": 0.9531115459882583,
+    "video_nll": 0.8790984008624895
+  },
+  "limitations": [
+    "Test is used for selection, not independent held-out evaluation",
+    "Fusion starts from trained/selected image and point weights; image pretraining starts from ImageNet",
+    "Fusion global batch16 versus image batch64: same epoch means 4x as many optimizer steps",
+    "Comparison is versus individual image branches, not an independently trained three-image fusion/ensemble",
+    "Same video list may contain related groups across Train and Test",
+    "No inference, weight updates or training changes performed by this analysis"
+  ]
+}

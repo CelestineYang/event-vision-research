@@ -52,6 +52,9 @@ events.out.tfevents.*
 *.log
 # Imported PointMLP training log (not source code).
 /pointmlp.txt
+# Imported official training log. The explicitly reviewed research snapshot
+# contains its approved copy; raw logs remain local.
+/eventmamba.txt
 *.pid
 *.lock
 
@@ -163,3 +166,11 @@ Thumbs.db
 *.orig
 *.bak
 *.tmp
+
+# Explicitly approved, small research-discussion snapshot (not raw experiment
+# trees). CSV/PDF exceptions apply only to these selected report files.
+/research_exports/*
+!/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/
+!/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/*_predictions_best_loss.csv
+!/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/matched_epochs.csv
+!/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/curves.pdf
