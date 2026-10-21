@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "epochs": 20,
+  "batch_size": 8,
+  "batch_unit": "video",
+  "hidden": 64,
+  "alpha0": 0.5,
+  "eta": 0.5,
+  "fusion_frame_only": false,
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "gradient_clip": 1.0,
+  "seed": 0,
+  "ece_bins": 15,
+  "ema_decay": 0.9
+}
