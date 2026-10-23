@@ -1,0 +1,286 @@
+{
+  "cache_fingerprints": {
+    "test": "ae743f05b99b141e18903df9a5ffafa870ce68084267cc1fec930f898e59ded3",
+    "train": "80bae3d0a2716afc00d7ddaf17f40b6d28829c1315290a6cc48da54934528d61"
+  },
+  "class_to_idx": {
+    "ApplyEyeMakeup": 0,
+    "ApplyLipstick": 1,
+    "Archery": 2,
+    "BabyCrawling": 3,
+    "BalanceBeam": 4,
+    "BandMarching": 5,
+    "BaseballPitch": 6,
+    "Basketball": 7,
+    "BasketballDunk": 8,
+    "BenchPress": 9,
+    "Biking": 10,
+    "Billiards": 11,
+    "BlowDryHair": 12,
+    "BlowingCandles": 13,
+    "BodyWeightSquats": 14,
+    "Bowling": 15,
+    "BoxingPunchingBag": 16,
+    "BoxingSpeedBag": 17,
+    "BreastStroke": 18,
+    "BrushingTeeth": 19,
+    "CleanAndJerk": 20,
+    "CliffDiving": 21,
+    "CricketBowling": 22,
+    "CricketShot": 23,
+    "CuttingInKitchen": 24,
+    "Diving": 25,
+    "Drumming": 26,
+    "Fencing": 27,
+    "FieldHockeyPenalty": 28,
+    "FloorGymnastics": 29,
+    "FrisbeeCatch": 30,
+    "FrontCrawl": 31,
+    "GolfSwing": 32,
+    "Haircut": 33,
+    "HammerThrow": 35,
+    "Hammering": 34,
+    "HandstandPushups": 36,
+    "HandstandWalking": 37,
+    "HeadMassage": 38,
+    "HighJump": 39,
+    "HorseRace": 40,
+    "HorseRiding": 41,
+    "HulaHoop": 42,
+    "IceDancing": 43,
+    "JavelinThrow": 44,
+    "JugglingBalls": 45,
+    "JumpRope": 47,
+    "JumpingJack": 46,
+    "Kayaking": 48,
+    "Knitting": 49,
+    "LongJump": 50,
+    "Lunges": 51,
+    "MilitaryParade": 52,
+    "Mixing": 53,
+    "MoppingFloor": 54,
+    "Nunchucks": 55,
+    "ParallelBars": 56,
+    "PizzaTossing": 57,
+    "PlayingCello": 58,
+    "PlayingDaf": 59,
+    "PlayingDhol": 60,
+    "PlayingFlute": 61,
+    "PlayingGuitar": 62,
+    "PlayingPiano": 63,
+    "PlayingSitar": 64,
+    "PlayingTabla": 65,
+    "PlayingViolin": 66,
+    "PoleVault": 67,
+    "PommelHorse": 68,
+    "PullUps": 69,
+    "Punch": 70,
+    "PushUps": 71,
+    "Rafting": 72,
+    "RockClimbingIndoor": 73,
+    "RopeClimbing": 74,
+    "Rowing": 75,
+    "SalsaSpin": 76,
+    "ShavingBeard": 77,
+    "Shotput": 78,
+    "SkateBoarding": 79,
+    "Skiing": 80,
+    "Skijet": 81,
+    "SkyDiving": 82,
+    "SoccerJuggling": 83,
+    "SoccerPenalty": 84,
+    "StillRings": 85,
+    "SumoWrestling": 86,
+    "Surfing": 87,
+    "Swing": 88,
+    "TableTennisShot": 89,
+    "TaiChi": 90,
+    "TennisSwing": 91,
+    "ThrowDiscus": 92,
+    "TrampolineJumping": 93,
+    "Typing": 94,
+    "UnevenBars": 95,
+    "VolleyballSpiking": 96,
+    "WalkingWithDog": 97,
+    "WallPushups": 98,
+    "WritingOnBoard": 99,
+    "YoYo": 100
+  },
+  "dataset_id": "UCF101-DVS",
+  "expert_provenance": {
+    "fit_source_splits": [
+      "train"
+    ],
+    "independent_test": false,
+    "initialization_images_sha256": {
+      "cstr3": "c4f9ef8cb934f6dc130c4d96b293f9eda863d662f04d3369845a31df0e0ccef3",
+      "ty_p": "ae9de57323189ff8cda7a38d8e12eb8b8535e4fe1c00e7e165f3fca3f03ea8c0",
+      "xt_p": "2045c6e21804c1e60dd6d59dbaa95690da8569a8c27d7a758a37942be302fe1e"
+    },
+    "initialization_point_sha256": "499cf427b08c6e9b50df686600ebebb6f58eb514caec6032a1bd7561a55ed6d4",
+    "point": "co-trained Point head from SAME restored fusion state",
+    "provenance_basis": "existing Fusion A training protocol/config",
+    "selection_source_splits": [
+      "test"
+    ],
+    "upstream_point_fit_identity": "unknown: no verifiable per-video manifest in official initializer"
+  },
+  "independent_test": false,
+  "models": {
+    "conditional": {
+      "alpha": 0.7908821105957031,
+      "alpha_meaning": "initial/reference alpha; dynamic alpha varies",
+      "base_logit": 1.3302507400512695,
+      "checkpoint": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/best_val_nll.pt",
+      "epoch": 21,
+      "eta": 0.09410769492387772,
+      "sha256": "97da6c12d87522507ac3fcb52610dc9e46153374e88ad011da8df6f2c7692b17"
+    },
+    "current": {
+      "alpha": 0.7908821105957031,
+      "alpha_meaning": "initial/reference alpha; dynamic alpha varies",
+      "base_logit": 1.3302507400512695,
+      "checkpoint": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/best_val_nll.pt",
+      "epoch": 58,
+      "eta": 0.09410769492387772,
+      "sha256": "0d4f08dbfe89ec2c12bbcc92761b20ccc70596c174954438c4fb4fe543a7136d"
+    },
+    "gru": {
+      "alpha": 0.7908821105957031,
+      "alpha_meaning": "initial/reference alpha; dynamic alpha varies",
+      "base_logit": 1.3302507400512695,
+      "checkpoint": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/best_val_nll.pt",
+      "epoch": 11,
+      "eta": 0.09410769492387772,
+      "sha256": "113dcca67b39b7090825fadefbeaa4f91adb1f7e766e003cfe4b78cf36a9a6d8"
+    },
+    "static": {
+      "alpha": 0.7908821105957031,
+      "alpha_meaning": "static value",
+      "base_logit": null,
+      "checkpoint": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/best_val_nll.pt",
+      "epoch": 10,
+      "eta": 0.09410769492387772,
+      "sha256": "5524912a1633cabb0f5f1fb83c9aa5e1bbe4bfed88a265334d855b1bf155bf56"
+    }
+  },
+  "observations": [
+    "fusion_normalized_entropy",
+    "fusion_top2_margin",
+    "point_normalized_entropy",
+    "point_top2_margin",
+    "cstr3_normalized_entropy",
+    "cstr3_top2_margin",
+    "xt_p_normalized_entropy",
+    "xt_p_top2_margin",
+    "ty_p_normalized_entropy",
+    "ty_p_top2_margin",
+    "frame_point_js_divergence_log2",
+    "image_pair_agreement",
+    "log1p_events_per_pixel_second",
+    "log1p_event_count",
+    "occupied_pixel_fraction",
+    "point_samples_per_raw_event",
+    "log1p_dt_seconds"
+  ],
+  "selection_protocol": "original_test_as_val",
+  "sources_sha256": "87796d297fd31d0c96fd3a67994e810e755cab7fd9df53f19ae96911ff15289a",
+  "verified_sources": {
+    "conditional/best_val_nll.pt": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/best_val_nll.pt",
+      "sha256": "97da6c12d87522507ac3fcb52610dc9e46153374e88ad011da8df6f2c7692b17"
+    },
+    "conditional/config.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/config.json",
+      "sha256": "2eb31e010c1bc55701a1562ae4dcf78966625693da20d1ee1c4cdb4dd018b2d8"
+    },
+    "conditional/metrics.jsonl": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/metrics.jsonl",
+      "sha256": "4c647fee05a59c24d3331d0279afaadc54e53f2da2c80ad478038037da99a51b"
+    },
+    "conditional/status.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/status.json",
+      "sha256": "c00eede54307a8b7564dd28d35de48325aa3ce4d9106fc61049240a57ed28e9d"
+    },
+    "conditional/validation_predictions_best.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/validation_predictions_best.json",
+      "sha256": "94ae106330bd3ed660971ab4a99c38f83d166b97072511dc4f3bce49b7a23c74"
+    },
+    "current/best_val_nll.pt": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/best_val_nll.pt",
+      "sha256": "0d4f08dbfe89ec2c12bbcc92761b20ccc70596c174954438c4fb4fe543a7136d"
+    },
+    "current/config.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/config.json",
+      "sha256": "f69a4d79529f28214096224ec2af422b2d62d71a9bcf5cc6b158845a35d84009"
+    },
+    "current/metrics.jsonl": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/metrics.jsonl",
+      "sha256": "8f77c3888251692a99a3912c4739e70230129f79eacfef79486637bf7407efb7"
+    },
+    "current/status.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/status.json",
+      "sha256": "8131b7a9d4e98bf055c2a2b8649385d0fca35d95b579236433511ba1d1583c20"
+    },
+    "current/validation_predictions_best.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/validation_predictions_best.json",
+      "sha256": "cd9ea015021536d443473dddb89c7f8ee424d7752c015039ef8a042b11656506"
+    },
+    "evidence_test": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/test/manifest.json",
+      "sha256": "7884e2a9524dc3a06b9723052d4bb1a9b3a5d41b341c15c86d2979a701f85cb5"
+    },
+    "evidence_train": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/train/manifest.json",
+      "sha256": "a4e23a691819d774506c70490232f6f26491cde88daf20d9147be6d42fc3a2c8"
+    },
+    "gru/best_val_nll.pt": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/best_val_nll.pt",
+      "sha256": "113dcca67b39b7090825fadefbeaa4f91adb1f7e766e003cfe4b78cf36a9a6d8"
+    },
+    "gru/config.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/config.json",
+      "sha256": "e8ce14cece74074b1a29db1d25d0b487c33fd5067fc9ea40434a88a86cd1800c"
+    },
+    "gru/metrics.jsonl": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/metrics.jsonl",
+      "sha256": "82735f724162e13fc39274b9f014e122962b791988d13687288d4a43f882755a"
+    },
+    "gru/status.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/status.json",
+      "sha256": "622a257f08dbc35be08f767d5a594f76be0dd0f343c62cc51f077bfa7bf5d740"
+    },
+    "gru/validation_predictions_best.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/validation_predictions_best.json",
+      "sha256": "ce9352440bb29bb95f4369f42754f1960d065a8c5523b5200eb7f8ffeb641af3"
+    },
+    "static/best_val_nll.pt": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/best_val_nll.pt",
+      "sha256": "5524912a1633cabb0f5f1fb83c9aa5e1bbe4bfed88a265334d855b1bf155bf56"
+    },
+    "static/config.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/config.json",
+      "sha256": "8f2bf7d5aa4c53fec1f4777f17f3666d498fe6e227bcedbabf6c65f226db9216"
+    },
+    "static/metrics.jsonl": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/metrics.jsonl",
+      "sha256": "bbed8731896506428f48eb194c0fdbe34aa17bc06771ae22c888ee0cbef2fb60"
+    },
+    "static/status.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/status.json",
+      "sha256": "e3007934297ebae1a31447a2c4b966670a234276c572dca56a91e15cb84525d6"
+    },
+    "static/validation_predictions_best.json": {
+      "path": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/validation_predictions_best.json",
+      "sha256": "aa5180bb5f34ea71d7684a1aadbdf603f8711d5c6744e7d7ec3297c161b03bf5"
+    }
+  },
+  "videos": {
+    "test": 2555,
+    "train": 10296
+  },
+  "windows": {
+    "test": 27384,
+    "train": 108066
+  }
+}

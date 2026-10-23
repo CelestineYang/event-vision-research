@@ -1,0 +1,16 @@
+{
+  "batch_size": 32,
+  "ece_bins": 15,
+  "ema_decay": 0.9,
+  "interventions": [
+    "normal",
+    "reset_each_window",
+    "zero_memory_readout"
+  ],
+  "prefixes": [
+    1.0
+  ],
+  "role": "gate_val",
+  "selection_protocol": "original_test_as_val",
+  "sources": "research_exports/ucf101_routing_epoch040_2026-10-23/sources.json"
+}

@@ -1,0 +1,6 @@
+{
+  "best_validation_nll": 0.19449063641803527,
+  "epochs": 80,
+  "optimizer_steps": 25760,
+  "status": "complete"
+}

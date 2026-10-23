@@ -171,7 +171,16 @@ Thumbs.db
 # trees). CSV/PDF exceptions apply only to these selected report files.
 /research_exports/*
 !/research_exports/ucf101_routing_epoch040_2026-10-23/
+!/research_exports/ucf101_routing_stage2_2026-10-23/
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/*_predictions_best_loss.csv
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/matched_epochs.csv
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/curves.pdf
+
+# Stage-2 delivery: only the small integrity audit and CPU test log.
+!/reports/
+/reports/*
+!/reports/routing_stage2/
+/reports/routing_stage2/*
+!/reports/routing_stage2/artifact_audit_final.json
+!/reports/routing_stage2/cpu_tests.log

@@ -1,0 +1,39 @@
+test_metric_directions_and_unique_rescue_numeric (test_fusion_routing.AnalysisTests) ... ok
+test_zero_errors_csv_and_missing_checkpoint_metadata (test_fusion_routing.AnalysisTests) ... ok
+test_identity_completeness_integrity_and_role_boundaries (test_fusion_routing.CacheTests) ... ok
+test_missing_duplicate_nonfinite_pending_and_cross_role (test_fusion_routing.CacheTests) ... ok
+test_original_test_as_val_explicit_protocol_and_training_boundary (test_fusion_routing.CacheTests) ... ok
+test_sort_gaps_overlap_padding_and_label_free_inputs (test_fusion_routing.CacheTests) ... ok
+test_window_sequence_gap_shuffle_and_normalization_agree (test_fusion_routing.CacheTests) ... ok
+test_metric_type_video_softvote_ece_brier_and_small_topk (test_fusion_routing.EvaluationTests) ... ok
+test_export_train_source_no_augmentation_and_fixed_sampling (test_fusion_routing.FrozenRegressionTests) ... ok
+test_full_checkpoint_code_hash_is_not_bypassed (test_fusion_routing.FrozenRegressionTests) ... ok
+test_original_interfaces_single_point_pass_frozen_bn_and_strict_state (test_fusion_routing.FrozenRegressionTests) ... ok
+test_complete_valid_video_mapping_without_new_split (test_fusion_routing.RoleGenerationTests) ... ok
+test_all_fixed_modes (test_fusion_routing.RoutingMathTests) ... ok
+test_arithmetic_mixture_endpoints_and_three_way (test_fusion_routing.RoutingMathTests) ... ok
+test_dynamic_initial_equals_static_and_frozen_eta (test_fusion_routing.RoutingMathTests) ... ok
+test_explicit_alpha_endpoints_with_nonzero_eta (test_fusion_routing.RoutingMathTests) ... ok
+test_nll_gradient_and_extreme_logits (test_fusion_routing.RoutingMathTests) ... ok
+test_observations_ignore_labels_ids_and_have_fixed_dimension (test_fusion_routing.RoutingMathTests) ... ok
+test_raw_static_logit_extremes_ema_and_restore (test_fusion_routing.RoutingMathTests) ... /root/anaconda3/envs/torch201/lib/python3.10/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+ok
+test_unequal_video_batches_preserve_epoch_window_weights (test_fusion_routing.RoutingMathTests) ... ok
+test_common_gap_input_has_nonzero_path_in_every_dynamic_mode (test_fusion_routing.SequenceTests) ... ok
+test_conditional_reads_old_state_before_current_write (test_fusion_routing.SequenceTests) ... ok
+test_future_isolation_video_reset_padding_and_explicit_state (test_fusion_routing.SequenceTests) ... ok
+test_synthetic_static_dynamic_memory_fit_and_explicit_test (test_fusion_routing.SmokeTests) ... ok
+test_artifact_audit_and_tampered_sources_rejected (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_ema_math_prefix_and_hook_cleanup (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_interventions_preserve_observation_dt_and_state_updates (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_pairing_distinguishes_equal_accuracy_and_rejects_identity (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_state_dict_not_config_and_identity_rejected (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_suite_matches_old_metrics_and_fixed_math (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_synthetic_complete_suite_outputs_and_no_overwrite (test_fusion_routing_stage2.Stage2Tests) ... ok
+test_trace_step_whole_weights_and_causality (test_fusion_routing_stage2.Stage2Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 6.735s
+
+OK

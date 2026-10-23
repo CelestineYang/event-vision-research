@@ -19,6 +19,11 @@
 
 日常提交前检查：
 
+第二阶段收尾经用户授权上传精选结果至
+`research_exports/ucf101_routing_stage2_2026-10-23/`：保留评估指标、三种子完整训练指标、
+实际配置、选中预测、小型配对汇总与来源 SHA；不包含权重或完整概率数组。
+`reports/routing_stage2/` 仅允许最终完整性审计与 CPU 测试日志，其他 reports 仍排除。
+
 ```bash
 git status --short
 git diff
