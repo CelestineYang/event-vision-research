@@ -1,6 +1,7 @@
 {
   "schema": 1,
   "dataset_id": "UCF101-DVS",
+  "selection_protocol": "original_test_as_val",
   "videos": [],
-  "note": "Template only. Supply actual video_id/source_split/role records after deciding roles. No automatic split. Original Test cannot be gate_train/gate_val. Expert fit/selection exposure is derived from original protocol, never from role names."
+  "note": "Generate complete valid-video roles with prepare_fusion_routing_roles.py: original Train -> gate_train, original Test -> gate_val. No random re-split. Parameter and normalizer fitting are Train-only. Original Test selects checkpoints; independent_test=false."
 }

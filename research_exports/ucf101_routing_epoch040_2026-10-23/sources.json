@@ -1,0 +1,94 @@
+{
+  "conditional/best_val_nll.pt": {
+    "included": false,
+    "sha256": "97da6c12d87522507ac3fcb52610dc9e46153374e88ad011da8df6f2c7692b17",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/best_val_nll.pt"
+  },
+  "conditional/config.json": {
+    "sha256": "2eb31e010c1bc55701a1562ae4dcf78966625693da20d1ee1c4cdb4dd018b2d8",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/config.json"
+  },
+  "conditional/metrics.jsonl": {
+    "sha256": "4c647fee05a59c24d3331d0279afaadc54e53f2da2c80ad478038037da99a51b",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/metrics.jsonl"
+  },
+  "conditional/status.json": {
+    "sha256": "c00eede54307a8b7564dd28d35de48325aa3ce4d9106fc61049240a57ed28e9d",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/status.json"
+  },
+  "conditional/validation_predictions_best.json": {
+    "sha256": "94ae106330bd3ed660971ab4a99c38f83d166b97072511dc4f3bce49b7a23c74",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/conditional/validation_predictions_best.json"
+  },
+  "current/best_val_nll.pt": {
+    "included": false,
+    "sha256": "0d4f08dbfe89ec2c12bbcc92761b20ccc70596c174954438c4fb4fe543a7136d",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/best_val_nll.pt"
+  },
+  "current/config.json": {
+    "sha256": "f69a4d79529f28214096224ec2af422b2d62d71a9bcf5cc6b158845a35d84009",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/config.json"
+  },
+  "current/metrics.jsonl": {
+    "sha256": "8f77c3888251692a99a3912c4739e70230129f79eacfef79486637bf7407efb7",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/metrics.jsonl"
+  },
+  "current/status.json": {
+    "sha256": "8131b7a9d4e98bf055c2a2b8649385d0fca35d95b579236433511ba1d1583c20",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/status.json"
+  },
+  "current/validation_predictions_best.json": {
+    "sha256": "cd9ea015021536d443473dddb89c7f8ee424d7752c015039ef8a042b11656506",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/current/validation_predictions_best.json"
+  },
+  "evidence_test": {
+    "sha256": "7884e2a9524dc3a06b9723052d4bb1a9b3a5d41b341c15c86d2979a701f85cb5",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/test/manifest.json"
+  },
+  "evidence_train": {
+    "sha256": "a4e23a691819d774506c70490232f6f26491cde88daf20d9147be6d42fc3a2c8",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/train/manifest.json"
+  },
+  "gru/best_val_nll.pt": {
+    "included": false,
+    "sha256": "113dcca67b39b7090825fadefbeaa4f91adb1f7e766e003cfe4b78cf36a9a6d8",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/best_val_nll.pt"
+  },
+  "gru/config.json": {
+    "sha256": "e8ce14cece74074b1a29db1d25d0b487c33fd5067fc9ea40434a88a86cd1800c",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/config.json"
+  },
+  "gru/metrics.jsonl": {
+    "sha256": "82735f724162e13fc39274b9f014e122962b791988d13687288d4a43f882755a",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/metrics.jsonl"
+  },
+  "gru/status.json": {
+    "sha256": "622a257f08dbc35be08f767d5a594f76be0dd0f343c62cc51f077bfa7bf5d740",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/status.json"
+  },
+  "gru/validation_predictions_best.json": {
+    "sha256": "ce9352440bb29bb95f4369f42754f1960d065a8c5523b5200eb7f8ffeb641af3",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/gru/validation_predictions_best.json"
+  },
+  "static/best_val_nll.pt": {
+    "included": false,
+    "sha256": "5524912a1633cabb0f5f1fb83c9aa5e1bbe4bfed88a265334d855b1bf155bf56",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/best_val_nll.pt"
+  },
+  "static/config.json": {
+    "sha256": "8f2bf7d5aa4c53fec1f4777f17f3666d498fe6e227bcedbabf6c65f226db9216",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/config.json"
+  },
+  "static/metrics.jsonl": {
+    "sha256": "bbed8731896506428f48eb194c0fdbe34aa17bc06771ae22c888ee0cbef2fb60",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/metrics.jsonl"
+  },
+  "static/status.json": {
+    "sha256": "e3007934297ebae1a31447a2c4b966670a234276c572dca56a91e15cb84525d6",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/status.json"
+  },
+  "static/validation_predictions_best.json": {
+    "sha256": "aa5180bb5f34ea71d7684a1aadbdf603f8711d5c6744e7d7ec3297c161b03bf5",
+    "source": "/remote-home/datasets/event_project_cache/routing_epoch040_static_20261022_v3/static/validation_predictions_best.json"
+  }
+}

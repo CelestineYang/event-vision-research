@@ -12,7 +12,8 @@ from torch.utils.data import DataLoader
 
 from fusion_router import Router, degeneracies, window_nll
 from routing_data import (EvidenceCache, ObservationNormalizer, RoutingDataset,
-                          OBSERVATIONS, collate_sequences, digest, fingerprint,
+                          OBSERVATIONS, OBSERVATION_SCHEMA, PROTOCOLS, protocol_config,
+                          collate_sequences, digest, fingerprint,
                           json_write, validate_training_roles, video_key)
 
 
@@ -180,6 +181,8 @@ def evaluate(router, normalizer, data, config, device='cpu', ema_decay=None):
 def train(args):
     config = json.loads(Path(args.config).read_text())
     config['mode'] = args.mode
+    selection_protocol = getattr(args, 'selection_protocol', None) or config.get('selection_protocol', 'strict')
+    config.update(protocol_config(selection_protocol))
     if args.mode not in ('static', 'current', 'gru', 'conditional'):
         raise ValueError('Fit only static/current/gru/conditional; EMA is current-Gate evaluation only')
     if int(config.get('epochs', 0))<1 or int(config.get('batch_size', 0))<1 or float(config.get('lr', 0))<=0:
@@ -198,7 +201,8 @@ def train(args):
         raise ValueError('Memory fit requires video sequence batches')
     train_data = RoutingDataset(cache, args.train_role, sequence=sequence)
     val_data = RoutingDataset(val_cache, args.val_role, sequence=sequence)
-    validate_training_roles(train_data, val_data, allow_seen_experts=args.allow_seen_expert_validation)
+    validate_training_roles(train_data, val_data, allow_seen_experts=args.allow_seen_expert_validation,
+                            selection_protocol=selection_protocol)
     if args.mode != 'static':
         if args.static_init is None:
             raise ValueError('Dynamic fits require a shared --static-init checkpoint')
@@ -209,13 +213,18 @@ def train(args):
             raise ValueError('Static initialization used different cache/roles')
         if (static['train_role'], static['val_role']) != (args.train_role, args.val_role):
             raise ValueError('Static initialization data roles differ')
-        config.update(alpha0=static['weights']['alpha'], eta=static['weights']['eta'],
-                      static_init_sha256=digest(args.static_init))
+        config.update(static_init_sha256=digest(args.static_init),
+                      initialization='raw static router_state alpha_logit and sigmoid(eta_logit)',
+                      static_init_epoch=static['epoch'])
     router = Router(config).to(args.device)
-    normalizer = ObservationNormalizer().fit(train_data).to(args.device)
-    if args.mode != 'static':
-        # Exact same normalization and b0/eta across all dynamic variants.
+    normalizer = ObservationNormalizer()
+    if args.mode == 'static':
+        normalizer.fit(train_data)
+    else:
+        router.initialize_from_static(static['router_state'])
+        normalizer.to(dtype=static['normalizer_state']['mean'].dtype)
         normalizer.load_state_dict(static['normalizer_state'], strict=True)
+    normalizer.to(args.device)
     optimizer = torch.optim.Adam(router.parameters(), lr=float(config['lr']),
                                  weight_decay=float(config.get('weight_decay', 0.)))
     provenance = dict(train_exposure=sorted({cache.rows[i]['expert_fit_exposure'] for i in train_data.indices}),
@@ -223,7 +232,8 @@ def train(args):
                       validation_selection_exposure=sorted({val_cache.rows[i]['expert_selection_exposure'] for i in val_data.indices}),
                       exploratory_seen_expert_validation=args.allow_seen_expert_validation,
                       experts=cache.identity['expert_provenance'])
-    config.update(observations=list(OBSERVATIONS), time_gap='log1p(seconds) in conditional write',
+    config.update(observations=list(OBSERVATIONS), observation_schema=OBSERVATION_SCHEMA,
+                  time_gap='shared log1p(dt_seconds), then Train standardization; per-video precomputed gaps',
                   overlap='metadata only, not an additional Gate observation',
                   normalization_fit_role=args.train_role, expert_identity=cache.identity,
                   optimizer='Adam', loss='valid-window-mean-NLL', temperature=1.,
@@ -232,7 +242,7 @@ def train(args):
                   train_role=args.train_role, val_role=args.val_role, provenance=provenance,
                   warnings=degeneracies(router), code=code_identity(),
                   effective_steps_per_epoch=len(batches(train_data, config)),
-                  validation_selector='video_nll', independent_test=False if args.allow_seen_expert_validation else 'not_evaluated')
+                  validation_selector='video_nll', independent_test=False)
     output = new_output(args.output)
     json_write(output/'config.json', config)
     best = float('inf')
@@ -264,8 +274,9 @@ def train(args):
         alpha, eta = router.weights()
         item = dict(epoch=epoch, train_online_window_nll=train_loss/windows,
                     train=training_metrics, validation=validation, optimizer_steps=steps,
-                    parameter_count=config['parameter_count'], seconds=time.perf_counter()-started)
-        saved = dict(schema=1, config=config, identity=cache.identity, router_state=router.state_dict(),
+                    parameter_count=config['parameter_count'], seconds=time.perf_counter()-started,
+                    **protocol_config(selection_protocol))
+        saved = dict(schema=2, config=config, identity=cache.identity, router_state=router.state_dict(),
                      normalizer_state=normalizer.state_dict(), optimizer_state=optimizer.state_dict(),
                      epoch=epoch, optimizer_steps=steps, train_cache=cache.fingerprint, val_cache=val_cache.fingerprint,
                      train_role=args.train_role, val_role=args.val_role, metrics=item,
@@ -284,29 +295,37 @@ def train(args):
 
 def load_checkpoint(path, identity):
     saved = torch.load(path, map_location='cpu', weights_only=False)
-    if saved.get('schema') != 1 or saved['identity'] != identity:
+    if saved.get('schema') != 2 or saved['identity'] != identity:
         raise ValueError('Router checkpoint/evidence identity mismatch')
-    if saved['config'].get('code') != code_identity() or saved['config'].get('observations') != list(OBSERVATIONS):
+    if saved['config'].get('code') != code_identity() or saved['config'].get('observations') != list(OBSERVATIONS) or saved['config'].get('observation_schema') != OBSERVATION_SCHEMA:
         raise ValueError('Router code/observation identity changed')
+    if saved['config']['selection_protocol'] != identity['selection_protocol']:
+        raise ValueError('Router checkpoint selection protocol mismatch')
     return saved
 
 
 def eval_command(args):
     expected = json.loads(Path(args.expect_identity).read_text()) if args.expect_identity else None
     cache = EvidenceCache(args.cache, expected)
+    selection_protocol = getattr(args, 'selection_protocol', None) or cache.identity['selection_protocol']
+    if selection_protocol != cache.identity['selection_protocol']:
+        raise ValueError('Evaluation/cache selection protocol mismatch')
     if args.checkpoint:
         saved = load_checkpoint(args.checkpoint, cache.identity)
         config = saved['config']
-        router = Router(config)
+        router = Router(config).to(dtype=saved['router_state']['base_logit'].dtype)
         router.load_state_dict(saved['router_state'], strict=True)
-        normalizer = ObservationNormalizer()
+        normalizer = ObservationNormalizer().to(dtype=saved['normalizer_state']['mean'].dtype)
         normalizer.load_state_dict(saved['normalizer_state'], strict=True)
     else:
-        config = dict(mode='fixed', fixed=args.fixed, batch_size=8, ece_bins=15)
+        config = dict(mode='fixed', fixed=args.fixed, batch_size=8, ece_bins=15,
+                      **protocol_config(selection_protocol))
         router = Router(config)
         normalizer = ObservationNormalizer()  # Fixed weights do not use observations.
     if args.ema_decay is not None and (not args.checkpoint or router.mode != 'current'):
         raise ValueError('--ema-decay evaluates a fitted current Gate only; no Test tuning')
+    if args.ema_decay is not None and args.ema_decay != config.get('ema_decay', .9):
+        raise ValueError('EMA coefficient must equal the predeclared training configuration')
     sequence = router.sequence or args.ema_decay is not None or config.get('batch_unit', 'video') == 'video'
     data = RoutingDataset(cache, args.role, sequence=sequence)
     output = new_output(args.output)
@@ -315,7 +334,8 @@ def eval_command(args):
     json_write(output/'metrics.json', dict(metrics=metrics, cache_fingerprint=cache.fingerprint,
         config=config, role=args.role, ema_decay=args.ema_decay,
         checkpoint_sha256=digest(args.checkpoint) if args.checkpoint else None,
-        evaluation_only=True, expert_provenance=cache.identity['expert_provenance']))
+        evaluation_only=True, expert_provenance=cache.identity['expert_provenance'],
+        **protocol_config(selection_protocol)))
     json_write(output/'video_predictions.json', predictions)
     print(json.dumps(metrics, indent=2))
     return metrics
@@ -340,6 +360,8 @@ def main():
     group.add_argument('--fixed', choices=('fusion', 'frame', 'frame_point', 'fusion_frame', 'three_way'))
     ev.add_argument('--ema-decay', type=float, help='Predeclared evaluation option, never selected on Test')
     for command in (fit, ev):
+        command.add_argument('--selection-protocol', choices=PROTOCOLS,
+                             help='Explicit original Test validation/selection; gradients and normalization remain Train-only')
         command.add_argument('--cache', required=True)
         command.add_argument('--output', required=True)
         command.add_argument('--device', default='cpu')

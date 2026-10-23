@@ -60,6 +60,7 @@ class Router(nn.Module):
         self.register_buffer('base_logit', torch.tensor(inverse_sigmoid(self.alpha0)))
         self.register_buffer('fixed_eta', torch.tensor(self.eta0))
         self.register_buffer('fixed_alpha', torch.tensor(self.alpha0))
+        self.register_buffer('exact_alpha_endpoint', torch.tensor(self.alpha0 in (0., 1.)))
         if self.mode == 'fixed':
             self.alpha0, self.eta0 = FIXED[config.get('fixed', 'fusion')]
             self.fixed_alpha.fill_(self.alpha0)
@@ -81,7 +82,7 @@ class Router(nn.Module):
                 self.read = nn.Sequential(nn.Linear(self.dimensions+self.hidden, self.hidden), nn.Tanh(), nn.Linear(self.hidden, 1))
                 # At hidden=64, GRU and conditional variants have similar total
                 # parameter counts; both use exactly the same observations.
-                self.write = nn.Sequential(nn.Linear(self.dimensions+self.hidden+1, self.hidden),
+                self.write = nn.Sequential(nn.Linear(self.dimensions+self.hidden, self.hidden),
                                            nn.Tanh(), nn.Linear(self.hidden, self.hidden))
                 self.candidate = nn.Sequential(nn.Linear(self.dimensions, self.hidden), nn.Tanh())
             if self.mode in ('gru', 'conditional'):
@@ -89,13 +90,28 @@ class Router(nn.Module):
                 nn.init.zeros_(last.weight)
                 nn.init.zeros_(last.bias)
 
+    @torch.no_grad()
+    def initialize_from_static(self, state):
+        """Copy finite raw logits, preserving tiny/saturated alpha without clipping."""
+        if self.mode not in ('current', 'ema', 'gru', 'conditional'):
+            raise ValueError('Static initialization is for dynamic routers only')
+        alpha, eta = state['alpha_logit'], state['eta_logit']
+        if alpha.numel()!=1 or eta.numel()!=1 or alpha.dtype!=eta.dtype or not torch.isfinite(alpha).all() or not torch.isfinite(eta).all():
+            raise ValueError('Finite scalar static logits of matching dtype required')
+        self.to(dtype=alpha.dtype)
+        self.base_logit.copy_(alpha)
+        self.fixed_alpha.copy_(alpha.sigmoid())
+        self.fixed_eta.copy_(eta.sigmoid())
+        self.exact_alpha_endpoint.fill_(False)
+        return self
+
     @property
     def sequence(self):
         return self.mode in ('ema', 'gru', 'conditional')
 
     def initial_state(self, batch, reference):
         if self.mode == 'ema':
-            return reference.new_full((batch, 1), self.alpha0)
+            return self.fixed_alpha.to(reference).expand(batch, 1).clone()
         if self.mode in ('gru', 'conditional'):
             return reference.new_zeros((batch, self.hidden))
         return None
@@ -125,7 +141,7 @@ class Router(nn.Module):
                 raise ValueError('EMA decay must be fixed in [0,1)')
             if use_ema:
                 if state is None:
-                    state = observation.new_full((len(logits), 1), self.alpha0)
+                    state = self.fixed_alpha.to(observation).expand(len(logits), 1).clone()
             elif state is None:
                 state = self.initial_state(len(logits), observation)
             alpha_values = []
@@ -140,14 +156,14 @@ class Router(nn.Module):
                 elif self.mode == 'conditional':
                     # READ OLD state first; current write affects only later windows.
                     delta = delta+self.read(torch.cat((obs, state), -1)).squeeze(-1)
-                    time_gap = torch.log1p(dt[:, t:t+1])
-                    update = self.write(torch.cat((obs, state, time_gap), -1)).sigmoid()
+                    # log1p(dt) is already in the common normalized observation.
+                    update = self.write(torch.cat((obs, state), -1)).sigmoid()
                     proposed = (1-update)*state+update*self.candidate(obs)
                 a = (self.base_logit+delta).sigmoid()
                 # Exact boundary alpha has no routing freedom; keep it exact and
                 # keep a zero-gradient graph rather than secretly perturbing it.
-                if self.alpha0 in (0., 1.):
-                    a = a*0+self.alpha0
+                if bool(self.exact_alpha_endpoint):
+                    a = a*0+self.fixed_alpha
                 if use_ema:
                     proposed = decay*state+(1-decay)*a[:, None]
                     a = proposed.squeeze(-1)
@@ -169,10 +185,12 @@ def window_nll(log_probs, labels, mask):
 
 def degeneracies(router):
     result = []
-    if router.eta0 < .01:
+    if float(router.fixed_eta) < .01:
         result.append('eta<0.01: alpha has little/no influence on final probabilities')
-    if router.alpha0 in (0., 1.) and router.mode not in ('fixed', 'static'):
+    if bool(router.exact_alpha_endpoint) and router.mode not in ('fixed', 'static'):
         result.append('boundary alpha0: dynamic correction is inactive to preserve exact initialization')
+    elif router.mode not in ('fixed', 'static') and float(router.fixed_alpha) in (0., 1.):
+        result.append('finite-logit sigmoid saturation: correction remains enabled; gradients may be numerically small/zero')
     if router.mode == 'static':
         result.append('static endpoint initializations are clamped to [1e-6,1-1e-6] before logit')
     return result

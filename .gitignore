@@ -170,6 +170,7 @@ Thumbs.db
 # Explicitly approved, small research-discussion snapshot (not raw experiment
 # trees). CSV/PDF exceptions apply only to these selected report files.
 /research_exports/*
+!/research_exports/ucf101_routing_epoch040_2026-10-23/
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/*_predictions_best_loss.csv
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/matched_epochs.csv

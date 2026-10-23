@@ -1,0 +1,4 @@
+-r requirements.txt
+# Install a matching torch/torchvision pair for the target server's CUDA first.
+torch>=2.0
+torchvision>=0.15

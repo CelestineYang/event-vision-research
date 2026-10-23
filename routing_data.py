@@ -13,13 +13,23 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
-SCHEMA = 1
+SCHEMA = 2
+OBSERVATION_SCHEMA = 2
+PROTOCOLS = ('strict', 'original_test_as_val')
 HEADS = ('fusion', 'point', 'cstr3', 'xt_p', 'ty_p')
 STATS = ('log1p_events_per_pixel_second', 'log1p_event_count',
          'occupied_pixel_fraction', 'point_samples_per_raw_event')
 OBSERVATIONS = tuple(f'{h}_{s}' for h in HEADS for s in ('normalized_entropy', 'top2_margin')) + (
-    'frame_point_js_divergence_log2', 'image_pair_agreement') + STATS
+    'frame_point_js_divergence_log2', 'image_pair_agreement') + STATS + ('log1p_dt_seconds',)
 ROLES = ('gate_train', 'gate_val', 'test', 'unassigned')
+
+
+def protocol_config(name):
+    if name not in PROTOCOLS:
+        raise ValueError('Unknown selection protocol')
+    return dict(selection_protocol=name, train_source_split='train', train_role='gate_train',
+                selection_split='test' if name == 'original_test_as_val' else 'gate_val_sources',
+                validation_role='gate_val', selection_metric='video_nll', independent_test=False)
 
 
 def digest(path):
@@ -51,14 +61,16 @@ def video_key(row):
 
 def validate_identity(identity):
     required = ('dataset_id', 'class_to_idx', 'checkpoint_sha256', 'data_manifest_sha256',
-                'code', 'normalization', 'sampling', 'export', 'expert_provenance', 'time_unit')
+                'code', 'normalization', 'sampling', 'export', 'expert_provenance', 'time_unit',
+                'selection_protocol')
     if any(k not in identity for k in required):
         raise ValueError('Incomplete cache identity')
+    protocol_config(identity['selection_protocol'])
     classes = identity['class_to_idx']
     if len(classes) < 2 or sorted(classes.values()) != list(range(len(classes))):
         raise ValueError('Class mapping must be contiguous and contain >=2 classes')
     if identity['time_unit'] != 'microseconds':
-        raise ValueError('Schema 1 timestamps are explicitly in microseconds')
+        raise ValueError('Schema 2 timestamps are explicitly in microseconds')
     if not identity['checkpoint_sha256'] or not identity['code']:
         raise ValueError('Checkpoint and code identity required')
 
@@ -70,6 +82,12 @@ def validate_row(row, identity):
         raise ValueError('Missing window metadata')
     if row['dataset_id'] != identity['dataset_id'] or row['role'] not in ROLES:
         raise ValueError('Dataset or role mismatch')
+    if row.get('selection_protocol') != identity['selection_protocol']:
+        raise ValueError('Window/cache selection protocol mismatch')
+    if row['role'] == 'gate_train' and row['source_split'] != 'train':
+        raise ValueError('Only original Train can be gate_train')
+    if row['role'] == 'gate_val' and row['source_split'] == 'test' and identity['selection_protocol'] != 'original_test_as_val':
+        raise ValueError('Test-as-Val requires explicit selection protocol')
     if not 0 <= int(row['label_id']) < len(identity['class_to_idx']):
         raise ValueError('Invalid label')
     if int(row['end_us']) <= int(row['start_us']):
@@ -135,7 +153,7 @@ class EvidenceWriter:
         self.stats.flush()
         (self.directory/'rows.jsonl').write_text(''.join(json.dumps(r, sort_keys=True)+'\n' for r in self.rows))
         files = {name: digest(self.directory/name) for name in ('logits.npy', 'stats.npy', 'rows.jsonl')}
-        manifest = dict(schema=SCHEMA, status='complete', heads=HEADS, statistics=STATS,
+        manifest = dict(schema=SCHEMA, observation_schema=OBSERVATION_SCHEMA, status='complete', heads=HEADS, statistics=STATS,
                         observations=OBSERVATIONS, temperature=1.0, identity=self.identity,
                         rows=len(self.rows), expected_keys_sha256=fingerprint(sorted(self.expected)), files=files)
         json_write(self.directory/'manifest.json', manifest)
@@ -152,7 +170,7 @@ class EvidenceCache:
             raise ValueError('Pending cache cannot be read')
         self.manifest = json.loads((self.directory/'manifest.json').read_text())
         m = self.manifest
-        if m.get('schema') != SCHEMA or m.get('status') != 'complete':
+        if m.get('schema') != SCHEMA or m.get('observation_schema') != OBSERVATION_SCHEMA or m.get('status') != 'complete':
             raise ValueError('Unsupported/incomplete evidence cache')
         if tuple(m['heads']) != HEADS or tuple(m['statistics']) != STATS or tuple(m['observations']) != OBSERVATIONS or m['temperature'] != 1.0:
             raise ValueError('Evidence schema/order/temperature mismatch')
@@ -191,7 +209,7 @@ class EvidenceCache:
         self.fingerprint = fingerprint(m)
 
 
-def observations(logits, stats):
+def observations(logits, stats, dt_seconds=None):
     """Only inference-available, class-count-independent features; no labels/IDs."""
     if logits.shape[-2] != len(HEADS) or stats.shape[-1] != len(STATS):
         raise ValueError('Observation schema mismatch')
@@ -210,7 +228,13 @@ def observations(logits, stats):
     pred = p[..., 2:, :].argmax(-1)
     agree = ((pred[..., 0] == pred[..., 1]).float()+(pred[..., 0] == pred[..., 2]).float()
              +(pred[..., 1] == pred[..., 2]).float())/3
-    result = torch.cat((confidence, js.unsqueeze(-1), agree.unsqueeze(-1), stats), -1)
+    if dt_seconds is None:
+        raise ValueError('Explicit per-video gap required')
+    dt_seconds = torch.as_tensor(dt_seconds, dtype=logits.dtype, device=logits.device)
+    if dt_seconds.shape != logits.shape[:-2] or (dt_seconds < 0).any() or not torch.isfinite(dt_seconds).all():
+        raise ValueError('Invalid raw time gap')
+    result = torch.cat((confidence, js.unsqueeze(-1), agree.unsqueeze(-1), stats,
+                        torch.log1p(dt_seconds).unsqueeze(-1)), -1)
     if not torch.isfinite(result).all():
         raise ValueError('Nonfinite Gate observation')
     return result
@@ -228,9 +252,9 @@ class ObservationNormalizer(torch.nn.Module):
         total = torch.zeros_like(self.mean, dtype=torch.float64)
         squares, count = total.clone(), 0
         for idx in data.indices:
-            if data.cache.rows[idx]['source_split'].lower() == 'test':
-                raise ValueError('Original Test cannot fit input normalization')
-            x = observations(torch.tensor(np.array(data.cache.logits[idx])), torch.tensor(np.array(data.cache.stats[idx]))).double()
+            if data.cache.rows[idx]['source_split'] != 'train':
+                raise ValueError('Only original Train can fit input normalization')
+            x = data.observation_for([idx])[0].double()
             total += x
             squares += x*x
             count += 1
@@ -256,12 +280,27 @@ class RoutingDataset(Dataset):
         for idx in self.indices:
             groups.setdefault(video_key(cache.rows[idx]), []).append(idx)
         self.groups = []
+        self.gaps, self.overlaps = {}, {}
         for key in sorted(groups):
             ids = sorted(groups[key], key=lambda i: int(cache.rows[i]['start_us']))
             starts = [int(cache.rows[i]['start_us']) for i in ids]
             if len(starts) != len(set(starts)):
                 raise ValueError('Duplicate window start within video')
+            for position, idx in enumerate(ids):
+                row = cache.rows[idx]
+                self.gaps[idx], self.overlaps[idx] = 0., 0.
+                if position:
+                    previous = cache.rows[ids[position-1]]
+                    start, end = int(row['start_us']), int(row['end_us'])
+                    old_start, old_end = int(previous['start_us']), int(previous['end_us'])
+                    self.gaps[idx] = (start-old_start)/1e6
+                    self.overlaps[idx] = max(old_end-start, 0)/min(old_end-old_start, end-start)
             self.groups.append(ids)
+
+    def observation_for(self, ids):
+        return observations(torch.tensor(np.array(self.cache.logits[ids])),
+                            torch.tensor(np.array(self.cache.stats[ids])),
+                            torch.tensor([self.gaps[i] for i in ids]))
 
     def __len__(self):
         return len(self.groups) if self.sequence else len(self.indices)
@@ -269,15 +308,11 @@ class RoutingDataset(Dataset):
     def __getitem__(self, index):
         ids = self.groups[index] if self.sequence else [self.indices[index]]
         rows = [self.cache.rows[i] for i in ids]
-        starts = torch.tensor([int(r['start_us']) for r in rows], dtype=torch.float64)
-        ends = torch.tensor([int(r['end_us']) for r in rows], dtype=torch.float64)
-        dt, overlap = torch.zeros(len(ids)), torch.zeros(len(ids))
-        if self.sequence and len(ids)>1:
-            dt[1:] = ((starts[1:]-starts[:-1])/1e6).float()
-            overlap[1:] = ((ends[:-1]-starts[1:]).clamp_min(0)/torch.minimum(ends[:-1]-starts[:-1], ends[1:]-starts[1:])).float()
+        dt = torch.tensor([self.gaps[i] for i in ids])
+        overlap = torch.tensor([self.overlaps[i] for i in ids])
         logits = torch.tensor(np.array(self.cache.logits[ids]))
         stats = torch.tensor(np.array(self.cache.stats[ids]))
-        return dict(logits=logits, observations=observations(logits, stats), dt=dt, overlap=overlap,
+        return dict(logits=logits, observations=observations(logits, stats, dt), dt=dt, overlap=overlap,
                     labels=torch.tensor([int(r['label_id']) for r in rows]), rows=rows)
 
 
@@ -296,18 +331,26 @@ def collate_sequences(items):
     return result
 
 
-def validate_training_roles(train, val, *, allow_seen_experts=False):
+def validate_training_roles(train, val, *, allow_seen_experts=False, selection_protocol='strict'):
+    protocol_config(selection_protocol)
     if train.role != 'gate_train' or val.role != 'gate_val':
         raise ValueError('Fit requires explicit gate_train and gate_val roles')
     if train.cache.identity != val.cache.identity:
         raise ValueError('Train/validation expert identities differ')
+    if train.cache.identity['selection_protocol'] != selection_protocol:
+        raise ValueError('Cache/training selection protocol differs')
     train_videos = {r['video_id'] for i in train.indices for r in [train.cache.rows[i]]}
     val_videos = {r['video_id'] for i in val.indices for r in [val.cache.rows[i]]}
     if train_videos & val_videos:
         raise ValueError('Gate training/validation videos overlap')
-    for data in (train, val):
-        if any(data.cache.rows[i]['source_split'].lower() == 'test' for i in data.indices):
-            raise ValueError('Original Test cannot fit/select Gate or normalization')
+    if any(train.cache.rows[i]['source_split'] != 'train' for i in train.indices):
+        raise ValueError('Only original Train can fit Gate parameters')
+    if selection_protocol == 'original_test_as_val':
+        if any(val.cache.rows[i]['source_split'] != 'test' for i in val.indices):
+            raise ValueError('original_test_as_val requires original Test validation')
+        return  # Seen/unknown exposure is retained, not relabeled.
+    if any(val.cache.rows[i]['source_split'].lower() == 'test' for i in val.indices):
+        raise ValueError('Strict protocol prohibits original Test selection')
     exposure = {val.cache.rows[i][k] for i in val.indices
                 for k in ('expert_fit_exposure', 'expert_selection_exposure')}
     if exposure != {'unseen'} and not allow_seen_experts:
