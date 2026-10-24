@@ -172,6 +172,8 @@ Thumbs.db
 /research_exports/*
 !/research_exports/ucf101_routing_epoch040_2026-10-23/
 !/research_exports/ucf101_routing_stage2_2026-10-23/
+!/research_exports/ucf101_routing_stage3_2026-10-24/
+!/research_exports/ucf101_routing_stage3_2026-10-24/cpu_tests.log
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/*_predictions_best_loss.csv
 !/research_exports/ucf101_filename_v2_fusion_A_2026-10-20/matched_epochs.csv
@@ -184,3 +186,17 @@ Thumbs.db
 /reports/routing_stage2/*
 !/reports/routing_stage2/artifact_audit_final.json
 !/reports/routing_stage2/cpu_tests.log
+
+# Stage-3 small audit/test/baseline reports only; no model or probability arrays.
+!/reports/routing_stage3/
+/reports/routing_stage3/*
+!/reports/routing_stage3/cpu_tests.log
+!/reports/routing_stage3/audit_v1/
+/reports/routing_stage3/audit_v1/*
+!/reports/routing_stage3/audit_v1/audit.json
+!/reports/routing_stage3/train_baselines_v1/
+/reports/routing_stage3/train_baselines_v1/*
+!/reports/routing_stage3/train_baselines_v1/analysis.md
+!/reports/routing_stage3/train_baselines_v1/summary.json
+!/reports/routing_stage3/train_baselines_v1/audit.json
+!/reports/routing_stage3/train_baselines_v1/status.json

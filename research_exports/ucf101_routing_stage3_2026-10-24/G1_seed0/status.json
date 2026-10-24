@@ -1,0 +1,6 @@
+{
+  "best_video_nll": 0.1908591005446127,
+  "epochs": 80,
+  "optimizer_steps": 25760,
+  "status": "complete"
+}

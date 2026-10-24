@@ -1,0 +1,360 @@
+{
+  "G1_seed0/best_metrics.json": {
+    "included": true,
+    "sha256": "17d5572e0e9ba299ce796c005d0ff299110a21f80b7dc5ef8fdf43203de977c1",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/best/metrics.json"
+  },
+  "G1_seed0/best_val_nll.pt": {
+    "included": false,
+    "sha256": "8a0d3e1873969449a22ba690d1bd12d6de292ffcc253d740d479d82d332eed1d",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/best_val_nll.pt"
+  },
+  "G1_seed0/config.json": {
+    "included": true,
+    "sha256": "f6b8ebab7d32a57200d55412ba0395bd5a89d5e0c2da7da5ce17678c4eb51e72",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/config.json"
+  },
+  "G1_seed0/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/epoch0.json"
+  },
+  "G1_seed0/last.pt": {
+    "included": false,
+    "sha256": "7bc51f4c6015aba67b7fa26d8d475d6feb6b0ecb133c5579553bad2bf6b8a452",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/last.pt"
+  },
+  "G1_seed0/metrics.jsonl": {
+    "included": true,
+    "sha256": "b751ed16a70effc0a0b7a7bbce4d91fe7f499bcf395aefcd43534335671d05e3",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/metrics.jsonl"
+  },
+  "G1_seed0/status.json": {
+    "included": true,
+    "sha256": "59de4866c906230bd651917fb7c9c276375eecfd4dc72c21497f627ed6bcd1ee",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/status.json"
+  },
+  "G1_seed0/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed0/best/video_index.json",
+    "source_sha256": "b7e7c4557540885fbbfba433f4d91321fc0f73a3d7600dd9d7423816fedea8ea",
+    "transformation": "remove window_index only"
+  },
+  "G1_seed1/best_metrics.json": {
+    "included": true,
+    "sha256": "23a0b5e7d189cf1744f3e790af20ef183e83454acc6dc936c797cc905e304cd5",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/best/metrics.json"
+  },
+  "G1_seed1/best_val_nll.pt": {
+    "included": false,
+    "sha256": "045432fec0befd9df7c3d366963ab2cb3e860df85dcf2a4a610cbd46af08197b",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/best_val_nll.pt"
+  },
+  "G1_seed1/config.json": {
+    "included": true,
+    "sha256": "26d14db8b107aa31bc469f18148a5a89248c410b30fdfcf2d412b9dd323f3bd6",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/config.json"
+  },
+  "G1_seed1/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/epoch0.json"
+  },
+  "G1_seed1/last.pt": {
+    "included": false,
+    "sha256": "05af88c3e9941e71229eff419511509d6ac462e45e577a7d0dcc61a0eb1ae74c",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/last.pt"
+  },
+  "G1_seed1/metrics.jsonl": {
+    "included": true,
+    "sha256": "851109b66e9abf83a63a49bdc6782abe54973856614bc5dab69089521fcbb39a",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/metrics.jsonl"
+  },
+  "G1_seed1/status.json": {
+    "included": true,
+    "sha256": "4bcc2bb380d417bd3ef509d815855b275fc52eca1856eb923d82cc8f535bd018",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/status.json"
+  },
+  "G1_seed1/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed1/best/video_index.json",
+    "source_sha256": "071eefd0ad96170f5c25d28d72658bd2c2bf5cbfaaeab5f6ddb0571903fa4226",
+    "transformation": "remove window_index only"
+  },
+  "G1_seed2/best_metrics.json": {
+    "included": true,
+    "sha256": "6d7a644faa58b86036c02ff8c96e99aaac7378548ba51bdd3deb5f26bd7a1e9b",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/best/metrics.json"
+  },
+  "G1_seed2/best_val_nll.pt": {
+    "included": false,
+    "sha256": "fcf2b206eca8bb39b450b72068769203970d6f9629ae9c2d43c354de958cfe34",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/best_val_nll.pt"
+  },
+  "G1_seed2/config.json": {
+    "included": true,
+    "sha256": "ed2a3ee1c0fa6a7562553be4ad2cda83e95f074e171c7c01b109e7c545cc793f",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/config.json"
+  },
+  "G1_seed2/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/epoch0.json"
+  },
+  "G1_seed2/last.pt": {
+    "included": false,
+    "sha256": "9904ea986b2edd89bb7d5fa9f8a56ac8078e797621e084c582f223d2cfc907fc",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/last.pt"
+  },
+  "G1_seed2/metrics.jsonl": {
+    "included": true,
+    "sha256": "8cc313e282d28eebdf60c68bf2c6af28b7187d75bf8f7ca26f246e6ba0d9334e",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/metrics.jsonl"
+  },
+  "G1_seed2/status.json": {
+    "included": true,
+    "sha256": "d15ae9ab5a7dd8a4a06b09e1ac767d81e95f4337895c22c4ebd28685981f8b44",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/status.json"
+  },
+  "G1_seed2/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G1_seed2/best/video_index.json",
+    "source_sha256": "e38f68839f09e6c4291e4fa61854f76348cbddaf46e5be40e6d502ddfb3d7ee7",
+    "transformation": "remove window_index only"
+  },
+  "G2_seed0/best_metrics.json": {
+    "included": true,
+    "sha256": "8a28792662f8e174e5bcf9dfbaa5bc7265116e8369140db03c7a77ba1d61074b",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/best/metrics.json"
+  },
+  "G2_seed0/best_val_nll.pt": {
+    "included": false,
+    "sha256": "b7fa82a717a1a9d147c2a52320fdbdcc55501a65627f2bba5d844d987661a530",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/best_val_nll.pt"
+  },
+  "G2_seed0/config.json": {
+    "included": true,
+    "sha256": "7f2da5e8a82336ed1a493f87650cebc2bd9e21d30bba530fbe6980729872cd03",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/config.json"
+  },
+  "G2_seed0/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/epoch0.json"
+  },
+  "G2_seed0/last.pt": {
+    "included": false,
+    "sha256": "9657515a7d08bdd269c8b150753923dc9f55fd2693d0dcae8c5ffc88f8b11ad8",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/last.pt"
+  },
+  "G2_seed0/metrics.jsonl": {
+    "included": true,
+    "sha256": "5f6830a9b7548fac8993bf829488ca379efb7bcb01f45a14c61ab04d878d5ace",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/metrics.jsonl"
+  },
+  "G2_seed0/status.json": {
+    "included": true,
+    "sha256": "1bb256809fca5993c9b76882d0c77fbf80ef7c8eb25858e9c1c7acb0b6817123",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/status.json"
+  },
+  "G2_seed0/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed0/best/video_index.json",
+    "source_sha256": "f8480d788f5846af60cb44ff0f74fa03b3c12b5dc0bacf2565663ceefa9a408d",
+    "transformation": "remove window_index only"
+  },
+  "G2_seed1/best_metrics.json": {
+    "included": true,
+    "sha256": "cd88459f35ce77769b3202b8f07a2e2285f9a32f037e95ab7cda88b66621f0d9",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/best/metrics.json"
+  },
+  "G2_seed1/best_val_nll.pt": {
+    "included": false,
+    "sha256": "e044e6b725bafc7b6fd9d060344b2a56c9572f9f813247829e3bd692dc794f29",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/best_val_nll.pt"
+  },
+  "G2_seed1/config.json": {
+    "included": true,
+    "sha256": "ff25b4b83d8e345bc785e6ea87dcfc0d215fc7f54c218893f61083f942fac88f",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/config.json"
+  },
+  "G2_seed1/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/epoch0.json"
+  },
+  "G2_seed1/last.pt": {
+    "included": false,
+    "sha256": "506d6b2f6574e25a0901f6bfd62b035cf513d1b6511af28da46f57387df148e1",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/last.pt"
+  },
+  "G2_seed1/metrics.jsonl": {
+    "included": true,
+    "sha256": "6d9805ec1d5b7225acfe49530f849a8268766f7b5a83e85baa138c43de0d12fb",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/metrics.jsonl"
+  },
+  "G2_seed1/status.json": {
+    "included": true,
+    "sha256": "1d7685252ca756a011858abf0ea3166263ac1aa334bb6a13913eea74c38f0a3c",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/status.json"
+  },
+  "G2_seed1/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed1/best/video_index.json",
+    "source_sha256": "ee43ea14a384ae856c26d4bbb6ab77bb005083c340c9a2a28dbfb00dd78f6f03",
+    "transformation": "remove window_index only"
+  },
+  "G2_seed2/best_metrics.json": {
+    "included": true,
+    "sha256": "0c8ba85fe3556e407712719c2dc2ab8163fff0c019380739176b0e94a4aa7c85",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/best/metrics.json"
+  },
+  "G2_seed2/best_val_nll.pt": {
+    "included": false,
+    "sha256": "01bce381b3b34941694b40dbc6dcd9716f4788fb84d99ccb5a5b5d508a96bc68",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/best_val_nll.pt"
+  },
+  "G2_seed2/config.json": {
+    "included": true,
+    "sha256": "6f6b37589a2e146b3588d57497a3ef6dff7c651df9e1b69e0b2ec1ca08697856",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/config.json"
+  },
+  "G2_seed2/epoch0.json": {
+    "included": true,
+    "sha256": "9db50126fd0be4ef096bf317a51050f82a9c47c309f1e0b60411e82f67d08aec",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/epoch0.json"
+  },
+  "G2_seed2/last.pt": {
+    "included": false,
+    "sha256": "845ec7d50c16610309fea7cef4e45b04a18088104feecafef2b8dc0321afeb59",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/last.pt"
+  },
+  "G2_seed2/metrics.jsonl": {
+    "included": true,
+    "sha256": "7a259cfc5af170f2fc9538f99fcb66a0cc59fe942f3e348971e6a76e06cc0297",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/metrics.jsonl"
+  },
+  "G2_seed2/status.json": {
+    "included": true,
+    "sha256": "c8f3960cc781c6112605911e55af4147908004521d6509d32d03bf9bc7d82061",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/status.json"
+  },
+  "G2_seed2/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G2_seed2/best/video_index.json",
+    "source_sha256": "8057288455d76b42ca4910e78dadc36cefb35ab3d0baa9890a4bfe90eac0d7e2",
+    "transformation": "remove window_index only"
+  },
+  "G3_seed0/best_metrics.json": {
+    "included": true,
+    "sha256": "a02eb4c95c81a5debaf87cceaa2fcbbeed19f74833e747be14e6e940e7eec424",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/best/metrics.json"
+  },
+  "G3_seed0/best_val_nll.pt": {
+    "included": false,
+    "sha256": "29e94a1f6a7158aa4edbe99d43e742e0e4b40302daa914a21e05ada6fbb89f0e",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/best_val_nll.pt"
+  },
+  "G3_seed0/config.json": {
+    "included": true,
+    "sha256": "358730fabadde71b85ce92df9e26afdb972eb37c90ee265161c0d801acf2e4a0",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/config.json"
+  },
+  "G3_seed0/epoch0.json": {
+    "included": true,
+    "sha256": "6985cada8c17cde7bb2397b2feabdc3c916d137342bbf1d458d581047ad2168d",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/epoch0.json"
+  },
+  "G3_seed0/last.pt": {
+    "included": false,
+    "sha256": "5b39b009e493954b12fc0b2fef214415a2f2b2307f59a97419450fe372fa2c29",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/last.pt"
+  },
+  "G3_seed0/metrics.jsonl": {
+    "included": true,
+    "sha256": "8b375fe34f1c50bb80e94d4f53851bc17210ec38ae6731d3e5f045a6d3585527",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/metrics.jsonl"
+  },
+  "G3_seed0/status.json": {
+    "included": true,
+    "sha256": "707f967ce2c3f540191da6d9430a03dc290df99012fa723fbb08cb7cfdfb64f5",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/status.json"
+  },
+  "G3_seed0/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G3_seed0/best/video_index.json",
+    "source_sha256": "934d732cb1cff7c54aef842a0a6854742c7ba878a2a17432167a57f34c601b27",
+    "transformation": "remove window_index only"
+  },
+  "G4_seed0/best_metrics.json": {
+    "included": true,
+    "sha256": "9717052c5e552bf08e4888e3506b5e7b2a61ecdc0d5adae2888422ff20396be2",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/best/metrics.json"
+  },
+  "G4_seed0/best_val_nll.pt": {
+    "included": false,
+    "sha256": "12ac879db9c32b07a215afa2fc26a555dd56344458347e20b80230792a7e9b96",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/best_val_nll.pt"
+  },
+  "G4_seed0/config.json": {
+    "included": true,
+    "sha256": "0ace51dc7183d7f60c00f1579b53b91e4216bc91f8281e1eb3ff6c5562dc6c31",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/config.json"
+  },
+  "G4_seed0/epoch0.json": {
+    "included": true,
+    "sha256": "6985cada8c17cde7bb2397b2feabdc3c916d137342bbf1d458d581047ad2168d",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/epoch0.json"
+  },
+  "G4_seed0/last.pt": {
+    "included": false,
+    "sha256": "c064b5d3d61db286c7d44df33f41076453f69c1b7fb31e3d93255d0f33ae9048",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/last.pt"
+  },
+  "G4_seed0/metrics.jsonl": {
+    "included": true,
+    "sha256": "9002eea21a6768104aba4df1d5608b27280a3e1423a496b6b5dc5009ae4949d6",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/metrics.jsonl"
+  },
+  "G4_seed0/status.json": {
+    "included": true,
+    "sha256": "1a2fbf6aa86bcdf1c18fe116a6e79bf324324aa88aec25191b7eac5996842673",
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/status.json"
+  },
+  "G4_seed0/video_predictions_best.json": {
+    "included": true,
+    "source": "/remote-home/chenhaoquan/event_project/checkpoints/routing_stage3_G4_seed0/best/video_index.json",
+    "source_sha256": "01d68a8a48b4ca953d47e159a200fbc4d787b9105335431e5bc9aad98a5ba089",
+    "transformation": "remove window_index only"
+  },
+  "cpu_tests.log": {
+    "included": true,
+    "sha256": "f5ffd426e055e263fba5c2032d1a2884720f09df4d427ac6312b6a46d6bb63bc",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/cpu_tests.log"
+  },
+  "input_audit.json": {
+    "included": true,
+    "sha256": "750704b9203980cd8f107b5ceea899d1798f6b450509d307757e7e0b94c418cb",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/audit_v1/audit.json"
+  },
+  "seed0_analysis/curves.png": {
+    "included": true,
+    "sha256": "ea10c3d4afdcd4de1858d5fc38455f1c352e3b5237182831b77e36ebb68813b4",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/full_analysis_v1/curves.png"
+  },
+  "seed0_analysis/report.md": {
+    "included": true,
+    "sha256": "7655f031289a28c4c836714d958ca80c0a90fbb9cdc8278f685b5a0d61673d47",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/full_analysis_v1/report.md"
+  },
+  "seed0_analysis/training_summary.json": {
+    "included": true,
+    "sha256": "170173b12ee73a16cde3823740c46c2d1db5a5fc553997749b9037b742306491",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/full_analysis_v1/training_summary.json"
+  },
+  "train_baselines.md": {
+    "included": true,
+    "sha256": "a3584e835d101185ace6b3a6ef5515cebc14607ebb3911d0dad7e680de02c7b3",
+    "source": "/remote-home/chenhaoquan/event_project/reports/routing_stage3/train_baselines_v1/analysis.md"
+  }
+}

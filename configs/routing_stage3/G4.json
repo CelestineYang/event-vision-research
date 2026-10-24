@@ -1,0 +1,19 @@
+{
+  "id": "G4",
+  "sources": "research_exports/ucf101_routing_epoch040_2026-10-23/sources.json",
+  "selection_protocol": "original_test_as_val",
+  "independent_test": false,
+  "train_role": "gate_train",
+  "val_role": "gate_val",
+  "eta_mode": "current",
+  "loss_mode": "video_nll",
+  "epochs": 80,
+  "batch_size": 32,
+  "batch_unit": "video",
+  "hidden": 64,
+  "lr": 0.001,
+  "weight_decay": 0,
+  "gradient_clip": 1,
+  "seed": 0,
+  "ece_bins": 15
+}

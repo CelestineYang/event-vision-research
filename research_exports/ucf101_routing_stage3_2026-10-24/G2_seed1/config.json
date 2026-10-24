@@ -1,0 +1,81 @@
+{
+  "architecture": "current_alpha_outer_eta_v3",
+  "batch_size": 32,
+  "batch_unit": "video",
+  "cache_schema": 2,
+  "code": {
+    "analyze_fusion_routing.py": "00cd2ab4278acc98f33c29f6b31287b989b024d5a8e8a7a71663d5d160b99dfd",
+    "evaluate_fusion_routing_suite.py": "0663e0170c284f391c278e6197b8a55032139d2a2c2c48e3008b318ceb6247e4",
+    "evaluate_fusion_routing_v3.py": "ca6b0c691f4eb9eea974d4384f7a1bfb948be6e8b2ba09fc1c65567b416a3a33",
+    "fusion_router.py": "8e2474da553b23add02e1df55522cdcdfa949a676474f0564bdaa6ae27c09b69",
+    "fusion_router_v3.py": "5cc687c9dec26dab2e0ac6ddffeb0cd45d5d076b0a5692563388dcee5a176bd3",
+    "routing_data.py": "a93e0c313a389ea61e7ac169136f4d8aa2dbaa0373dc2d34600e1a5876ed9290",
+    "routing_stage2.py": "ab44f97c2f5aef345b63fd10ef7fcec1cd51966a126415787f8ef20ac92ca2b9",
+    "train_fusion_routing.py": "a290b6ba53b28a5e06779d29a69914f5c63ddf005d67f05672a2f47ed44b2d86",
+    "train_fusion_routing_v3.py": "ec18ef93651a5c6258804a15cb10484c431441b502b0f657a47d3eb0c7901af0"
+  },
+  "ece_bins": 15,
+  "effective_steps_per_epoch": 322,
+  "epoch0_selection": false,
+  "epoch_loss_scaling": "sum(loss_terms) * steps_per_epoch / windows_per_epoch",
+  "epochs": 80,
+  "eta_mode": "current",
+  "expert_provenance": {
+    "fit_source_splits": [
+      "train"
+    ],
+    "independent_test": false,
+    "initialization_images_sha256": {
+      "cstr3": "c4f9ef8cb934f6dc130c4d96b293f9eda863d662f04d3369845a31df0e0ccef3",
+      "ty_p": "ae9de57323189ff8cda7a38d8e12eb8b8535e4fe1c00e7e165f3fca3f03ea8c0",
+      "xt_p": "2045c6e21804c1e60dd6d59dbaa95690da8569a8c27d7a758a37942be302fe1e"
+    },
+    "initialization_point_sha256": "499cf427b08c6e9b50df686600ebebb6f58eb514caec6032a1bd7561a55ed6d4",
+    "point": "co-trained Point head from SAME restored fusion state",
+    "provenance_basis": "existing Fusion A training protocol/config",
+    "selection_source_splits": [
+      "test"
+    ],
+    "upstream_point_fit_identity": "unknown: no verifiable per-video manifest in official initializer"
+  },
+  "gradient_clip": 1,
+  "hidden": 64,
+  "id": "G2",
+  "independent_test": false,
+  "loss_mode": "window_nll",
+  "lr": 0.001,
+  "model_schema": 3,
+  "normalizer_fit": "copied unchanged from unrestricted Static Train state; never refit",
+  "observation_schema": 2,
+  "observations": [
+    "fusion_normalized_entropy",
+    "fusion_top2_margin",
+    "point_normalized_entropy",
+    "point_top2_margin",
+    "cstr3_normalized_entropy",
+    "cstr3_top2_margin",
+    "xt_p_normalized_entropy",
+    "xt_p_top2_margin",
+    "ty_p_normalized_entropy",
+    "ty_p_top2_margin",
+    "frame_point_js_divergence_log2",
+    "image_pair_agreement",
+    "log1p_events_per_pixel_second",
+    "log1p_event_count",
+    "occupied_pixel_fraction",
+    "point_samples_per_raw_event",
+    "log1p_dt_seconds"
+  ],
+  "optimizer": "Adam",
+  "parameter_count": 2435,
+  "precision": "FP32",
+  "seed": 1,
+  "selection_metric": "video_nll",
+  "selection_protocol": "original_test_as_val",
+  "sources": "research_exports/ucf101_routing_epoch040_2026-10-23/sources.json",
+  "static_init_epoch": 10,
+  "static_init_sha256": "5524912a1633cabb0f5f1fb83c9aa5e1bbe4bfed88a265334d855b1bf155bf56",
+  "train_role": "gate_train",
+  "val_role": "gate_val",
+  "weight_decay": 0
+}

@@ -24,6 +24,11 @@
 实际配置、选中预测、小型配对汇总与来源 SHA；不包含权重或完整概率数组。
 `reports/routing_stage2/` 仅允许最终完整性审计与 CPU 测试日志，其他 reports 仍排除。
 
+2026-10-24经用户授权，第三阶段精选快照位于
+`research_exports/ucf101_routing_stage3_2026-10-24/`：允许完整训练指标、配置、
+选中模型的精简视频预测、曲线、三种子配对统计及来源SHA；不含权重、缓存或完整概率数组。
+`reports/routing_stage3/`仅允许明确列出的CPU测试、输入审计和一次性Train基线小型报告。
+
 ```bash
 git status --short
 git diff
