@@ -200,3 +200,6 @@ Thumbs.db
 !/reports/routing_stage3/train_baselines_v1/summary.json
 !/reports/routing_stage3/train_baselines_v1/audit.json
 !/reports/routing_stage3/train_baselines_v1/status.json
+
+# User-approved public research snapshot, 2026-10-27 (metrics only, no weights).
+!/research_exports/thu_chl_ablation_2026-10-27/

@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/rhwxmx/EventMamba",
+  "commit": "7f61fd397cf69f10f0f92a182109d36cd7b6fdbb",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "models/__pycache__/eventmamba.cpython-38.pyc",
+    "models/__pycache__/eventmamba_v1.cpython-38.pyc",
+    "models/__pycache__/eventmamba_v2.cpython-38.pyc",
+    "models/__pycache__/mamba_layer.cpython-38.pyc",
+    "models/__pycache__/modules.cpython-38.pyc",
+    "models/eventmamba_v1.py",
+    "models/eventmamba_v2.py",
+    "models/mamba_layer.py",
+    "models/modules.py"
+  ]
+}

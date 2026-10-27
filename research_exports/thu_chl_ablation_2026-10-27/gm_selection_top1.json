@@ -1,0 +1,17 @@
+{
+  "experiment": "THU-CHL GM",
+  "selection_metric": "video_top1",
+  "historical_best_epoch": 10,
+  "tied_epochs": [
+    10
+  ],
+  "video_top1": 0.8125,
+  "correct": 442,
+  "videos": 544,
+  "video_nll_at_first_top1_winner": 0.8097812655508461,
+  "last_logged_epoch": 50,
+  "checkpoint_available": true,
+  "checkpoint": "best_top1.pt (not distributed)",
+  "checkpoint_epoch": 10,
+  "note": "Exact winning weights preserved; legacy NLL checkpoints retained separately"
+}

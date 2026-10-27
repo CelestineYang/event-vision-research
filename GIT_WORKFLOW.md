@@ -63,3 +63,9 @@ git push origin main
 
 推送完成后核对远端main的SHA与本地HEAD一致。认证失败时分别报告本地
 提交和远端上传状态，不把“本地已提交”说成“已上传”。禁止强制推送。
+
+## 2026-10-27 发布范围更新
+
+用户授权同步消融源码、可复现配置及有用的正式研究资料。API核验该仓库当前为 public；旧文档的 private 描述是历史状态。公开发布使用 `configs/examples/` 中的路径占位模板、`PROJECT_CONTINUITY.md` 和 `research_exports/thu_chl_ablation_2026-10-27/` 中已完成的 GM 指标。原始数据、权重、服务器路径、实时运行状态和故障日志仍保留本地。用户明确表示无需同步 OOM 等运行插曲。
+
+有已连接且具有写权限的 GitHub App 时，可使用其 Git data API 创建 tree/commit，再以预期旧 SHA 和非强制更新 main；无需重复设备登录。推送前后均核对仓库与分支 SHA。API 发布必须同步本地 Git objects、索引和 main，不能只更新远端却声称本地已提交。
