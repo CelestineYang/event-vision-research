@@ -14,6 +14,7 @@ For THU-CHL, all variants start from the same independently pretrained image bra
 - `train_thu_chl_ablation.py`: THU single-GPU training, Top-1 selection, additional NLL checkpoint, epoch-boundary resume.
 - `thu_chl_sequence_dataset.py`: chronological video windows and aligned image/point augmentation.
 - `thu_chl_ablation_fusion.py`: strict independent-branch loading and identity checks.
+- `train_thu_chl_memory_only.py`: isolated M (base fusion + memory residual) training; see `THU_CHL_MEMORY_ONLY.md`. M removes the complete PF supplement, retains the memory writer gate, and is distinct from GM-FeatureOnly. Its CPU tests and strict pretrained-branch loading pass; real CUDA smoke and formal training remain pending.
 - `train_gcstr_feature_memory_ablation.py`, `evaluate_gcstr_feature_memory_ablation.py`: UCF ablation training/evaluation.
 - `prepare_ucf101_ablations.py`: relocate UCF configs and audit supplied assets.
 - `configs/examples/`: portable configuration templates. Replace `ASSET_ROOT` and `LOCAL_PATH` strings with actual paths; these are literal placeholders, not automatically expanded environment variables. Copy THU templates to `configs/thu_chl_ablations/` and UCF templates to `configs/feature_memory_ablations/` for tests and default benchmark commands.
