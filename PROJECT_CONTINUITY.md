@@ -6,7 +6,7 @@ This repository preserves implementation and research artifacts, not chat histor
 
 The project combines full-event gCSTR image projections with EventMamba point features. B is the base prototype fusion architecture; G adds an independent frame reader and a gated feature residual; GM adds causal cross-window feature memory. G-FixedGate fixes the added gate to 0.5 while retaining the frame reader and residual MLP. Therefore B versus G does not isolate the gate alone.
 
-For THU-CHL, all variants start from the same independently pretrained image branches and EventMamba V1 checkpoint, with newly initialized fusion. They do not initialize from a trained Fusion A model. UCF experiments use a different initialization protocol; do not mix their configs with THU.
+For THU-CHL, all variants start from the same independently pretrained image branches and EventMamba V1 checkpoint, with newly initialized fusion. They do not initialize from a trained Fusion A model. Historical UCF GM instead started from trained Fusion A epoch 40. The new independent-initialization UCF entry is prepared but has no formal training result; do not mix these protocols.
 
 ## Entry points
 
@@ -25,12 +25,20 @@ For THU-CHL, all variants start from the same independently pretrained image bra
 
 Historical-GM-aligned configs are under `configs/examples/thu_chl_ablations/gm_aligned/`: global video batch 48, TBPTT 4, 50 epochs, seed 0, FP32, AdamW, weight decay 1e-4, clip 1, no scheduler or early stopping. Point LR 1e-5, base fusion LR 5e-5, new-module LR 1e-4. Freeze image encoders and Point BN running statistics. Loss is fusion CE + 0.5 Point CE. Select by video Top-1; local code breaks ties with lower NLL and saves a separate NLL-best checkpoint.
 
-Historical GM used three DDP ranks, local batch 16; current training entry processes global batch 48 on one GPU. Global grouping and update counts match, but random-number streams and floating-point execution are not bitwise identical. `train_thu_chl_ablation.py` does not implement gradient accumulation. Concurrency and memory availability must be checked on the destination machine.
+Historical GM used three DDP ranks, local batch 16; completed G used global batch 48 on one GPU. Global grouping and update counts match, but random-number streams and floating-point execution are not bitwise identical. `train_thu_chl_ablation.py` does not implement gradient accumulation. Concurrency and memory availability must be checked on the destination machine.
 
-## Preserved evidence and pending work
+## Results as of 2026-11-03
 
-`research_exports/thu_chl_ablation_2026-10-27/` contains the completed historical GM metrics and verification summary. GM reached 81.25% video Top-1 at epoch 10; its Top-1- and NLL-selected model tensors are identical. Do not report unfinished local ablations as completed results.
+The current source of truth is [the main/ablation snapshot](research_exports/main_ablation_2026-11-03/README.md), including complete curves, selection rules, four prediction tables and input/checkpoint checksums.
 
-UCF ablation preparation includes synthetic CPU tests and real Train-only CUDA smoke checks; see the tests and configuration-generation entry point. Remaining research work includes completing protocol-matched THU baselines and Gate/Memory ablations and comparing selected checkpoints. A plan or prepared config is not proof that a run completed.
+- THU-CHL: G completed 50 epochs, selected epoch 40, 439/544 = 80.6985% video Top-1. GM completed 50 epochs, selected epoch 10, 442/544 = 81.25%. Both evaluate all 2,392 windows. The +3-video difference is one seed with single-GPU/DDP execution differences. B and M have no completed result; G-FixedGate is also incomplete and G-GlobalGate deferred.
+- DVSAction: GM completed 50 epochs, selected epoch 47, 51/57 = 89.4737%; 239 Test windows. Independent pretrained branches, new fusion, shared spatial augmentation of distinct raw-image/SNN-point populations. No completed B/G/M ablations.
+- UCF101-DVS: historical Fusion A log maximum is 96.1252% at epoch 40; historical GM log maximum is 96.7123% at epoch 47. The latter weights were not retained. Its retained NLL-selected epoch 17 scores 96.2427%. GM initializes from trained Fusion A, so this is not a matched independent-initialization comparison. The new fresh-GM entry is prepared, not formally trained.
+- DailyDVS-200: no completed current-window-protocol fusion main experiment or B/G/M/GM ablation. Standalone branch pretraining is outside this result snapshot's scope.
+- Historical frozen-expert probability routing is an appendix, not feature-level G/GM. Its G2 three-seed mean is 96.7776% ± 0.0815 percentage points (sample SD), selected by NLL on the original Test.
 
-Raw datasets, pretrained weights, experiment directories, machine-specific configs and private local handoffs stay outside Git. Keep them backed up separately. No training task should auto-start merely because this document was read.
+All listed main results use the original Test for checkpoint selection. No claim of an untouched final evaluation set. A prepared configuration or successful smoke test is not a completed experiment.
+
+New entry points: `train_dvsaction_gm.py`, `train_ucf101_fresh_gm.py`, DVSAction preprocessing under `dvsaction_preprocessing/`, DailyDVS-200 prepared-window adaptation under `dailydvs200_prepared_data.py`, and point pretraining under `train_eventmamba_paper.py`. See their runbooks before reuse.
+
+Raw datasets, weights, experiment directories, machine-specific configs and local handoffs remain outside Git. No task should auto-start merely because this document is read. This publication leaves active training sources unchanged; their local path defaults may differ from portable public versions and must remain unchanged for identity-checked resume.

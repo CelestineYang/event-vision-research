@@ -1,0 +1,208 @@
+{
+  "snapshot_date": "2026-11-03",
+  "generated_at": "2026-11-03T11:59:04.625507+08:00",
+  "scope": "Main fusion experiments and ablations; standalone branch pretraining and early prototypes excluded.",
+  "results": [
+    {
+      "dataset": "THU-CHL",
+      "method": "G",
+      "selection": "video_top1_then_nll",
+      "completed_epochs": 50,
+      "selected_epoch": 40,
+      "video_top1_pct": 80.69852941176471,
+      "video_top5_pct": 93.56617647058823,
+      "video_nll": 0.8668723638342847,
+      "videos": 544,
+      "windows": 2392,
+      "correct": 439,
+      "winning_weights_retained": true,
+      "initialization": "fresh_fusion",
+      "execution": "single_gpu_global48",
+      "independent_test": false
+    },
+    {
+      "dataset": "THU-CHL",
+      "method": "GM",
+      "selection": "video_top1_then_nll",
+      "completed_epochs": 50,
+      "selected_epoch": 10,
+      "video_top1_pct": 81.25,
+      "video_top5_pct": 94.85294117647058,
+      "video_nll": 0.8097812655508461,
+      "videos": 544,
+      "windows": 2392,
+      "correct": 442,
+      "winning_weights_retained": true,
+      "initialization": "fresh_fusion",
+      "execution": "DDP3_local16_global48",
+      "independent_test": false
+    },
+    {
+      "dataset": "DVSAction",
+      "method": "GM",
+      "selection": "video_top1_then_nll",
+      "completed_epochs": 50,
+      "selected_epoch": 47,
+      "video_top1_pct": 89.47368421052632,
+      "video_top5_pct": 100.0,
+      "video_nll": 0.34803432930048683,
+      "videos": 57,
+      "windows": 239,
+      "correct": 51,
+      "winning_weights_retained": true,
+      "initialization": "fresh_fusion",
+      "execution": "single_gpu_global48",
+      "independent_test": false
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "method": "Fusion_A",
+      "selection": "video_top1_then_nll",
+      "completed_epochs": 150,
+      "selected_epoch": 40,
+      "video_top1_pct": 96.1252446183953,
+      "video_top5_pct": 98.70841487279843,
+      "video_nll": 0.36205984962661464,
+      "videos": 2555,
+      "windows": 27384,
+      "correct": 2456,
+      "winning_weights_retained": true,
+      "initialization": "independent_pretrained_branches",
+      "execution": "DDP2_global_window16",
+      "independent_test": false
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "method": "Fusion_A",
+      "selection": "video_nll",
+      "completed_epochs": 150,
+      "selected_epoch": 6,
+      "video_top1_pct": 94.99021526418787,
+      "video_top5_pct": 98.86497064579257,
+      "video_nll": 0.239658978845264,
+      "videos": 2555,
+      "windows": 27384,
+      "correct": 2427,
+      "winning_weights_retained": true,
+      "initialization": "independent_pretrained_branches",
+      "execution": "DDP2_global_window16",
+      "independent_test": false
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "method": "historical_GM",
+      "selection": "video_top1_then_nll",
+      "completed_epochs": 50,
+      "selected_epoch": 47,
+      "video_top1_pct": 96.7123287671233,
+      "video_top5_pct": 98.98238747553816,
+      "video_nll": 0.3276316488680676,
+      "videos": 2555,
+      "windows": 27384,
+      "correct": 2471,
+      "winning_weights_retained": false,
+      "initialization": "trained_Fusion_A_epoch40",
+      "execution": "epoch1_single16_then_DDP3_global48",
+      "independent_test": false
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "method": "historical_GM",
+      "selection": "video_nll",
+      "completed_epochs": 50,
+      "selected_epoch": 17,
+      "video_top1_pct": 96.2426614481409,
+      "video_top5_pct": 99.09980430528375,
+      "video_nll": 0.2871843883545156,
+      "videos": 2555,
+      "windows": 27384,
+      "correct": 2459,
+      "winning_weights_retained": true,
+      "initialization": "trained_Fusion_A_epoch40",
+      "execution": "epoch1_single16_then_DDP3_global48",
+      "independent_test": false
+    }
+  ],
+  "status": [
+    {
+      "dataset": "THU-CHL",
+      "B": "no_completed_result",
+      "G": "complete",
+      "M": "implemented_not_trained",
+      "GM": "complete",
+      "G-FixedGate": "no_completed_result",
+      "G-GlobalGate": "deferred"
+    },
+    {
+      "dataset": "DVSAction",
+      "B": "not_trained",
+      "G": "not_trained",
+      "M": "not_trained",
+      "GM": "complete",
+      "G-FixedGate": "not_trained",
+      "G-GlobalGate": "not_trained"
+    },
+    {
+      "dataset": "UCF101-DVS fresh initialization",
+      "B": "no_formal_result",
+      "G": "no_formal_result",
+      "M": "not_trained",
+      "GM": "prepared_not_trained",
+      "G-FixedGate": "smoke_only",
+      "G-GlobalGate": "smoke_only"
+    },
+    {
+      "dataset": "DailyDVS-200 current window protocol",
+      "B": "not_trained",
+      "G": "not_trained",
+      "M": "not_trained",
+      "GM": "not_trained",
+      "G-FixedGate": "not_trained",
+      "G-GlobalGate": "not_trained"
+    }
+  ],
+  "detailed_ablation_status": [
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "G-PointQuery",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "G-PointComplement",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "G-FrameComplement",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "GM-FeatureOnly",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "GM-GateOnly",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "GM-FixedUpdate",
+      "status": "smoke_only_no_formal_result"
+    },
+    {
+      "dataset": "UCF101-DVS",
+      "variant": "GM-NoWriteGate",
+      "status": "smoke_only_no_formal_result"
+    }
+  ],
+  "limitations": [
+    "Original Test used for checkpoint selection.",
+    "UCF historical GM initializes from Fusion A and changes batch size; not a matched fresh-initialization ablation.",
+    "UCF historical GM epoch47 weights were not retained; its Top1 maximum is log-only.",
+    "THU G and GM match reviewed hyperparameters but single-GPU/DDP random streams differ; single seed only.",
+    "B-to-G adds the entire PF supplement, not just a gate. M retains the memory writer gate."
+  ]
+}

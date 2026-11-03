@@ -203,3 +203,8 @@ Thumbs.db
 
 # User-approved public research snapshot, 2026-10-27 (metrics only, no weights).
 !/research_exports/thu_chl_ablation_2026-10-27/
+
+# Reviewed main/ablation snapshot, explicitly authorized 2026-11-03.
+!/research_exports/main_ablation_2026-11-03/
+!/research_exports/main_ablation_2026-11-03/*.csv
+!/research_exports/main_ablation_2026-11-03/predictions/*.csv

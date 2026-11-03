@@ -1,0 +1,480 @@
+{
+  "thu_chl_g": {
+    "dataset": "THU-CHL",
+    "initialization": "fresh_fusion",
+    "execution": "single_gpu_global48",
+    "config": {
+      "architecture": "feature_gate_memory_ablation_v1",
+      "mode": "G",
+      "seed": 0,
+      "epochs": 50,
+      "num_classes": 50,
+      "store": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/chl_prepared",
+      "point_count": 2048,
+      "point_sensor_width": 346,
+      "point_sensor_height": 260,
+      "video_batch_size_per_gpu": 48,
+      "tbptt_steps": 4,
+      "workers": 2,
+      "optimizer": "AdamW",
+      "lr_point": 1e-05,
+      "lr_existing_fusion": 5e-05,
+      "lr_new_modules": 0.0001,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1,
+      "point_aux_weight": 0.5,
+      "precision": "FP32",
+      "scheduler": null,
+      "early_stopping": false,
+      "freeze_image_backbones": true,
+      "freeze_point_bn_running_stats": true,
+      "selection_protocol": "original_test_as_val",
+      "independent_test": false,
+      "selection_metric": "video_top1",
+      "dataset": "THU-EACT-50-CHL",
+      "point_checkpoint": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/thu_best_checkpoint.pth",
+      "point_sha256": "5a7f82e8f2e1d0e855d1a84690d41b035ff0677a9b97943ee2ecac83a94b87e7",
+      "image_checkpoints": {
+        "cstr3": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/cstr3/best_loss.pt",
+        "xt_p": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/xt_p/best_loss.pt",
+        "ty_p": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/ty_p/best_loss.pt"
+      },
+      "image_sha256": {
+        "cstr3": "0bdb49d7c4c409df84b688373e47e55eeb429c514df088b2b802e8497bf8dce3",
+        "xt_p": "4c5e6e8fc04a1018a49c30be8b1da44b88ee0c863c6d8e9f3e3f6d2e7c863b3a",
+        "ty_p": "13e246765e2f55de76e9d807d501fb6c13adb13597b5fae10237c80232b627fd"
+      },
+      "point_protocol": "shared augmented events -> radius .01 nb5 -> 2048 sorted points; raw fallback if <100 filtered",
+      "test_windows": "all nonempty manifest windows, including previously invalid point windows",
+      "schema": 1,
+      "base_mode": "G",
+      "selection_tiebreak": "video_nll",
+      "frame_query_source": "learned_q",
+      "history_to_gate": false,
+      "history_direct_residual": false,
+      "memory_update": "none",
+      "ablation_id": "base",
+      "gate_policy": "learned"
+    },
+    "data_identity": {
+      "config.json": "42d6472a5867df0ce9c6d26040d8c90e2dfd2520058407287e25690132c632a7",
+      "samples.json": "db7e9e2fb12a7b4420cf08b623bbce63d31597f3fb75cf7cf00d98e7d8783901",
+      "train_windows.jsonl": "dd92ded66d0053c2fe202fa23d0a98cf880954fbf1316f32b1bf2feebed11a8e",
+      "test_windows.jsonl": "395ff3b1c71885660de45f31dc48c8d0b77bfda76af9fa45626859d397033890"
+    },
+    "code_identity": {
+      "evaluate_gcstr_feature_memory.py": "fcb49bdaa6a7a93ce9b09400f885313f1cc10d9acc631f5d075400a5231f3f53",
+      "evaluate_gcstr_feature_memory_ablation.py": "a6d19eb401e959c78842c2779c4d7da3b81e653b51d3d494a97b7a77f0d9ae99",
+      "eventmamba_v1_layers.py": "a607c9cddc7f65c7a1bfed51157a70f47cca93809d2f93ef6b01628d8bb08b2a",
+      "eventmamba_v1_model.py": "902e747fe1223fa3a731712671215d51db9e126b898c8d13b57003d418d095cd",
+      "eventmamba_v1_pretrained.py": "035e13feb35c95f920cdcf0777f786629deaab5adbdb0d86e0015cc523b9f239",
+      "feature_ablation_runtime.py": "3ae427f6ebd3f3751ef50ce386198f9f90bf75e69a2107f5e56977863449ea65",
+      "gcstr_eventmamba_fusion.py": "349f98e2bf430930ff60fa6654006f997ed1fed0ee0f5cafada50087a3d70e25",
+      "gcstr_feature_memory_ablation.py": "7927f313d3bd6462079282fe285c56d6c218515cf8e1be33582d9ccf0182af63",
+      "gcstr_feature_memory_fusion.py": "2b60d1315364c684e5e5cd76e78876782909b2d33d5cdba106cf5538492fba93",
+      "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3",
+      "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "gcstr_secnet_fusion.py": "55ff121257ff78075d9705f6fad0e035fa221c958ef6e81f9fa88665e092d33b",
+      "gcstr_video_sequence_dataset.py": "dfc57068d95b0e1b1076c5bb010681ea23c5507eb82a02b686686277c5f38381",
+      "thu_chl_ablation_fusion.py": "51f2214c14589ee40190a9c36f622bce352b0e41b2fd2d8634d540889ac1f059",
+      "thu_chl_ablation_runtime.py": "e3d68bd18a57b3aea5e08c47e016fbd223d3a0b65f2ba10fb1e979c5689474e2",
+      "thu_chl_render.py": "55b0fc23bdfd9d797d78fedb4d224ad5855d56bec15288cebe0318d78ad5fb48",
+      "thu_chl_sequence_dataset.py": "3c12e46c558dc70254726d0621a456aac5bb2669f3db0902523dad262b1ceefe",
+      "train_gcstr_feature_memory.py": "80ae3eb2ec249d1d21648a2dcc9646ef9024d124eed55f8df8be5dcfa17b9cc9",
+      "train_gcstr_feature_memory_ablation.py": "14ac1befb2bd865730581f969120c7f582a1e5e3b330bac253f0debfe923894b",
+      "train_thu_chl_ablation.py": "9ff74d85ca5219054355c4c70b11da1fe77d7c2d81e7109c0b5485de4786d28d"
+    },
+    "coverage": {},
+    "pretrained_sources": {
+      "initialization": "independent pretrained branches; random fusion; zero residual gate/memory",
+      "point": {
+        "checkpoint": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/thu_best_checkpoint.pth",
+        "architecture": "EventMamba V1 THU",
+        "groups": [
+          1024,
+          512,
+          256
+        ],
+        "neighbors": 24,
+        "knn": "coordinate",
+        "epoch_zero_based": 156,
+        "checkpoint_window_accuracy": 47.917,
+        "strict_load": true
+      },
+      "images": {
+        "cstr3": {
+          "path": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/cstr3/best_loss.pt",
+          "epoch": 21
+        },
+        "xt_p": {
+          "path": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/xt_p/best_loss.pt",
+          "epoch": 18
+        },
+        "ty_p": {
+          "path": "ASSET_ROOT/assets/THU-EACT-50-CHL-prepared/gcstr_run1/ty_p/best_loss.pt",
+          "epoch": 20
+        }
+      }
+    }
+  },
+  "thu_chl_gm": {
+    "dataset": "THU-CHL",
+    "initialization": "fresh_fusion",
+    "execution": "DDP3_local16_global48",
+    "config": {
+      "architecture": "feature_gate_memory_v1",
+      "mode": "GM",
+      "seed": 0,
+      "epochs": 50,
+      "num_classes": 50,
+      "store": "LOCAL_PATH/chl_prepared",
+      "point_count": 2048,
+      "point_sensor_width": 346,
+      "point_sensor_height": 260,
+      "video_batch_size_per_gpu": 16,
+      "tbptt_steps": 4,
+      "workers": 2,
+      "optimizer": "AdamW",
+      "lr_point": 1e-05,
+      "lr_existing_fusion": 5e-05,
+      "lr_new_modules": 0.0001,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1,
+      "point_aux_weight": 0.5,
+      "precision": "FP32",
+      "scheduler": null,
+      "early_stopping": false,
+      "freeze_image_backbones": true,
+      "freeze_point_bn_running_stats": true,
+      "selection_protocol": "original_test_as_val",
+      "independent_test": false,
+      "selection_metric": "video_nll",
+      "dataset": "THU-EACT-50-CHL",
+      "point_checkpoint": "LOCAL_PATH/thu_best_checkpoint.pth",
+      "point_sha256": "5a7f82e8f2e1d0e855d1a84690d41b035ff0677a9b97943ee2ecac83a94b87e7",
+      "image_checkpoints": {
+        "cstr3": "LOCAL_PATH/best_loss.pt",
+        "xt_p": "LOCAL_PATH/best_loss.pt",
+        "ty_p": "LOCAL_PATH/best_loss.pt"
+      },
+      "image_sha256": {
+        "cstr3": "0bdb49d7c4c409df84b688373e47e55eeb429c514df088b2b802e8497bf8dce3",
+        "xt_p": "4c5e6e8fc04a1018a49c30be8b1da44b88ee0c863c6d8e9f3e3f6d2e7c863b3a",
+        "ty_p": "13e246765e2f55de76e9d807d501fb6c13adb13597b5fae10237c80232b627fd"
+      },
+      "point_protocol": "shared augmented events -> radius .01 nb5 -> 2048 sorted points; raw fallback if <100 filtered",
+      "test_windows": "all nonempty manifest windows, including previously invalid point windows",
+      "ddp_world_size": 3,
+      "allocator_fraction": 0.46
+    },
+    "data_identity": {
+      "config.json": "42d6472a5867df0ce9c6d26040d8c90e2dfd2520058407287e25690132c632a7",
+      "samples.json": "db7e9e2fb12a7b4420cf08b623bbce63d31597f3fb75cf7cf00d98e7d8783901",
+      "train_windows.jsonl": "dd92ded66d0053c2fe202fa23d0a98cf880954fbf1316f32b1bf2feebed11a8e",
+      "test_windows.jsonl": "395ff3b1c71885660de45f31dc48c8d0b77bfda76af9fa45626859d397033890"
+    },
+    "code_identity": {
+      "train_thu_chl_gm.py": "212bd080e43c43dbf287ee8326f59880db1588dc314e1039d86978e71e022f1b",
+      "thu_chl_sequence_dataset.py": "163d7fd4781146c0f8676976da359447f7499f6a069af25f13853505f615cef6",
+      "thu_chl_fusion.py": "c84de0fbe46b52644593a810e5b9230937baad3d81dd5bb1f5d33a10d58d8f57",
+      "eventmamba_v1_pretrained.py": "035e13feb35c95f920cdcf0777f786629deaab5adbdb0d86e0015cc523b9f239",
+      "eventmamba_v1_model.py": "902e747fe1223fa3a731712671215d51db9e126b898c8d13b57003d418d095cd",
+      "eventmamba_v1_layers.py": "a607c9cddc7f65c7a1bfed51157a70f47cca93809d2f93ef6b01628d8bb08b2a",
+      "thu_chl_render.py": "55b0fc23bdfd9d797d78fedb4d224ad5855d56bec15288cebe0318d78ad5fb48",
+      "gcstr_feature_memory_fusion.py": "2b60d1315364c684e5e5cd76e78876782909b2d33d5cdba106cf5538492fba93",
+      "gcstr_video_sequence_dataset.py": "dfc57068d95b0e1b1076c5bb010681ea23c5507eb82a02b686686277c5f38381",
+      "gcstr_secnet_fusion.py": "55ff121257ff78075d9705f6fad0e035fa221c958ef6e81f9fa88665e092d33b",
+      "gcstr_eventmamba_fusion.py": "349f98e2bf430930ff60fa6654006f997ed1fed0ee0f5cafada50087a3d70e25",
+      "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3"
+    },
+    "coverage": {},
+    "pretrained_sources": {
+      "initialization": "independent pretrained branches; random fusion; zero residual gate/memory",
+      "point": {
+        "checkpoint": "LOCAL_PATH/thu_best_checkpoint.pth",
+        "architecture": "EventMamba V1 THU",
+        "groups": [
+          1024,
+          512,
+          256
+        ],
+        "neighbors": 24,
+        "knn": "coordinate",
+        "epoch_zero_based": 156,
+        "checkpoint_window_accuracy": 47.917,
+        "strict_load": true
+      },
+      "images": {
+        "cstr3": {
+          "path": "LOCAL_PATH/best_loss.pt",
+          "epoch": 21
+        },
+        "xt_p": {
+          "path": "LOCAL_PATH/best_loss.pt",
+          "epoch": 18
+        },
+        "ty_p": {
+          "path": "LOCAL_PATH/best_loss.pt",
+          "epoch": 20
+        }
+      }
+    }
+  },
+  "dvsaction_gm": {
+    "dataset": "DVSAction",
+    "initialization": "fresh_fusion",
+    "execution": "single_gpu_global48",
+    "config": {
+      "architecture": "dvsaction_independent_branches_gm_v1",
+      "mode": "GM",
+      "seed": 0,
+      "epochs": 50,
+      "num_classes": 10,
+      "store": "LOCAL_PATH/dvsaction_prepared_v2",
+      "point_count": 2048,
+      "point_sensor_width": 150,
+      "point_sensor_height": 150,
+      "video_batch_size_per_gpu": 48,
+      "tbptt_steps": 4,
+      "workers": 2,
+      "optimizer": "AdamW",
+      "lr_point": 1e-05,
+      "lr_existing_fusion": 5e-05,
+      "lr_new_modules": 0.0001,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1,
+      "point_aux_weight": 0.5,
+      "precision": "FP32",
+      "scheduler": null,
+      "early_stopping": false,
+      "freeze_image_backbones": true,
+      "freeze_point_bn_running_stats": true,
+      "selection_protocol": "original_test_as_val",
+      "independent_test": false,
+      "selection_metric": "video_top1",
+      "schema": 1,
+      "base_mode": "GM",
+      "ablation_id": "base",
+      "frame_query_source": "learned_q",
+      "gate_policy": "learned",
+      "history_to_gate": true,
+      "history_direct_residual": true,
+      "memory_update": "learned_gate",
+      "dataset": "DVSAction",
+      "selection_tiebreak": "video_nll",
+      "data_version_confirmed": true,
+      "point_checkpoint": "PROJECT_ROOT/DVSAction_best_checkpoint.pth",
+      "point_sha256": "f28ac2731bc75a1f2b6dcc0e2e36fdc2f913eb962930c87a0c05c42dc148852f",
+      "image_checkpoints": {
+        "cstr3": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/cstr3/best_loss.pt",
+        "xt_p": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/xt_p/best_loss.pt",
+        "ty_p": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/ty_p/best_loss.pt"
+      },
+      "image_sha256": {
+        "cstr3": "09c203c929b1193e6d59d52e4e3be66b65ec6b85b6098c8507ac774eff2e7d2f",
+        "xt_p": "29a674299f57eee743a468688c874a1ca91b9665900004570c4ad96458875560",
+        "ty_p": "2d5ee7a45252ec8a3d9cff2f078d6b0855970ffde59aeda21824ac320214e6a1"
+      },
+      "augmentation": "shared_spatial",
+      "frames": "LOCAL_PATH/dvsaction_frames_v1"
+    },
+    "data_identity": {
+      "config.json": "31887a66c0269e27f909658c01628f1b4383cc245a9e3a3392a748f138032c32",
+      "train_files.jsonl": "2a26b28d0f476a955af05221e2d2a2479ae38c80ef8956a0cd5d0a5334954cee",
+      "test_files.jsonl": "e999a8a170d37f60663089404d9416871df7d81d5bbdf1bd84b37c8fadb3054d",
+      "train_windows.jsonl": "aec9880903211bdd1847ccd292af30ca72be11cdfa15001816bb95be0dfc05ae",
+      "test_windows.jsonl": "4e87199728b23482465c768e9bf7525bd6b1cb0d4ef46f6454f77109a9314b7b",
+      "train.h5": "2a32d2e3c8ab1a8fefc9c0d95b89a38fab783890faf1e9c4771b21f0408d579d",
+      "test.h5": "4b472aeb8d97be37a58fc73ca967b539e9bdc11ddc3ace03962ee272635bad8f"
+    },
+    "code_identity": {
+      "dvsaction_gm_data.py": "7f98c532e8ab48c8540ed2e9dd11b1fd0b16fd470e81f735818c7134bb461c4d",
+      "dvsaction_gm_fusion.py": "61f2fa041985df74efdaf0a87d91c961e2b09f43f8c43f4d08f9c5a20c8cd745",
+      "dvsaction_gm_runtime.py": "1f436400c002003b60bc91d76f94504f72efef7447f31839acde9f81b5c3a18d",
+      "dvsaction_preprocessing/render_frames.py": "1ba2a26319c0a5e4b300cf3f24749f799f4141cc14a07526ed379c52d11f2d70",
+      "evaluate_gcstr_feature_memory.py": "fcb49bdaa6a7a93ce9b09400f885313f1cc10d9acc631f5d075400a5231f3f53",
+      "evaluate_gcstr_feature_memory_ablation.py": "a6d19eb401e959c78842c2779c4d7da3b81e653b51d3d494a97b7a77f0d9ae99",
+      "eventmamba_v2_layers.py": "d94873e429ea18d42f7f36b762120b8df7a9e5a455cb839ff6e86dcb7fed18a3",
+      "eventmamba_v2_model.py": "4dc39cca938ce1813b3228439bbf181f65a1edb13a7e400e3ea005e01e993c28",
+      "eventmamba_v2_pretrained.py": "70f3cdc283bdf8e8935402fe54143612f90114a7a8fcb06566c99d2220cf441f",
+      "feature_ablation_runtime.py": "3ae427f6ebd3f3751ef50ce386198f9f90bf75e69a2107f5e56977863449ea65",
+      "gcstr_eventmamba_fusion.py": "349f98e2bf430930ff60fa6654006f997ed1fed0ee0f5cafada50087a3d70e25",
+      "gcstr_feature_memory_ablation.py": "7927f313d3bd6462079282fe285c56d6c218515cf8e1be33582d9ccf0182af63",
+      "gcstr_feature_memory_fusion.py": "2b60d1315364c684e5e5cd76e78876782909b2d33d5cdba106cf5538492fba93",
+      "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3",
+      "gcstr_secnet_fusion.py": "55ff121257ff78075d9705f6fad0e035fa221c958ef6e81f9fa88665e092d33b",
+      "gcstr_video_sequence_dataset.py": "dfc57068d95b0e1b1076c5bb010681ea23c5507eb82a02b686686277c5f38381",
+      "thu_preprocessing/gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "train_dvsaction_gm.py": "d0b86830e06e3df6e725a4416dc6bb1bc25e4dcc5816fe51b636f2b75a71f8de",
+      "train_gcstr_feature_memory.py": "80ae3eb2ec249d1d21648a2dcc9646ef9024d124eed55f8df8be5dcfa17b9cc9",
+      "train_gcstr_feature_memory_ablation.py": "14ac1befb2bd865730581f969120c7f582a1e5e3b330bac253f0debfe923894b"
+    },
+    "coverage": {
+      "train_windows": 926,
+      "train_videos": 226,
+      "test_windows": 239,
+      "test_videos": 57
+    },
+    "pretrained_sources": {
+      "initialization": "independent pretrained branches; random fusion; zero residuals",
+      "point": {
+        "checkpoint": "PROJECT_ROOT/DVSAction_best_checkpoint.pth",
+        "sha256": "f28ac2731bc75a1f2b6dcc0e2e36fdc2f913eb962930c87a0c05c42dc148852f",
+        "epoch": 91,
+        "accuracy": 0.8928571428571429,
+        "groups": [
+          512,
+          256,
+          128
+        ],
+        "group_source": "author log name dvsaction_2048_512_batch16 and published configuration; groups not encoded in state_dict",
+        "stage_channels": [
+          64,
+          128,
+          256
+        ]
+      },
+      "images": {
+        "cstr3": {
+          "checkpoint": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/cstr3/best_loss.pt",
+          "epoch": 26,
+          "sha256": "09c203c929b1193e6d59d52e4e3be66b65ec6b85b6098c8507ac774eff2e7d2f",
+          "selection": "video_nll"
+        },
+        "xt_p": {
+          "checkpoint": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/xt_p/best_loss.pt",
+          "epoch": 43,
+          "sha256": "29a674299f57eee743a468688c874a1ca91b9665900004570c4ad96458875560",
+          "selection": "video_nll"
+        },
+        "ty_p": {
+          "checkpoint": "PROJECT_ROOT/experiments/dvsaction_gcstr_three_branch_seed0_20261031/ty_p/best_loss.pt",
+          "epoch": 35,
+          "sha256": "2d5ee7a45252ec8a3d9cff2f078d6b0855970ffde59aeda21824ac320214e6a1",
+          "selection": "video_nll"
+        }
+      }
+    }
+  },
+  "ucf101_dvs_fusion_a": {
+    "dataset": "UCF101-DVS",
+    "initialization": "independent_pretrained_branches",
+    "execution": "DDP2_global_window16",
+    "config": {
+      "architecture": "pretrained_filename_V2_prototype_A",
+      "classes": 101,
+      "experiment": "PROJECT_ROOT/experiments/ucf101dvs_gcstr_sliding_txtsplit_v2",
+      "store": "LOCAL_PATH/ucf101_txtsplit_v2_events_v1",
+      "checkpoint_dir": "LOCAL_PATH/ucf101_filename_v2_fusion_A_seed0_v1_checkpoints",
+      "manifest_sha256": "bd07cb2a14bc70089dc8359f36de7b1ebafb27e1156bd579058e5c9c7e982f58",
+      "video_splits_sha256": "071c1249e205026389e793ce45fd4b002448197744398510c0e5cc9dee6e118f",
+      "point_checkpoint_sha256": "499cf427b08c6e9b50df686600ebebb6f58eb514caec6032a1bd7561a55ed6d4",
+      "image_checkpoint_sha256": {
+        "cstr3": "c4f9ef8cb934f6dc130c4d96b293f9eda863d662f04d3369845a31df0e0ccef3",
+        "xt_p": "2045c6e21804c1e60dd6d59dbaa95690da8569a8c27d7a758a37942be302fe1e",
+        "ty_p": "ae9de57323189ff8cda7a38d8e12eb8b8535e4fe1c00e7e165f3fca3f03ea8c0"
+      },
+      "epochs": 150,
+      "global_batch": 16,
+      "world_size": 2,
+      "optimizer": "AdamW",
+      "lr": 0.0001,
+      "weight_decay": 0.0001,
+      "scheduler": null,
+      "point_count": 2048,
+      "point_normalization": "official",
+      "point_groups": [
+        1024,
+        512,
+        256
+      ],
+      "images_frozen": true,
+      "points_trainable": true,
+      "aux_weight": 0.5,
+      "gradient_clip": 1.0,
+      "label_smoothing": 0.0,
+      "early_stopping": false,
+      "precision": "FP32",
+      "amp": false,
+      "seed": 0,
+      "num_workers": 4,
+      "selection_split": "test",
+      "validation_split": null,
+      "selection_metric": "video_nll",
+      "independent_test": false,
+      "video_voting": "mean_window_probability",
+      "tail": "exact coverage without padding/dropping; SyncBN handles singleton local shards",
+      "checkpoint_interval": 5,
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "code": {
+        "train_ucf101_pretrained_fusion.py": "cbddc9dd6e970d61fbf37de12c2d07348fd7efa56ef84e363ce00d63e0df999c",
+        "ucf101_pretrained_fusion.py": "47f245b7d113c95b90f9bc5fae0c28f3a1650d7ef3caee71e257714051a3c5c4",
+        "ucf101_fusion_window_data.py": "2a09eb7a064b0371f110fe3c202a20ee45b7ee97e763ffd0ba582454b5a95945",
+        "eventmamba_v2_pretrained.py": "70f3cdc283bdf8e8935402fe54143612f90114a7a8fcb06566c99d2220cf441f",
+        "eventmamba_v2_model.py": "4dc39cca938ce1813b3228439bbf181f65a1edb13a7e400e3ea005e01e993c28",
+        "eventmamba_v2_layers.py": "d94873e429ea18d42f7f36b762120b8df7a9e5a455cb839ff6e86dcb7fed18a3",
+        "ucf101_event_store.py": "11fc7531d2f0eed0abe4d2d10f454d605e682a33eadc5788ce03d019d9b6e697",
+        "gcstr_eventmamba_fusion.py": "349f98e2bf430930ff60fa6654006f997ed1fed0ee0f5cafada50087a3d70e25",
+        "gcstr_secnet_fusion.py": "55ff121257ff78075d9705f6fad0e035fa221c958ef6e81f9fa88665e092d33b",
+        "train_ucf101_window_gcstr.py": "d0d65342115fdf83d511e1a1bfca6d154b6727ef9d2154a75bbe68c6538c65ce",
+        "ucf101_window_data.py": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+        "gcstr_augmentation.py": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2",
+        "gcstr_representations.py": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+        "gcstr_models.py": "04b96465ae2d8f35155bfe7954f5ed278e3b7cfc9618e7ccbeb7fd8cddabc2a3"
+      }
+    },
+    "data_identity": {},
+    "code_identity": {},
+    "coverage": {},
+    "pretrained_sources": {}
+  },
+  "ucf101_dvs_historical_gm": {
+    "dataset": "UCF101-DVS",
+    "initialization": "trained_Fusion_A_epoch40",
+    "execution": "epoch1_single16_then_DDP3_global48",
+    "config": {
+      "architecture": "feature_gate_memory_v1",
+      "mode": "GM",
+      "seed": 0,
+      "epochs": 50,
+      "num_classes": 101,
+      "experiment": "LOCAL_PATH/experiment",
+      "store": "LOCAL_PATH/event_store",
+      "source_checkpoint": "LOCAL_PATH/epoch_040.pt",
+      "source_sha256": "616c07083ba01df1f9cefc6b27c192775247e18066cf58f709a2753ca590eb62",
+      "point_count": 2048,
+      "point_sensor_width": 320,
+      "point_sensor_height": 240,
+      "video_batch_size_per_gpu": 16,
+      "tbptt_steps": 4,
+      "workers": 2,
+      "optimizer": "AdamW",
+      "lr_point": 1e-05,
+      "lr_existing_fusion": 5e-05,
+      "lr_new_modules": 0.0001,
+      "weight_decay": 0.0001,
+      "gradient_clip": 1,
+      "point_aux_weight": 0.5,
+      "precision": "FP32",
+      "scheduler": null,
+      "early_stopping": false,
+      "freeze_image_backbones": true,
+      "freeze_point_bn_running_stats": true,
+      "selection_protocol": "original_test_as_val",
+      "independent_test": false,
+      "selection_metric": "video_nll",
+      "ddp_world_size": 3
+    },
+    "data_identity": {},
+    "code_identity": {
+      "gcstr_feature_memory_fusion.py": "2b60d1315364c684e5e5cd76e78876782909b2d33d5cdba106cf5538492fba93",
+      "gcstr_video_sequence_dataset.py": "dfc57068d95b0e1b1076c5bb010681ea23c5507eb82a02b686686277c5f38381",
+      "train_gcstr_feature_memory.py": "80ae3eb2ec249d1d21648a2dcc9646ef9024d124eed55f8df8be5dcfa17b9cc9",
+      "evaluate_gcstr_feature_memory.py": "fcb49bdaa6a7a93ce9b09400f885313f1cc10d9acc631f5d075400a5231f3f53"
+    },
+    "coverage": {},
+    "pretrained_sources": {}
+  }
+}

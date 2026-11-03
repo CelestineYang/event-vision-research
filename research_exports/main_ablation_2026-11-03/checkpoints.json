@@ -1,0 +1,42 @@
+{
+  "thu_chl_g/video_top1_then_nll": {
+    "file": "thu_chl_g/best_video_top1.pt",
+    "exists_at_export": true,
+    "bytes": 180063579,
+    "sha256": "8fbf615d9e5fb058bb378aefc51e1e72243710ef76c37433e926cb70133360d5"
+  },
+  "thu_chl_gm/video_top1_then_nll": {
+    "file": "thu_chl_gm/best_top1.pt",
+    "exists_at_export": true,
+    "bytes": 184311796,
+    "sha256": "3c6d1eb4ae4ac9fc9a0f5295b7bbb95eba4a3bb871c78be05ad2f162591d0791"
+  },
+  "dvsaction_gm/video_top1_then_nll": {
+    "file": "dvsaction_gm/best_video_top1.pt",
+    "exists_at_export": true,
+    "bytes": 183794075,
+    "sha256": "5f9b9817d14496d2f8b4215ac823a2f8d9235a54952d9b5d78855f6e8d45010b"
+  },
+  "ucf101_dvs_fusion_a/video_top1_then_nll": {
+    "file": "ucf101_dvs_fusion_a/epoch_040.pt",
+    "exists_at_export": true,
+    "bytes": 165670769,
+    "sha256": "616c07083ba01df1f9cefc6b27c192775247e18066cf58f709a2753ca590eb62"
+  },
+  "ucf101_dvs_fusion_a/video_nll": {
+    "file": "ucf101_dvs_fusion_a/best_loss.pt",
+    "exists_at_export": true,
+    "bytes": 165678787,
+    "sha256": "368edde5c2a196455c8960a31672c8b37f0e64da6cbb9e21c0d356251e974223"
+  },
+  "ucf101_dvs_historical_gm/video_top1_then_nll": {
+    "file": "ucf101_dvs_historical_gm/epoch_047.pt",
+    "exists_at_export": false
+  },
+  "ucf101_dvs_historical_gm/video_nll": {
+    "file": "ucf101_dvs_historical_gm/best_video_nll.pt",
+    "exists_at_export": true,
+    "bytes": 185075163,
+    "sha256": "5f5fc8d3532ddc60a094840d7d4bdf2f685452297afc95b3cb757ec1fd9551a2"
+  }
+}

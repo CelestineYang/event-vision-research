@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "both_correct": 423,
+    "g_only_correct": 16,
+    "gm_only_correct": 19,
+    "both_wrong": 86
+  },
+  "videos": 544,
+  "scope": "Selected checkpoints on original Test; single seed, execution differs, descriptive comparison only."
+}

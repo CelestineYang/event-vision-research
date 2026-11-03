@@ -8,7 +8,7 @@
 共123,096窗口、369,288张三投影图。唯一短Test样本test_03343（约0.10秒、3783事件）保留。
 完整事件流全部写入mmap，包括窗口尾部未覆盖事件；窗口索引不改变此前约定。
 
-输出根：`/remote-home/datasets/event_project_cache/dailydvs200_full_windows_1s_stride05_v1`
+输出根：`LOCAL_PATH/dailydvs200_full_windows_1s_stride05_v1`
 
 - `experiment/window_manifest.csv`：全部窗口身份、时间边界、事件数、源哈希。
 - `experiment/video_splits.csv` / `class_to_idx.json`：官方样本划分和200类映射。
@@ -31,10 +31,12 @@ Train缓存是**未增强参考图像**，不能直接拿它与增强Point配对
 已完成目录拒绝覆盖。运行锁阻止同目录并发。
 
 ```bash
-CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv-eventmamba/bin/python -u preprocess_dailydvs200_full.py --workers 2 --output /remote-home/datasets/event_project_cache/dailydvs200_full_windows_1s_stride05_v1
+CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv-eventmamba/bin/python -u preprocess_dailydvs200_full.py --workers 2 --output LOCAL_PATH/dailydvs200_full_windows_1s_stride05_v1
 # 中断恢复：同一命令末尾加 --resume
 tail -f logs/dailydvs200_windows/full_1s_stride05_v1.log
 ```
 
 全量开始前执行普通Train样本和短Test样本的真实预处理smoke，以及恢复校验；这是数据检查，不是Test调参或模型训练。
 此交付仅准备数据。DailyDVS的200类训练入口/模型初始化仍需后续单独适配，不能直接加载UCF101的101类分类头训练。
+
+后续 prepared_v1 读取、三路图像在线投影与可选缓存见 [DAILYDVS200_PREPARED_ADAPTER.md](DAILYDVS200_PREPARED_ADAPTER.md)。该图像分支预训练不等同于完成融合主实验。

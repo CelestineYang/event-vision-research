@@ -1,0 +1,53 @@
+{
+  "protocol": "eventmamba_paper_dailydvs200_v1",
+  "dataset": "DailyDVS-200",
+  "classes": 200,
+  "seed": 0,
+  "paper": "https://arxiv.org/html/2405.06116v4",
+  "upstream_commit": "7f61fd397cf69f10f0f92a182109d36cd7b6fdbb",
+  "data": {
+    "width": 320,
+    "height": 240,
+    "points": 2048,
+    "window_us": 1500000,
+    "stride_us": 500000,
+    "window_choice": "user chose official script stride; actual overlap is 1 second",
+    "bounds": "full half-open windows with end strictly before final event, as official eligibility; no short or tail fallback",
+    "zero_window_recordings": "exclude and report IDs, reasons, and actual evaluation denominator; user-selected official filtering",
+    "original_min_events_exclusive": 10000,
+    "variants": ["original", "random_crop", "time_reverse", "flip_y", "flip_x"],
+    "augmentation": "fixed offline variants of full raw windows before sampling",
+    "time_normalization": "sample min/max; original quantized to milliseconds; augmented microseconds",
+    "missing_official_functions": "reverse_T, flip_H, flip_W absent; explicit chronological reversal and pixel reflections supplied",
+    "split": "existing official DailyDVS-200 participant split"
+  },
+  "model": {
+    "version": "V2",
+    "embedding": 32,
+    "stage_channels": [64, 128, 256],
+    "groups": [1024, 512, 256],
+    "neighbors": 24,
+    "knn": "feature; official README V2 instruction",
+    "initialization": "random; no implicit checkpoint loading"
+  },
+  "training": {
+    "batch_size": 32,
+    "epochs": 350,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "scheduler": "CosineAnnealingLR",
+    "eta_min": 0.0,
+    "label_smoothing": 0.2,
+    "smoothing_convention": "true class 0.8; each other class 0.2/(classes-1)",
+    "drop_last_train": true,
+    "precision": "FP32",
+    "batch_norm": "train statistics and affine",
+    "selection": "strictly higher video hard-vote Top-1 on Test; retain final too",
+    "evaluation_seed": 100000,
+    "unspecified_in_paper": "weight_decay=1e-4 and smoothing=0.2 from official trainer; Adam betas/eps from framework defaults; seed=0 project choice",
+    "independent_validation": false
+  }
+}

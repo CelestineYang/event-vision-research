@@ -1,0 +1,25 @@
+{
+  "splits/train_files.txt": {
+    "sha256": "cf862a73242488bdca82b4e2afcebafbb4f81beb4b6408a72dc4c908dee6c57d",
+    "bytes": 6819
+  },
+  "splits/test_files.txt": {
+    "sha256": "548172659eac7076f4c4b51162c2441f8a76e0446192205a1092f8a5e4ffcae2",
+    "bytes": 1747
+  },
+  "upstream_generate_action.py": {
+    "sha256": "a704893fb80bbeb3d8b0b21b4f4c80790a6ca399a6cc14cf94d63241f03f0fa5",
+    "bytes": 10481
+  },
+  "split_coverage": {
+    "train_videos": 226,
+    "test_videos": 57,
+    "overlapping_recordings": 0
+  },
+  "upstream": {
+    "source": "https://github.com/rhwxmx/EventMamba/blob/main/dataprocess/generate_action.py",
+    "retrieved": "2026-10-31",
+    "license": "MIT; see ../eventmamba_v2_upstream/LICENSE",
+    "preservation": "Source and input split bytes preserved without line-ending normalization"
+  }
+}

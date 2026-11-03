@@ -1,0 +1,5 @@
+dataset,B,G,M,GM,G-FixedGate,G-GlobalGate
+THU-CHL,no_completed_result,complete,implemented_not_trained,complete,no_completed_result,deferred
+DVSAction,not_trained,not_trained,not_trained,complete,not_trained,not_trained
+UCF101-DVS fresh initialization,no_formal_result,no_formal_result,not_trained,prepared_not_trained,smoke_only,smoke_only
+DailyDVS-200 current window protocol,not_trained,not_trained,not_trained,not_trained,not_trained,not_trained

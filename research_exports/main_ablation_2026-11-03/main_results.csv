@@ -1,0 +1,8 @@
+dataset,method,selection,completed_epochs,selected_epoch,video_top1_pct,video_top5_pct,video_nll,videos,windows,correct,winning_weights_retained,initialization,execution,independent_test
+THU-CHL,G,video_top1_then_nll,50,40,80.69852941176471,93.56617647058823,0.8668723638342847,544,2392,439,True,fresh_fusion,single_gpu_global48,False
+THU-CHL,GM,video_top1_then_nll,50,10,81.25,94.85294117647058,0.8097812655508461,544,2392,442,True,fresh_fusion,DDP3_local16_global48,False
+DVSAction,GM,video_top1_then_nll,50,47,89.47368421052632,100.0,0.34803432930048683,57,239,51,True,fresh_fusion,single_gpu_global48,False
+UCF101-DVS,Fusion_A,video_top1_then_nll,150,40,96.1252446183953,98.70841487279843,0.36205984962661464,2555,27384,2456,True,independent_pretrained_branches,DDP2_global_window16,False
+UCF101-DVS,Fusion_A,video_nll,150,6,94.99021526418787,98.86497064579257,0.239658978845264,2555,27384,2427,True,independent_pretrained_branches,DDP2_global_window16,False
+UCF101-DVS,historical_GM,video_top1_then_nll,50,47,96.7123287671233,98.98238747553816,0.3276316488680676,2555,27384,2471,False,trained_Fusion_A_epoch40,epoch1_single16_then_DDP3_global48,False
+UCF101-DVS,historical_GM,video_nll,50,17,96.2426614481409,99.09980430528375,0.2871843883545156,2555,27384,2459,True,trained_Fusion_A_epoch40,epoch1_single16_then_DDP3_global48,False

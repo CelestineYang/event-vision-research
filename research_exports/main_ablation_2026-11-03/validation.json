@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-03",
+  "cpu_unittest": {
+    "modules": [
+      "test_gcstr_memory_only",
+      "test_eventmamba_paper",
+      "test_ucf101_fresh_gm",
+      "test_main_ablation_results"
+    ],
+    "tests": 24,
+    "failures": 0,
+    "errors": 0,
+    "cuda_visible_devices": ""
+  },
+  "result_integrity": {
+    "complete_runs": 5,
+    "epochs": 350,
+    "selected_metric_rows": 7,
+    "prediction_tables": 4,
+    "prediction_rows": 3700,
+    "coverage_score_and_unique_ids": "pass",
+    "thu_paired_labels_windows": "pass",
+    "legacy_report_entries_including_reused_seed0": 22
+  },
+  "source_integrity": {
+    "active_source_and_config_files_unchanged": 161,
+    "publication_python_files_compile_checked": 26
+  },
+  "publication": "No model inference, new training, dataset mutation or active source replacement performed."
+}
