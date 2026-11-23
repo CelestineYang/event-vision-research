@@ -21,6 +21,11 @@ UCF 历史结果不属于独立初始化的同协议消融；可用的历史 GM 
 
 ## 代码与复现入口
 
+四个论文主实验数据集（THU-CHL、UCF101-DVS、DVS128 Gesture、DailyAction-DVS）的
+预处理代码、完整运行顺序、依赖及协议说明见
+[四数据集预处理](preprocessing/README.md)。该目录独立保存已核对源码，包含
+DailyAction 完整 Test 清单构建和 UCF 原始 ZIP/MAT 转换入口。
+
 | 内容 | 入口及说明 |
 |---|---|
 | 项目衔接与实验边界 | [PROJECT_CONTINUITY.md](PROJECT_CONTINUITY.md) |

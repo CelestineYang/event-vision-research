@@ -1,0 +1,107 @@
+{
+  "datasets": [
+    "THU-EACT-50-CHL",
+    "UCF101-DVS",
+    "DVS128 Gesture (10 classes)",
+    "DailyAction-DVS"
+  ],
+  "files": [
+    {
+      "path": "preprocessing/thu_family/prepare_chl.py",
+      "sha256": "efb8c1a2c7657b86841e4255ad6f3f97bc9fd5a302a456dc68efc085e9826156",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/prepare_dvsgesture.py",
+      "sha256": "968707616370785d5768d95710f114e8f0bba5808cccb8227a64606e50ce5803",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/prepare_daily.py",
+      "sha256": "e835cdbd1ba6d4285aa2a75f353be4bc46c2a6c107396df78fb7e3b078ecb5f4",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/render_frames.py",
+      "sha256": "55b0fc23bdfd9d797d78fedb4d224ad5855d56bec15288cebe0318d78ad5fb48",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/gcstr_representations.py",
+      "sha256": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved",
+      "source_sha256": "4501e870aa2894c3ce7fe3a8a693676f90d0b4f27ce366c84421852b9c18cdf9",
+      "publication_change": "remove extra blank line at EOF only"
+    },
+    {
+      "path": "preprocessing/thu_family/requirements.txt",
+      "sha256": "1f822c5e9c22d3c393eae6032d67a09cc62f6b486df2c453f46c7cbba3f059ca",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/test_preprocessing.py",
+      "sha256": "22c73700d4000114ae16604c241e63a374a0f48117f672e2de5c2eed7ef45900",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/test_dvsgesture.py",
+      "sha256": "f67919bba48d72246ba5b420337dccd311d9c8fa247e4733a693dddc5aa7cd05",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/thu_family/test_daily.py",
+      "sha256": "8803b86789924079e13047ce0a61face6662ade9af03cf4139c9edc2d0f1dfd3",
+      "source": "audited local preprocessing snapshot; existing repository pipeline preserved"
+    },
+    {
+      "path": "preprocessing/prepare_ucf101dvs.py",
+      "sha256": "f67635539fa6c0eeb2d77137a1f1b696df8f51a7e914a7d0fa976f7bce965cb9",
+      "source": "existing raw UCF ZIP/MAT converter"
+    },
+    {
+      "path": "ucf101_window_data.py",
+      "sha256": "58a6d7aae1fb5f980020bef39aa974b283534961bbbcdc97065bfe6f36f1ce93",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "prepare_ucf101_txt_split.py",
+      "sha256": "79bef89d56d54d16b0c0f60688452d7cd56c10685653ca11f834111ec413519c",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "preprocess_ucf101_event_store.py",
+      "sha256": "ba4ae74be62eae32bf84d7108fe6d02ca4aa269dc2c74b6eb4ea455b3c9ef3e5",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "ucf101_event_store.py",
+      "sha256": "11fc7531d2f0eed0abe4d2d10f454d605e682a33eadc5788ce03d019d9b6e697",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "gcstr_augmentation.py",
+      "sha256": "fc15e5b61618b5fdf4a0f3f656bb53e4dfa4b45d797d13974a2d7225ecbacca2",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "gcstr_representations.py",
+      "sha256": "1d08ed931ed596b6298267a6ac3063e6a6661690182b5978abc76e5fee2c9094",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "train_ucf.txt",
+      "sha256": "8a8de17c3ff7f7f3c5637cf6302569b67d42100032a606c5ad8c79cf33252010",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "test_ucf(1).txt",
+      "sha256": "03e82492b2bd4a92d7b08845b56d4fb6a9f42808bdcb75c51872d99d7d32c546",
+      "source": "existing versioned UCF filename pipeline"
+    },
+    {
+      "path": "preprocessing/build_daily_complete_test_manifest.py",
+      "sha256": "0462f909af861f389c257c428e92ab5393956884054af43d6229debed85d02c3",
+      "source": "standalone extraction of archived evaluate_daily_complete.py manifest logic"
+    }
+  ]
+}
